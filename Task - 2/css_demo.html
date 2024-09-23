@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Demo</title>
+  <style>
+    /* Reset styles for all elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling - background image and text alignment */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('background.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Styling the container */
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    /* Grid Layout example */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+      grid-gap: 20px; /* Space between grid items */
+      margin: 20px 0;
+    }
+
+    .grid-item {
+      padding: 20px;
+      background-color: #f4f4f4;
+      border: 2px solid #333;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Flexbox Layout example */
+    .flex-layout {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .flex-item {
+      padding: 15px;
+      background-color: #e0f7fa;
+      border: 2px solid #0073e6;
+      border-radius: 5px;
+      width: 200px;
+      text-align: center;
+    }
+
+    /* Box Model example */
+    .box-model {
+      width: 300px;
+      padding: 20px;
+      margin: 20px auto;
+      border: 2px solid #333;
+      background-color: #f4f4f4;
+    }
+
+    /* Pseudo-class example */
+    .box-model:hover {
+      border-color: #00f;
+      background-color: #e0f7fa;
+    }
+
+    /* Pseudo-element example */
+    .box-model::before {
+      content: 'Hover to see effects: ';
+      color: #f00;
+      font-weight: bold;
+    }
+
+    /* Text styling and alignment */
+    h1 {
+      font-size: 2.5em;
+      color: #0073e6;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* Background color and text color */
+    .highlight {
+      background-color: yellow;
+      color: #000;
+      padding: 10px;
+    }
+
+    /* Border styling */
+    .border-box {
+      border: 3px dashed #ff6347;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Specific margin and padding example */
+    .spaced-box {
+      margin: 30px;
+      padding: 15px;
+      border: 2px solid #00ff00;
+      background-color: #f0f8ff;
+    }
+
+    /* Universal styling using the all selector */
+    *::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>CSS Demo</h1>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, recusandae cupiditate quisquam quidem earum qui, at similique blanditiis error repellendus sunt fuga porro consequuntur officia, iste aperiam deserunt explicabo repudiandae!</p>
+    
+    <!-- Grid Layout Example -->
+    <h2>Grid Layout</h2>
+    <div class="grid-layout">
+      <div class="grid-item">Grid Item 1</div>
+      <div class="grid-item">Grid Item 2</div>
+      <div class="grid-item">Grid Item 3</div>
+    </div>
+
+    <!-- Flexbox Layout Example -->
+    <h2>Flexbox Layout</h2>
+    <div class="flex-layout">
+      <div class="flex-item">Flex Item 1</div>
+      <div class="flex-item">Flex Item 2</div>
+      <div class="flex-item">Flex Item 3</div>
+    </div>
+
+    <!-- Box Model Example -->
+    <div class="box-model">
+      This box uses the CSS Box Model.
+    </div>
+    
+    <!-- Highlighting text with a background color -->
+    <p class="highlight">This paragraph is highlighted using a background color and custom text color.</p>
+    
+    <!-- Border and margin padding example -->
+    <div class="border-box">
+      This box has a dashed border and padding.
+    </div>
+
+    <!-- Box with margin and padding example -->
+    <div class="spaced-box">
+      This box demonstrates margin and padding with a border.
+    </div>
+    
+  </div>
+
+</body>
+</html>
