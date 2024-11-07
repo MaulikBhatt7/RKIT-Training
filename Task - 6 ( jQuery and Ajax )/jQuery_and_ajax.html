@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Detail Form (jQuery and Ajax)</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-light text-center py-3">
+        <h1>Student/Faculty Registration Form</h1>
+        <h2>Fill in your details</h2>
+        <p>Use the form below to register as a student. Fields marked with an asterisk (*) are mandatory.</p>
+    </header>
+
+    <form id="registrationForm" action="student_list.html" method="get" class="container mt-4">
+        <div class="row mb-3">
+            <label for="name" class="col-sm-3 col-form-label">Full Name:*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" name="student_name" autocomplete="on" autofocus>
+                <span id="name_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-3 col-form-label">Email:*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="email" name="email">
+                <span id="email_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="password" class="col-sm-3 col-form-label">Create Password:*</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" name="password">
+                <span id="password_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="confirm_password" class="col-sm-3 col-form-label">Confirm Password:*</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password">
+                <span id="confirm_password_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="dob" class="col-sm-3 col-form-label">Date of Birth:*</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control" id="dob" name="dob">
+                <span id="dob_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="phone" class="col-sm-3 col-form-label">Phone Number:*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="phone" name="phone_number">
+                <span id="phone_error" class="error-message text-danger" style="display:none;"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <!-- <button type="submit" class="btn btn-primary" formaction="./faculty.html">Submit As Faculty</button> -->
+            </div>
+        </div>
+    </form>
+ 
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 MB Institute. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JS Load -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js
+    "></script>
+
+    <script src="jQuery_and_ajax.js" defer></script> 
+</body>
+</html>
