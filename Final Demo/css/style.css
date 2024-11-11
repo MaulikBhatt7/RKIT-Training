@@ -1,0 +1,106 @@
+/* General Body Styling */
+body {
+    background-color: #1a202c; /* Dark background color for the body */
+    color: white; /* White text color */
+    font-family: Arial, sans-serif; /* Set the font family to Arial for readability */
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5rem; /* Font size for the main title */
+    color: #e2e8f0; /* Light color for the title */
+    margin-bottom: 40px; /* Bottom margin to separate the title from other elements */
+}
+
+/* Match Cards */
+.card {
+    background-color: #2d3748; /* Dark background color for the card */
+    border-radius: 8px; /* Rounded corners for the card */
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect around the card */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    display: flex; /* Flexbox to arrange child elements */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    height: 100%; /* Make the card fill the available height */
+    color: #e2e8f0; /* Light text color inside the card */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slightly lift the card on hover for a 3D effect */
+}
+
+/* Card Inner Content */
+.card-body {
+    text-align: center; /* Center the text inside the card */
+}
+
+.card-body img {
+    width: 200px; /* Set width of the image */
+    height: 100px; /* Set height of the image */
+    margin-bottom: 15px; /* Bottom margin to space out the image from other content */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.card-body h5 {
+    font-size: 1.5rem; /* Font size for the card title */
+    margin-bottom: 10px; /* Margin below the card title */
+}
+
+.card-body .vs {
+    margin: 20px 0; /* Top and bottom margin for spacing */
+    font-size: 2rem; /* Larger font size for the "VS" text */
+    color: #fbbf24; /* Orange color for "VS" text */
+}
+
+.card-body p {
+    font-size: 1rem; /* Regular font size for paragraph text */
+    margin-bottom: 5px; /* Margin below the paragraph text */
+}
+
+/* Filter Bar Styling */
+select, #filterButton {
+    background-color: #2d3748; /* Dark background color for select and button */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    font-size: 1rem; /* Set font size */
+    padding: 10px; /* Padding inside the select and button */
+    border-radius: 5px; /* Rounded corners */
+}
+
+select:focus, #filterButton:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Add subtle glow effect on focus */
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    background-color: #4CAF50; /* Green background color for the button */
+    color: white; /* White text color */
+    font-size: 1rem; /* Font size for the button text */
+    border: none; /* Remove default border */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.btn-secondary {
+    background-color: #1D4ED8; /* Blue background color for secondary button */
+}
+
+.btn:hover {
+    background-color: #3b82f6; /* Change background color to light blue on hover */
+}
+
+/* Grid Layout */
+#matchList {
+    display: grid; /* Use grid layout for the match list */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create flexible grid columns */
+    gap: 1.5rem; /* Space between grid items */
+}
+
+/* Countdown Styling */
+.countdown {
+    border: 1px solid white; /* White border for countdown element */
+}
