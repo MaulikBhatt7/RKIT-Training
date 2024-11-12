@@ -25,6 +25,100 @@ $(function () {
         });
     }
 
+
+    /**
+     * Function: Delete Match
+     * Description: Handles the deletion of a match when the delete button is clicked.
+     *   - Displays a confirmation dialog using SweetAlert to confirm deletion.
+     *   - If confirmed, sends an AJAX DELETE request to the server to delete the match.
+     *   - On success, displays a success message and reloads the page to update the match list.
+     * Parameters: None (retrieves match ID from the clicked button's data attribute)
+     * Returns: None
+     * From: Delete button click event
+     */
+    $(document).on("click", ".deleteBtn", function(e) {
+        e.preventDefault(); // Prevent the default behavior of the button
+        
+        // Initialize SweetAlert with custom button styling
+        let swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success", // Style for the confirm button
+                cancelButton: "btn btn-danger"   // Style for the cancel button
+            },
+            buttonsStyling: true // Ensures button styling is applied
+        });
+
+        // Show SweetAlert confirmation dialog asking if the user is sure
+        swalWithBootstrapButtons.fire({
+            title: "Confirmation!!",
+            text: "Are you sure you want to delete?",
+            icon: "warning",
+            showCancelButton: true, // Show cancel button
+            confirmButtonText: "Yes, delete it!", // Confirm button text
+            cancelButtonText: "No, cancel!", // Cancel button text
+            reverseButtons: true // Reverse the order of buttons (confirm and cancel)
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // If the user confirms, get the match ID from the button
+                let matchID = $(this).data('id');
+                
+                // Set up the DELETE URL using the match's ID
+                let deleteURL = API_URL + '/' + matchID;
+
+                // Perform AJAX DELETE request to remove the match data
+                $.ajax({
+                    url: deleteURL,  // URL for deleting the match
+                    method: 'DELETE', // HTTP method for deletion
+                    success: function(response) {
+                        // Show success message if the match was successfully deleted
+                        swalWithBootstrapButtons.fire({
+                            title: "Deleted!",
+                            text: "Record has been deleted.",
+                            icon: "success"
+                        });
+
+                        // Reload the page to update the list of matches
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000); // Delay of 1 second before reload
+                    },
+                    error: function(error) {
+                        // Log an error message if the DELETE request fails
+                        console.log('Error fetching data', error);
+                    }
+                });
+            } 
+            else if (result.dismiss) {
+                // If the user cancels, show a cancellation message
+                Swal.fire({
+                    title: "Cancelled",
+                    icon: "error"
+                });
+            }
+        });
+    });
+
+
+
+    /**
+     * Function: Edit Match Redirect
+     * Description: Redirects the user to the "Add Match" page with the selected match's ID in the query parameter.
+     * This function is triggered when the edit button is clicked for a specific match.
+     * The match ID is retrieved from the button's data attribute and appended to the URL for retrieval on the next page.
+     * Parameters: None (retrieves match ID from the clicked button's data attribute)
+     * Returns: None
+     * From: Edit button click event
+     */
+    $(document).on('click', '.editBtn', function() {
+        // Get the match ID from the data attribute of the clicked button
+        let matchID = $(this).data('id');
+        
+        // Redirect to the "Add Match" page, passing the match ID as a query parameter
+        window.location.href = `add_match.html?matchID=${matchID}`;
+    });
+
+
+
     /**
      * Function: startCountdown
      * Description: Starts a countdown timer for each match, displaying the remaining time until the match starts.
@@ -81,6 +175,11 @@ $(function () {
                         <p><strong>Venue:</strong> ${match.venue}</p>  <!-- Match venue -->
                         <p><strong>Time Remains:</strong></p>
                         <p id="${countdownId}" class="countdown"></p>  <!-- Countdown element -->
+                        <div class="mt-4">
+                            <button class="btn btn-secondary editBtn m-2" data-id="${match.id}">Edit</button>
+                            <button class="btn btn-danger deleteBtn m-2" data-id="${match.id}">Delete</button>
+                            
+                        </div>
                     </div>
                 </div>
             `;

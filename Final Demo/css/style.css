@@ -78,7 +78,6 @@ select:focus, #filterButton:focus {
 .btn {
     padding: 10px 20px; /* Padding inside the button */
     border-radius: 5px; /* Rounded corners for the button */
-    background-color: #4CAF50; /* Green background color for the button */
     color: white; /* White text color */
     font-size: 1rem; /* Font size for the button text */
     border: none; /* Remove default border */
