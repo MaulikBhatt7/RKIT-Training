@@ -1,4 +1,3 @@
-
 /**
  * Event: Focus and Blur Event Handlers
  * Description: Adds visual feedback for form fields by changing the background color when they are focused or blurred.
@@ -6,11 +5,11 @@
  * Returns: None
  * From: User focusing or blurring input fields
  */
-function handleFocus(event) {
+function HandleFocus(event) {
     $(event.target).css("background-color", "#f0f8ff");
 }
 
-function handleBlur(event) {
+function HandleBlur(event) {
     $(event.target).css("background-color", "");
 }
 
@@ -103,9 +102,9 @@ $('#registrationForm').on('submit', function (e) {
  * In this case, simulates an operation that resolves after 5 seconds.
  * Parameters: None
  * Returns: None
- * From: Triggered by asyncOperation() call
+ * From: Triggered by AsyncOperation() call
  */
-function asyncOperation() {
+function AsyncOperation() {
     let deferred = $.Deferred(); // Create a deferred object
     setTimeout(() => {
         deferred.resolve("Operation complete!"); // Resolve deferred after 5 seconds
@@ -114,7 +113,7 @@ function asyncOperation() {
 }
 
 // Execute async operation and log the result
-asyncOperation().done((message) => {
+AsyncOperation().done((message) => {
     console.log(message); // Log the message after the async operation completes
 });
 
