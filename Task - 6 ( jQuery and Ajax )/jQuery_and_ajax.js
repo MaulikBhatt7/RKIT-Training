@@ -1,3 +1,6 @@
+let isValid = false
+let apiURL = "https://632158b682f8687273afe9c3.mockapi.io/StudentDetails"
+
 /**
  * Event: Focus and Blur Event Handlers
  * Description: Adds visual feedback for form fields by changing the background color when they are focused or blurred.
@@ -115,6 +118,14 @@ function AsyncOperation() {
 // Execute async operation and log the result
 AsyncOperation().done((message) => {
     console.log(message); // Log the message after the async operation completes
+});
+
+
+// Callback Example
+$("button").click(function(){
+    $("p").hide("slow", function(){
+      alert("The paragraph is now hidden");
+    });
 });
 
 /**
