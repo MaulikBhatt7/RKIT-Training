@@ -3,21 +3,16 @@ $(function () {
     let matches = [];  // Array to store the match data fetched from the API
 
     /**
-     * Function: fetchMatches
+     * Function: FetchMatches
      * Description: Fetches match data from the API and displays it on the page.
-     * On success, it stores the match data in the `matches` array and calls the `displayMatches()` function to render the matches.
-     * On failure, an alert is shown to inform the user about the error.
-     * Parameters: None
-     * Returns: None
-     * From: Initial page load
      */
-    function fetchMatches() {
+    function FetchMatches() {
         $.ajax({
             url: API_URL,  // API URL for fetching match data
             method: 'GET',  // HTTP GET request to fetch the data
             success: function (data) {  // On success, store the fetched data and display matches
                 matches = data;
-                displayMatches(matches);  // Calls displayMatches to render fetched matches
+                DisplayMatches(matches);  // Calls DisplayMatches to render fetched matches
             },
             error: function () {  // On failure, show an error message
                 alert('Error fetching match data');
@@ -25,71 +20,54 @@ $(function () {
         });
     }
 
-
     /**
-     * Function: Delete Match
+     * Function: DeleteMatch
      * Description: Handles the deletion of a match when the delete button is clicked.
-     *   - Displays a confirmation dialog using SweetAlert to confirm deletion.
-     *   - If confirmed, sends an AJAX DELETE request to the server to delete the match.
-     *   - On success, displays a success message and reloads the page to update the match list.
-     * Parameters: None (retrieves match ID from the clicked button's data attribute)
-     * Returns: None
-     * From: Delete button click event
      */
     $(document).on("click", ".deleteBtn", function(e) {
         e.preventDefault(); // Prevent the default behavior of the button
         
-        // Initialize SweetAlert with custom button styling
         let swalWithBootstrapButtons = Swal.mixin({
             customClass: {
-                confirmButton: "btn btn-success", // Style for the confirm button
-                cancelButton: "btn btn-danger"   // Style for the cancel button
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
             },
-            buttonsStyling: true // Ensures button styling is applied
+            buttonsStyling: true
         });
 
-        // Show SweetAlert confirmation dialog asking if the user is sure
         swalWithBootstrapButtons.fire({
             title: "Confirmation!!",
             text: "Are you sure you want to delete?",
             icon: "warning",
-            showCancelButton: true, // Show cancel button
-            confirmButtonText: "Yes, delete it!", // Confirm button text
-            cancelButtonText: "No, cancel!", // Cancel button text
-            reverseButtons: true // Reverse the order of buttons (confirm and cancel)
+            showCancelButton: true,
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel!",
+            reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                // If the user confirms, get the match ID from the button
                 let matchID = $(this).data('id');
-                
-                // Set up the DELETE URL using the match's ID
                 let deleteURL = API_URL + '/' + matchID;
 
-                // Perform AJAX DELETE request to remove the match data
                 $.ajax({
-                    url: deleteURL,  // URL for deleting the match
-                    method: 'DELETE', // HTTP method for deletion
+                    url: deleteURL,
+                    method: 'DELETE',
                     success: function(response) {
-                        // Show success message if the match was successfully deleted
                         swalWithBootstrapButtons.fire({
                             title: "Deleted!",
                             text: "Record has been deleted.",
                             icon: "success"
                         });
 
-                        // Reload the page to update the list of matches
                         setTimeout(function() {
                             window.location.reload();
-                        }, 1000); // Delay of 1 second before reload
+                        }, 1000);
                     },
                     error: function(error) {
-                        // Log an error message if the DELETE request fails
                         console.log('Error fetching data', error);
                     }
                 });
             } 
             else if (result.dismiss) {
-                // If the user cancels, show a cancellation message
                 Swal.fire({
                     title: "Cancelled",
                     icon: "error"
@@ -98,119 +76,86 @@ $(function () {
         });
     });
 
-
-
     /**
-     * Function: Edit Match Redirect
+     * Function: EditMatchRedirect
      * Description: Redirects the user to the "Add Match" page with the selected match's ID in the query parameter.
-     * This function is triggered when the edit button is clicked for a specific match.
-     * The match ID is retrieved from the button's data attribute and appended to the URL for retrieval on the next page.
-     * Parameters: None (retrieves match ID from the clicked button's data attribute)
-     * Returns: None
-     * From: Edit button click event
      */
     $(document).on('click', '.editBtn', function() {
-        // Get the match ID from the data attribute of the clicked button
         let matchID = $(this).data('id');
-        
-        // Redirect to the "Add Match" page, passing the match ID as a query parameter
         window.location.href = `add_match.html?matchID=${matchID}`;
     });
 
-
-
     /**
-     * Function: startCountdown
-     * Description: Starts a countdown timer for each match, displaying the remaining time until the match starts.
-     * Updates the countdown every second and shows "Match Over!" once the match time is over.
-     * Parameters: 
-     *   - matchDateTime (string): The date and time of the match.
-     *   - elementId (string): The ID of the HTML element where the countdown will be displayed.
-     * Returns: None
-     * From: displayMatches function (called in the forEach loop for each match)
+     * Function: StartCountdown
+     * Description: Starts a countdown timer for each match.
      */
-    function startCountdown(matchDateTime, elementId) {
-        let targetDate = new Date(matchDateTime);  // Convert the match date string to a Date object
-        setInterval(function() {  // Repeatedly execute this function every second (1000ms)
-            let now = new Date();  // Get the current date and time
-            let timeDiff = targetDate - now;  // Calculate the difference between the match date and current date
+    function StartCountdown(matchDateTime, elementId) {
+        let targetDate = new Date(matchDateTime);
+        setInterval(function() {
+            let now = new Date();
+            let timeDiff = targetDate - now;
 
-            // If the match time has passed, display "Match Over!"
             if (timeDiff <= 0) {
                 document.getElementById(elementId).innerHTML = "Match Over!";
             } else {
-                // Otherwise, calculate and display the remaining time in days, hours, minutes, and seconds
                 let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
                 let hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                 let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;  // Display the countdown
+                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
-        }, 1000);  // Update the countdown every second
+        }, 1000);
     }
 
     /**
-     * Function: displayMatches
+     * Function: DisplayMatches
      * Description: Displays the list of matches on the page.
-     * Loops through each match in the `matches` array and generates HTML content for each match.
-     * Adds a countdown timer and appends the match details to the page.
-     * Parameters: 
-     *   - matches (array): The array of match objects to be displayed.
-     * Returns: None
-     * From: fetchMatches function (called after data is successfully fetched), filter button click (for displaying filtered matches)
      */
-    function displayMatches(matches) {
-        $('#matchList').html('');  // Clear the existing match list before displaying the new one
-        matches.forEach(match => {  // Loop through each match and generate the match card
-            let countdownId = `countdown-${match.id}`;  // Generate a unique ID for the countdown element
+    function DisplayMatches(matches) {
+        $('#matchList').html('');
+        matches.forEach(match => {
+            let countdownId = `countdown-${match.id}`;
             let matchCard = `
-                <div class="card">  <!-- Match card container -->
+                <div class="card">
                     <div class="card-body">
-                        <img src="../images/${match.team1}.png" alt="${match.team1}">  <!-- Image of team 1 -->
-                        <h5>${match.team1}</h5>  <!-- Name of team 1 -->
-                        <div class="vs">vs</div>  <!-- Separator between teams -->
-                        <img src="../images/${match.team2}.png" alt="${match.team2}">  <!-- Image of team 2 -->
-                        <h5>${match.team2}</h5>  <!-- Name of team 2 -->
-                        <p><strong>Date:</strong> ${match.date}</p>  <!-- Match date -->
-                        <p><strong>Venue:</strong> ${match.venue}</p>  <!-- Match venue -->
+                        <img src="../images/${match.team1}.png" alt="${match.team1}">
+                        <h5>${match.team1}</h5>
+                        <div class="vs">vs</div>
+                        <img src="../images/${match.team2}.png" alt="${match.team2}">
+                        <h5>${match.team2}</h5>
+                        <p class="mt-4"><strong>Date:</strong> ${match.date}</p>
+                        <p><strong>Venue:</strong> ${match.venue}</p>
                         <p><strong>Time Remains:</strong></p>
-                        <p id="${countdownId}" class="countdown"></p>  <!-- Countdown element -->
+                        <p id="${countdownId}" class="countdown"></p>
                         <div class="mt-4">
                             <button class="btn btn-secondary editBtn m-2" data-id="${match.id}">Edit</button>
                             <button class="btn btn-danger deleteBtn m-2" data-id="${match.id}">Delete</button>
-                            
                         </div>
                     </div>
                 </div>
             `;
-            $('#matchList').append(matchCard);  // Append the match card to the list
-            startCountdown(match.date, countdownId);  // Calls startCountdown to display the countdown for each match
+            $('#matchList').append(matchCard);
+            StartCountdown(match.date, countdownId);
         });
     }
 
     /**
-     * Event: Filter Button Click
-     * Description: Filters the displayed matches based on the selected criteria (team1, team2, and venue).
-     * Once the filter button is clicked, it applies the filters to the `matches` array and updates the displayed matches.
-     * Parameters: None
-     * Returns: None
-     * From: User clicking the filter button on the page
+     * Event: FilterMatches
+     * Description: Filters the displayed matches based on the selected criteria.
      */
     $('#filterButton').click(function () {
-        let team1 = $('#team1Filter').val();  // Get the selected value for team 1
-        let team2 = $('#team2Filter').val();  // Get the selected value for team 2
-        let venue = $('#venueFilter').val();  // Get the selected value for venue
+        let team1 = $('#team1Filter').val();
+        let team2 = $('#team2Filter').val();
+        let venue = $('#venueFilter').val();
 
-        // Filter the matches array based on the selected criteria
         let filteredMatches = matches.filter(match => {
-            return (team1 ? match.team1 === team1 : true) &&  // Filter by team 1 if selected
-                   (team2 ? match.team2 === team2 : true) &&  // Filter by team 2 if selected
-                   (venue ? match.venue === venue : true);  // Filter by venue if selected
+            return (team1 ? match.team1 === team1 : true) &&  
+                   (team2 ? match.team2 === team2 : true) &&  
+                   (venue ? match.venue === venue : true);  
         });
 
-        displayMatches(filteredMatches);  // Calls displayMatches to update the displayed matches with the filtered results
+        DisplayMatches(filteredMatches);
     });
 
-    // Initial load of all matches when the page is loaded
-    fetchMatches();  // Calls fetchMatches to load the match data on page load
+    FetchMatches();
 });

@@ -42,6 +42,7 @@
                     <option value="England">England</option>
                     <option value="Sri Lanka">Sri Lanka</option>
                 </select>
+                <span id="team1_error" class="error-message text-danger" style="display:none;"></span>
             </div>
 
             <!-- Dropdown for selecting Team 2 -->
@@ -57,22 +58,29 @@
                     <option value="England">England</option>
                     <option value="Sri Lanka">Sri Lanka</option>
                 </select>
+                <span id="team2_error" class="error-message text-danger" style="display:none;"></span>
+
             </div>
 
             <!-- Input for selecting match date and time -->
             <div class="mb-4">
                 <label for="matchDate" class="form-label">Date & Time</label>
                 <input type="datetime-local" id="matchDate" class="form-control">
+                <span id="matchDate_error" class="error-message text-danger" style="display:none;"></span>
             </div>
 
             <!-- Dropdown for selecting venue -->
             <div class="mb-4">
                 <label for="venue" class="form-label">Venue</label>
                 <select id="venue" class="form-select">
+
+                    <!-- Default venue options -->
+                    <option value="">Select Venue</option>
                     <!-- Available venue options -->
                     <option value="Ahmedabad">Ahmedabad</option>
                     <option value="Melbourne">Melbourne</option>
                 </select>
+                <span id="venue_error" class="error-message text-danger" style="display:none;"></span>
             </div>
 
             <!-- Submit button to add match -->
