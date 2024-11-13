@@ -1,165 +1,193 @@
 $(function () {
-    let API_URL = 'https://632158b682f8687273afe9c3.mockapi.io/MatchList';  // URL for the API to add new match data (replace with actual API URL)
+    class MatchFormHandler {
+        /**
+         * Method: Constructor Initialization
+         * Description: Initializes the API URL and retrieves match ID from URL parameters.
+         * This setup is used for differentiating between add and edit operations.
+         * Parameters: ApiUrl (string) - The base API URL for match data operations.
+         * Returns: None
+         * From: Called when creating a new MatchFormHandler instance.
+         */
+        constructor(ApiUrl) {
+            this.APIUrl = ApiUrl;
+            this.MatchID = new URLSearchParams(window.location.search).get('matchID');
+            this.init();
+        }
 
-    let urlParams = new URLSearchParams(window.location.search); // URL Parameters to find matchId for edit operation 
-    let matchID = urlParams.get('matchID');
+        /**
+         * Method: Form Initialization
+         * Description: Sets up the page text for adding or editing and binds the form submission event.
+         * If match ID is present, fetches existing match data to pre-fill the form.
+         * Parameters: None
+         * Returns: None
+         * From: Called by constructor during initialization.
+         */
+        async init() {
+            this.SetupPageText();
+            this.ClearValidationMessages();
 
-    let headingOfAddPage = document.getElementById("heading-of-addPage");
-    let textOfSubmitBtn = document.getElementById("text-of-submit-btn");
+            if (this.MatchID) {
+                await this.PopulateFormData();
+            }
 
-    if (matchID) {
-        // Change text data according to add or edit
-        headingOfAddPage.innerHTML = "Edit Match Schedule";
-        textOfSubmitBtn.innerHTML = "Edit Match";
+            $('#addMatchForm').on('submit', (e) => this.HandleFormSubmit(e));
+        }
 
-        // Fetch match details and pre-fill form fields
-        let editData_URL = API_URL + '/' + matchID;
-        $.ajax({
-            url: editData_URL,
-            method: 'GET',
-            dataType: 'json',
-            success: function(match) {
-                // Populate form fields
-                $('#team1').val(match.team1);
-                $('#team2').val(match.team2);
-                $('#matchDate').val(match.date);
-                $('#venue').val(match.venue);
-            },
-            error: function(error) {
+        /**
+         * Method: Setup Page Text
+         * Description: Updates the heading and submit button text based on add or edit mode.
+         * Parameters: None
+         * Returns: None
+         * From: Called during initialization.
+         */
+        SetupPageText() {
+            let headingOfAddPage = document.getElementById("heading-of-addPage");
+            let textOfSubmitBtn = document.getElementById("text-of-submit-btn");
+
+            if (this.MatchID) {
+                headingOfAddPage.innerHTML = "Edit Match Schedule";
+                textOfSubmitBtn.innerHTML = "Edit Match";
+            }
+        }
+
+        /**
+         * Method: Populate Form Data
+         * Description: Fetches existing match data from the API for editing and pre-fills form fields.
+         * Parameters: None
+         * Returns: None
+         * From: Called during initialization if editing a match.
+         */
+        async PopulateFormData() {
+            let editDataURL = `${this.APIUrl}/${this.MatchID}`;
+            try {
+                let response = await $.ajax({
+                    url: editDataURL,
+                    method: 'GET',
+                    dataType: 'json'
+                });
+                $('#team1').val(response.team1);
+                $('#team2').val(response.team2);
+                $('#matchDate').val(response.date);
+                $('#venue').val(response.venue);
+            } catch (error) {
                 console.error('Error fetching match details:', error);
             }
-        });
-    }
-
-    /**
-     * Event: Add Match Form Submission
-     * Description: Handles the form submission to add a new match.
-     * It validates the form fields to ensure all are filled. If not, it shows an alert.
-     * On success, it sends the new match data via AJAX to the API, and shows a success message.
-     * On failure, it shows an error message.
-     * Parameters: None
-     * Returns: None
-     * From: User submitting the "Add Match" form
-     */
-    $('#addMatchForm').submit(function (e) {
-        e.preventDefault();  // Prevent the default form submission behavior (which would reload the page)
-        ClearValidationMessages(); // Clear Previous Validation Messages
-
-        // Retrieve the form values
-        let team1 = $('#team1').val();
-        let team2 = $('#team2').val();
-        let matchDate = $('#matchDate').val();
-        let venue = $('#venue').val();
-
-        let isValid = true;
-
-        // Validate that all fields are filled out
-        if (!team1) {
-            ShowValidationMessage('team1', "Select Team 1");
-            isValid = false;
-        }
-        if (!team2) {
-            ShowValidationMessage('team2', "Select Team 2");
-            isValid = false;
-        }
-        if (!matchDate) {
-            ShowValidationMessage('matchDate', "Select Date-Time");
-            isValid = false;
-        }
-        if (!venue) {
-            ShowValidationMessage('venue', "Select Venue");
-            isValid = false;
         }
 
-        if (isValid) {
-            // Same team alert
-            if (team1 === team2) {
+        /**
+         * Method: Add/Edit Match Form Submission
+         * Description: Handles the form submission to add or edit a match.
+         * Validates the form fields and then sends the data to the API based on add or edit mode.
+         * On success, displays a success message and redirects.
+         * Parameters: Event (Event) - The form submission event.
+         * Returns: None
+         * From: User submitting the "Add/Edit Match" form.
+         */
+        async HandleFormSubmit(Event) {
+            Event.preventDefault();
+            this.ClearValidationMessages();
+            let Team1 = $('#team1').val();
+            let Team2 = $('#team2').val();
+            let MatchDate = $('#matchDate').val();
+            let Venue = $('#venue').val();
+
+            let IsValid = true;
+
+            if (!Team1) {
+                this.ShowValidationMessage('team1', "Select Team 1");
+                IsValid = false;
+            }
+            if (!Team2) {
+                this.ShowValidationMessage('team2', "Select Team 2");
+                IsValid = false;
+            }
+            if (!MatchDate) {
+                this.ShowValidationMessage('matchDate', "Select Date-Time");
+                IsValid = false;
+            }
+            if (!Venue) {
+                this.ShowValidationMessage('venue', "Select Venue");
+                IsValid = false;
+            }
+
+            if (IsValid) {
+                if (Team1 === Team2) {
+                    Swal.fire({
+                        title: "Team 1 and Team 2 are the same!",
+                        icon: "warning"
+                    });
+                    return;
+                }
+
+                let NewMatch = { team1: Team1, team2: Team2, date: MatchDate, venue: Venue };
+                let url = this.MatchID ? `${this.APIUrl}/${this.MatchID}` : this.APIUrl;
+                let method = this.MatchID ? 'PUT' : 'POST';
+                let successMessage = this.MatchID ? "Match Successfully Edited!" : "Match Successfully Added!";
+
+                await this.SubmitMatchData(url, method, NewMatch, successMessage);
+            }
+        }
+
+        /**
+         * Method: Submit Match Data
+         * Description: Submits match data to the API, either for adding or editing, and shows success or error message.
+         * Parameters: 
+         *      URL (string) - The API endpoint to send data to.
+         *      Method (string) - The HTTP method, 'POST' for adding, 'PUT' for editing.
+         *      Data (object) - The match data object to send.
+         *      SuccessMessage (string) - The message to display on success.
+         * Returns: None
+         * From: Called by HandleFormSubmit for adding/editing a match.
+         */
+        async SubmitMatchData(URL, Method, Data, SuccessMessage) {
+            try {
+                await $.ajax({
+                    url: URL,
+                    method: Method,
+                    data: Data
+                });
                 Swal.fire({
-                    title: "Team 1 and Team 2 are the same!",
-                    icon: "warning"
+                    title: SuccessMessage,
+                    icon: "success"
                 });
-                return;
-            }
-
-            // Construct the new match object
-            let newMatch = {
-                team1: team1,
-                team2: team2,
-                date: matchDate,
-                venue: venue,
-                team1Flag: team1.toLowerCase().replace(/\s+/g, '') + '.png',  // Convert team1 name to lowercase and replace spaces, e.g., "india.png"
-                team2Flag: team2.toLowerCase().replace(/\s+/g, '') + '.png',  // Convert team2 name to lowercase and replace spaces, e.g., "australia.png"
-            };
-
-            if (!matchID) {
-                // AJAX call to send the new match data to the API
-                $.ajax({
-                    url: API_URL,  // API URL where the match data is to be posted
-                    method: 'POST',  // HTTP POST request to send data
-                    data: newMatch,  // The new match data to be sent to the API
-                    success: function () {  // On successful submission
-                        // Show a success message using Swal (SweetAlert)
-                        Swal.fire({
-                            title: "Match Successfully Added!",
-                            icon: "success"
-                        });
-                        // Redirect to the match list page after a delay
-                        setTimeout(function(){
-                            window.location.href = '../screens/match_list.html';  // Redirect to match list page after 2 seconds
-                        }, 2000);
-                    },
-                    error: function () {  // On failure, show an error message
-                        alert('Error adding match');
-                    }
-                });
-            } else {
-                // AJAX call to send the edited match data to the API
-                let editURL = API_URL + '/' + matchID;
-                $.ajax({
-                    url: editURL,  // API URL where the match data is to be posted
-                    method: 'PUT',  // HTTP PUT request to update data
-                    data: newMatch,  // The edited match data to be sent to the API
-                    success: function () {  // On successful submission
-                        // Show a success message using Swal (SweetAlert)
-                        Swal.fire({
-                            title: "Match Successfully Edited!",
-                            icon: "success"
-                        });
-                        // Redirect to the match list page after a delay
-                        setTimeout(function(){
-                            window.location.href = '../screens/match_list.html';  // Redirect to match list page after 2 seconds
-                        }, 2000);
-                    },
-                    error: function () {  // On failure, show an error message
-                        alert('Error editing match');
-                    }
-                });
+                setTimeout(() => {
+                    window.location.href = '../screens/match_list.html';
+                }, 2000);
+            } catch (error) {
+                alert(`Error ${Method === 'POST' ? 'adding' : 'editing'} match`);
             }
         }
-    });
 
-    /*
-     * ShowValidationMessage - This function displays validation error messages.
-     * Parameter {string} field - The ID of the input field being validated.
-     * Parameter {string} message - The validation message to display.
-     * Called from: Submit function.
-     */
-    function ShowValidationMessage(field, message) {
-        let messageSpan = document.getElementById(`${field}_error`);
-        messageSpan.textContent = message;
-        messageSpan.style.display = 'block';
+        /**
+         * Method: Show Validation Message
+         * Description: Displays a validation error message for a specific field.
+         * Parameters: Field (string) - The ID of the field to validate.
+         *              Message (string) - The validation message to display.
+         * Returns: None
+         * From: Called during validation in HandleFormSubmit.
+         */
+        ShowValidationMessage(Field, Message) {
+            let messageSpan = document.getElementById(`${Field}_error`);
+            messageSpan.textContent = Message;
+            messageSpan.style.display = 'block';
+        }
+
+        /**
+         * Method: Clear Validation Messages
+         * Description: Clears any displayed validation messages from the form.
+         * Parameters: None
+         * Returns: None
+         * From: Called at the beginning of form validation.
+         */
+        ClearValidationMessages() {
+            let errorSpans = document.querySelectorAll('.error-message');
+            errorSpans.forEach(span => {
+                span.textContent = '';
+                span.style.display = 'none';
+            });
+        }
     }
 
-    /*
-     * ClearValidationMessages - This function clears any displayed validation messages.
-     * No parameters.
-     * Called from: Submit function.
-     */
-    function ClearValidationMessages() {
-        let errorSpans = document.querySelectorAll('.error-message');
-        errorSpans.forEach(span => {
-            span.textContent = '';
-            span.style.display = 'none';
-        });
-    }
+    // Initialize MatchFormHandler with the API URL
+    new MatchFormHandler('https://632158b682f8687273afe9c3.mockapi.io/MatchList'); // Replace 'url' with the actual API URL
 });

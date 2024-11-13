@@ -1,161 +1,228 @@
 $(function () {
     let API_URL = 'https://632158b682f8687273afe9c3.mockapi.io/MatchList';  // URL for fetching the match data (replace with actual API URL)
-    let matches = [];  // Array to store the match data fetched from the API
 
-    /**
-     * Function: FetchMatches
-     * Description: Fetches match data from the API and displays it on the page.
-     */
-    function FetchMatches() {
-        $.ajax({
-            url: API_URL,  // API URL for fetching match data
-            method: 'GET',  // HTTP GET request to fetch the data
-            success: function (data) {  // On success, store the fetched data and display matches
-                matches = data;
-                DisplayMatches(matches);  // Calls DisplayMatches to render fetched matches
-            },
-            error: function () {  // On failure, show an error message
+    class MatchManager {
+        constructor(apiUrl) {
+            this.apiUrl = apiUrl;
+            this.matches = [];
+            this.FetchMatches();
+        }
+
+        /**
+         * Method: FetchMatches
+         * Description: Fetches match data from the API and displays it on the page.
+         * Parameters: None
+         * Returns: None
+         * From: Called on page load to fetch initial match data.
+         */
+        async FetchMatches() {
+            try {
+                let response = await $.ajax({ url: this.apiUrl, method: 'GET' });
+                this.matches = response;
+
+                let team1 = localStorage.getItem('team1Filter');
+                let team2 = localStorage.getItem('team2Filter');
+                let venue = localStorage.getItem('venueFilter');
+
+                if (team1 || team2 || venue) {
+                    $('#team1Filter').val(team1);
+                    $('#team2Filter').val(team2);
+                    $('#venueFilter').val(venue);
+                    
+                    this.FilterMatches(team1, team2, venue);
+                }
+                else{
+                    this.DisplayMatches(this.matches);
+                }
+               
+            } catch (error) {
+                console.error('Error fetching match data:', error);
                 alert('Error fetching match data');
             }
-        });
-    }
+        }
 
-    /**
-     * Function: DeleteMatch
-     * Description: Handles the deletion of a match when the delete button is clicked.
-     */
-    $(document).on("click", ".deleteBtn", function(e) {
-        e.preventDefault(); // Prevent the default behavior of the button
-        
-        let swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: "btn btn-success",
-                cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: true
-        });
+        /**
+         * Method: DeleteMatch
+         * Description: Confirms deletion and deletes a match from the API.
+         * Parameters: MatchID - the ID of the match to delete.
+         * Returns: None
+         * From: Triggered when the user clicks the delete button on a match.
+         */
+        async DeleteMatch(MatchID) {
+            let confirmed = await this.ShowConfirmationDialog("Are you sure you want to delete?");
+            if (!confirmed) return;
 
-        swalWithBootstrapButtons.fire({
-            title: "Confirmation!!",
-            text: "Are you sure you want to delete?",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel!",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                let matchID = $(this).data('id');
-                let deleteURL = API_URL + '/' + matchID;
-
-                $.ajax({
-                    url: deleteURL,
-                    method: 'DELETE',
-                    success: function(response) {
-                        swalWithBootstrapButtons.fire({
-                            title: "Deleted!",
-                            text: "Record has been deleted.",
-                            icon: "success"
-                        });
-
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 1000);
-                    },
-                    error: function(error) {
-                        console.log('Error fetching data', error);
-                    }
-                });
-            } 
-            else if (result.dismiss) {
-                Swal.fire({
-                    title: "Cancelled",
-                    icon: "error"
-                });
+            try {
+                await $.ajax({ url: `${this.apiUrl}/${MatchID}`, method: 'DELETE' });
+                this.ShowAlert("Deleted!", "Record has been deleted.", "success");
+                this.FetchMatches();
+            } catch (error) {
+                console.error('Error deleting match:', error);
+                alert('Error deleting match');
             }
-        });
-    });
+        }
 
-    /**
-     * Function: EditMatchRedirect
-     * Description: Redirects the user to the "Add Match" page with the selected match's ID in the query parameter.
-     */
-    $(document).on('click', '.editBtn', function() {
-        let matchID = $(this).data('id');
-        window.location.href = `add_match.html?matchID=${matchID}`;
-    });
+        /**
+         * Method: EditMatchRedirect
+         * Description: Redirects the user to the "Add Match" page with the selected match's ID in the query parameter.
+         * Parameters: MatchID - the ID of the match to edit.
+         * Returns: None
+         * From: Triggered when the user clicks the edit button on a match.
+         */
+        EditMatchRedirect(MatchID) {
+            window.location.href = `add_match.html?matchID=${MatchID}`;
+        }
 
-    /**
-     * Function: StartCountdown
-     * Description: Starts a countdown timer for each match.
-     */
-    function StartCountdown(matchDateTime, elementId) {
-        let targetDate = new Date(matchDateTime);
-        setInterval(function() {
-            let now = new Date();
-            let timeDiff = targetDate - now;
+        /**
+         * Method: StartCountdown
+         * Description: Starts a countdown timer for each match.
+         * Parameters: MatchDateTime - the date and time of the match, ElementID - the element ID to update with the countdown.
+         * Returns: None
+         * From: Called by DisplayMatches for each match card.
+         */
+        StartCountdown(MatchDateTime, ElementID) {
+            let targetDate = new Date(MatchDateTime);
+            setInterval(() => {
+                let now = new Date();
+                let timeDiff = targetDate - now;
 
-            if (timeDiff <= 0) {
-                document.getElementById(elementId).innerHTML = "Match Over!";
-            } else {
-                let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-                document.getElementById(elementId).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }
-        }, 1000);
-    }
+                if (timeDiff <= 0) {
+                    document.getElementById(ElementID).innerHTML = "Match Over!";
+                } else {
+                    let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                    document.getElementById(ElementID).innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                }
+            }, 1000);
+        }
 
-    /**
-     * Function: DisplayMatches
-     * Description: Displays the list of matches on the page.
-     */
-    function DisplayMatches(matches) {
-        $('#matchList').html('');
-        matches.forEach(match => {
-            let countdownId = `countdown-${match.id}`;
-            let matchCard = `
-                <div class="card">
-                    <div class="card-body">
-                        <img src="../images/${match.team1}.png" alt="${match.team1}">
-                        <h5>${match.team1}</h5>
-                        <div class="vs">vs</div>
-                        <img src="../images/${match.team2}.png" alt="${match.team2}">
-                        <h5>${match.team2}</h5>
-                        <p class="mt-4"><strong>Date:</strong> ${match.date}</p>
-                        <p><strong>Venue:</strong> ${match.venue}</p>
-                        <p><strong>Time Remains:</strong></p>
-                        <p id="${countdownId}" class="countdown"></p>
-                        <div class="mt-4">
-                            <button class="btn btn-secondary editBtn m-2" data-id="${match.id}">Edit</button>
-                            <button class="btn btn-danger deleteBtn m-2" data-id="${match.id}">Delete</button>
+        /**
+         * Method: DisplayMatches
+         * Description: Renders the list of matches on the page.
+         * Parameters: Matches - array of match objects to display.
+         * Returns: None
+         * From: Called after data is fetched from the API to render matches.
+         */
+        DisplayMatches(Matches) {
+            $('#matchList').html('');
+            Matches.forEach(match => {
+                let countdownId = `countdown-${match.id}`;
+                let matchCard = `
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="../images/${match.team1}.png" alt="${match.team1}">
+                            <h5>${match.team1}</h5>
+                            <div class="vs">vs</div>
+                            <img src="../images/${match.team2}.png" alt="${match.team2}">
+                            <h5>${match.team2}</h5>
+                            <p class="mt-4"><strong>Date:</strong> ${match.date}</p>
+                            <p><strong>Venue:</strong> ${match.venue}</p>
+                            <p><strong>Time Remains:</strong></p>
+                            <p id="${countdownId}" class="countdown"></p>
+                            <div class="mt-4">
+                                <button class="btn btn-secondary editBtn m-2" data-id="${match.id}">Edit</button>
+                                <button class="btn btn-danger deleteBtn m-2" data-id="${match.id}">Delete</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-            $('#matchList').append(matchCard);
-            StartCountdown(match.date, countdownId);
-        });
+                `;
+                $('#matchList').append(matchCard);
+                this.StartCountdown(match.date, countdownId);
+            });
+        }
+
+        /**
+         * Method: ShowConfirmationDialog
+         * Description: Displays a confirmation dialog.
+         * Parameters: Message - the confirmation message to display.
+         * Returns: Boolean - True if confirmed, False if canceled.
+         * From: Called in DeleteMatch to confirm the deletion action.
+         */
+        ShowConfirmationDialog(Message) {
+            return Swal.fire({
+                title: "Confirmation!",
+                text: Message,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                cancelButtonText: "No"
+            }).then(result => result.isConfirmed);
+        }
+
+        /**
+         * Method: ShowAlert
+         * Description: Shows an alert with a message.
+         * Parameters: Title - the title of the alert, Message - the alert message, Icon - the icon type (success, error, etc.)
+         * Returns: None
+         * From: Called after deletion or any action requiring an alert message.
+         */
+        ShowAlert(Title, Message, Icon) {
+            Swal.fire({ title: Title, text: Message, icon: Icon });
+        }
+
+        /**
+         * Method: FilterMatches
+         * Description: Filters the displayed matches based on selected criteria.
+         * Parameters: Team1 - filter by team 1, Team2 - filter by team 2, Venue - filter by venue.
+         * Returns: None
+         * From: Triggered by clicking the filter button on the page.
+         */
+        FilterMatches(Team1, Team2, Venue) {
+            let filteredMatches = this.matches.filter(match => {
+                return (Team1 ? match.team1 === Team1 : true) &&
+                       (Team2 ? match.team2 === Team2 : true) &&
+                       (Venue ? match.venue === Venue : true);
+            });
+            this.DisplayMatches(filteredMatches);
+        }
     }
 
+    let matchManager = new MatchManager(API_URL);
+
     /**
-     * Event: FilterMatches
-     * Description: Filters the displayed matches based on the selected criteria.
+     * Event: Clear Filters
+     * Description: Clear the filters 
+     * Parameters: None
+     * Returns: None
+     * From: Triggered by clicking the clear filter button on the page.
      */
+    $("#clear-filter").click(async function(){
+
+        // Clear Local Storage
+        localStorage.clear();
+
+        // Clear selected values from filter
+        $("#team1Filter").val("")
+        $("#team2Filter").val("")
+        $("#venueFilter").val("")
+
+        // Fetch all matches after clearing filter
+        await matchManager.FetchMatches();
+
+    })
+
+    // Event bindings
+    $(document).on("click", ".deleteBtn", function() {
+        let matchID = $(this).data('id');
+        matchManager.DeleteMatch(matchID);
+    });
+
+    $(document).on('click', '.editBtn', function() {
+        let matchID = $(this).data('id');
+        matchManager.EditMatchRedirect(matchID);
+    });
+
     $('#filterButton').click(function () {
         let team1 = $('#team1Filter').val();
         let team2 = $('#team2Filter').val();
         let venue = $('#venueFilter').val();
 
-        let filteredMatches = matches.filter(match => {
-            return (team1 ? match.team1 === team1 : true) &&  
-                   (team2 ? match.team2 === team2 : true) &&  
-                   (venue ? match.venue === venue : true);  
-        });
-
-        DisplayMatches(filteredMatches);
+        // Save filter preferences in localStorage
+        localStorage.setItem('team1Filter', team1);
+        localStorage.setItem('team2Filter', team2);
+        localStorage.setItem('venueFilter', venue);
+        matchManager.FilterMatches(team1, team2, venue);
     });
-
-    FetchMatches();
 });
