@@ -52,6 +52,7 @@
     <Compile Include="ExceptionHandlingExample.cs" />
     <Compile Include="FileOperationsExample.cs" />
     <Compile Include="InterfaceInheritanceExample.cs" />
+    <Compile Include="MethodsExample.cs" />
     <Compile Include="OperatorsExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

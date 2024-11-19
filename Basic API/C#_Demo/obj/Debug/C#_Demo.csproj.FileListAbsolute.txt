@@ -2,7 +2,6 @@ E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\C#_Demo.exe.confi
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\C#_Demo.exe
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\C#_Demo.pdb
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.AssemblyReference.cache
-E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.SuggestedBindingRedirects.cache
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.CoreCompileInputs.cache
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.exe
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.pdb

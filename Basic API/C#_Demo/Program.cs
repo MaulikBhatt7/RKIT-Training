@@ -17,13 +17,14 @@ namespace AllDemo
 
             //DatatypesDemo.DatatypeDemo.RunDatatypesDemo();
             //OperatorsDemo.OperatorsExample.RunOperatorsDemo();
+            //MethodsDemo.MethodsExample.RunMethodsDemo();
             //InterfaceDemo.InterfaceInheritanceExample.RunInterfaceInheritanceDemo();
             //CollectionsDemo.CollectionsExample.RunCollectionsDemo();
             //EnumDemo.EnumExample.RunEnumDemo();
             //DataTableDemo.DataTableExample.RunDataTableDemo();
             //StringClassDemo.StringExample.RunStringDemo();
             //DateTimeDemo.DateTimeExample.RunDateTimeDemo();
-            FileOperationsDemo.FileOperationsExample.RunFileOperationsDemo();
+            //FileOperationsDemo.FileOperationsExample.RunFileOperationsDemo();
         }
     }
 }
