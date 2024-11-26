@@ -1,6 +1,6 @@
 $(function () {
     let API_URL = 'https://632158b682f8687273afe9c3.mockapi.io/MatchList';  // URL for fetching the match data (replace with actual API URL)
-
+    
     class MatchManager {
         constructor(apiUrl) {
             this.apiUrl = apiUrl;

@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\employeemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:employeemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\methodsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:methodsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\encapsulationdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:encapsulationdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\inheritancedemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:inheritancedemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\polymorphismdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:polymorphismdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\abstractiondemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:abstractiondemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,34 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeManagement.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\EmployeeManagement.cs",
+              "RelativeDocumentMoniker": "EmployeeManagement.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\EmployeeManagement.cs",
+              "RelativeToolTip": "EmployeeManagement.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAgwAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T04:58:09.183Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MethodsExample.cs",
-              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\MethodsExample.cs",
-              "RelativeDocumentMoniker": "MethodsExample.cs",
-              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\MethodsExample.cs",
-              "RelativeToolTip": "MethodsExample.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EncapsulationDemo.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\EncapsulationDemo.cs",
+              "RelativeDocumentMoniker": "EncapsulationDemo.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\EncapsulationDemo.cs",
+              "RelativeToolTip": "EncapsulationDemo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T07:23:44.325Z",
+              "WhenOpened": "2024-11-22T10:07:38.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "InheritanceDemo.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\InheritanceDemo.cs",
+              "RelativeDocumentMoniker": "InheritanceDemo.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\InheritanceDemo.cs",
+              "RelativeToolTip": "InheritanceDemo.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAkwDkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:57:08.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AbstractionDemo.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\AbstractionDemo.cs",
+              "RelativeDocumentMoniker": "AbstractionDemo.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\AbstractionDemo.cs",
+              "RelativeToolTip": "AbstractionDemo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:53:52.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PolymorphismDemo.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\PolymorphismDemo.cs",
+              "RelativeDocumentMoniker": "PolymorphismDemo.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\PolymorphismDemo.cs",
+              "RelativeToolTip": "PolymorphismDemo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:52:32.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T04:59:04.875Z",
               "EditorCaption": ""

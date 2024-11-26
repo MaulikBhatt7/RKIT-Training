@@ -20,12 +20,13 @@ namespace DataTableDemo
 
             // Setting the ID column as the Primary Key
             table.PrimaryKey = new DataColumn[] { table.Columns["ID"] };
+            
 
             // Adding rows to the DataTable
-            table.Rows.Add(1, "John");
-            table.Rows.Add(2, "Jane");
-            table.Rows.Add(3, "Alice");
-            table.Rows.Add(4, "Bob");
+            table.Rows.Add(1, "MB");
+            table.Rows.Add(2, "YK");
+            table.Rows.Add(3, "AB");
+            table.Rows.Add(4, "JG");
 
             // Assumption: Display all rows
             Console.WriteLine("Displaying all rows:");
@@ -44,8 +45,8 @@ namespace DataTableDemo
             }
 
             // Filtering rows: Get rows where Name starts with 'J'
-            Console.WriteLine("\nDisplaying rows where Name starts with 'J':");
-            DataRow[] filteredRows = table.Select("Name LIKE 'J%'");
+            Console.WriteLine("\nDisplaying rows where Name starts with 'M':");
+            DataRow[] filteredRows = table.Select("Name LIKE 'M%'");
             foreach (DataRow row in filteredRows)
             {
                 Console.WriteLine($"ID: {row["ID"]}, Name: {row["Name"]}");
@@ -56,7 +57,7 @@ namespace DataTableDemo
             DataRow rowToModify = table.Rows.Find(2); // Find row by primary key (assuming ID is unique)
             if (rowToModify != null)
             {
-                rowToModify["Name"] = "Janet";
+                rowToModify["Name"] = "JK";
             }
 
             // Display modified row

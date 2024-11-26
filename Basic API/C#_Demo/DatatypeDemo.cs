@@ -13,6 +13,7 @@ namespace DatatypesDemo
             float floatValue = 20.5f;
             string strValue = "30";
 
+
             // Implicit conversion
             double doubleValue = intValue;
 
