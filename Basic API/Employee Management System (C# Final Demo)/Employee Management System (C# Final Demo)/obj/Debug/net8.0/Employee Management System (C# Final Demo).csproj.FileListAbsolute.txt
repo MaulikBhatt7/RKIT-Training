@@ -1,0 +1,15 @@
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\bin\Debug\net8.0\Employee Management System (C# Final Demo).exe
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\bin\Debug\net8.0\Employee Management System (C# Final Demo).deps.json
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\bin\Debug\net8.0\Employee Management System (C# Final Demo).runtimeconfig.json
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\bin\Debug\net8.0\Employee Management System (C# Final Demo).dll
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\bin\Debug\net8.0\Employee Management System (C# Final Demo).pdb
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).GeneratedMSBuildEditorConfig.editorconfig
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).AssemblyInfoInputs.cache
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).AssemblyInfo.cs
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).csproj.CoreCompileInputs.cache
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).sourcelink.json
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).dll
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\refint\Employee Management System (C# Final Demo).dll
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).pdb
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\Employee Management System (C# Final Demo).genruntimeconfig.cache
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\Employee Management System (C# Final Demo)\Employee Management System (C# Final Demo)\obj\Debug\net8.0\ref\Employee Management System (C# Final Demo).dll

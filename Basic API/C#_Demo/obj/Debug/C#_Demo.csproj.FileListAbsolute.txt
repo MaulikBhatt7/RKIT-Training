@@ -5,3 +5,6 @@ E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.As
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.CoreCompileInputs.cache
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.exe
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.pdb
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.dll
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.pdb
+E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.Up2Date

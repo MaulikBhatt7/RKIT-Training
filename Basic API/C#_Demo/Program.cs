@@ -24,7 +24,8 @@
             //PolymorphismDemo.PolymorphismExample.RunPolymorphismDemo();
             //InheritanceDemo.InheritanceExample.RunInheritanceDemo();
             //EncapsulationDemo.EncapsulationExample.RunEncapsulationDemo();
-            EmployeeManagement.EmployeeManagementSystem.RunDemo();
+            DataSetDemo.DataSetExample.RunDataSetDemo();
+            //EmployeeManagementSystem.EmployeeManagementSystem.RunDemo();
         }
     }
 }

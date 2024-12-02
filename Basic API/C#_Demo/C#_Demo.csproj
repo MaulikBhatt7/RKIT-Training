@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CalculatorLibrary">
+      <HintPath>..\CalculatorLibrary\CalculatorLibrary\bin\Debug\net8.0\CalculatorLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,7 +48,9 @@
   <ItemGroup>
     <Compile Include="AbstractionDemo.cs" />
     <Compile Include="ArraysExample.cs" />
+    <Compile Include="AssemblyDemo.cs" />
     <Compile Include="CollectionsExample.cs" />
+    <Compile Include="DataSetDemo.cs" />
     <Compile Include="DataTableExample.cs" />
     <Compile Include="DatatypeDemo.cs" />
     <Compile Include="DateTimeExample.cs" />
@@ -65,6 +70,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
