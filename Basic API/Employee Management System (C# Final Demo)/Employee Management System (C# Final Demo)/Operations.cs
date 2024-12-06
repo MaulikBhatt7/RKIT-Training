@@ -6,19 +6,33 @@ namespace EmployeeManagementSystem
 {
     /// <summary>
     /// Class for performing employee-related operations such as adding, viewing, updating, deleting, 
-    /// searching employees, and handling file operations.
+    /// searching _lstEmployee, and handling file operations.
     /// </summary>
     public class Operations
     {
-        private static List<Employee> employees = new List<Employee>();
 
-        #region Employee Operations
+        #region Private Properties
+
+        private static List<Employee> _lstEmployee = new List<Employee>();
+
+        #endregion
+
+        #region Public Properties
+        #endregion
+
+        #region Constructors
+        #endregion
+
+        #region Private Methods
+        #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Adds a new employee to the list by collecting details such as ID, name, department, salary, 
         /// and joining date. Handles exceptions for invalid input.
         /// </summary>
-        public static void AddEmployee()
+        public void AddEmployee()
         {
             try
             {
@@ -30,7 +44,7 @@ namespace EmployeeManagementSystem
                 }
 
                 // Ensures no duplicate ID exists
-                if (employees.Exists(e => e.Id == id))
+                if (_lstEmployee.Exists(e => e.Id == id))
                 {
                     throw new InvalidIdException($"Employee ID {id} already exists.");
                 }
@@ -58,7 +72,7 @@ namespace EmployeeManagementSystem
                     throw new InvalidDateException("Invalid date format.");
                 }
 
-                employees.Add(new Employee(id, name, dept, salary, joiningDate));
+                _lstEmployee.Add(new Employee(id, name, dept, salary, joiningDate));
                 Console.WriteLine("Employee added successfully.");
             }
             catch (Exception ex)
@@ -68,18 +82,18 @@ namespace EmployeeManagementSystem
         }
 
         /// <summary>
-        /// Displays details of all employees in the system.
+        /// Displays details of all _lstEmployee in the system.
         /// </summary>
-        public static void ViewAllEmployees()
+        public void ViewAll_lstEmployee()
         {
-            if (employees.Count == 0)
+            if (_lstEmployee.Count == 0)
             {
-                Console.WriteLine("No employees found.");
+                Console.WriteLine("No _lstEmployee found.");
                 return;
             }
 
             Console.WriteLine("\nEmployee Details:");
-            foreach (var emp in employees)
+            foreach (var emp in _lstEmployee)
             {
                 emp.DisplayDetails();
             }
@@ -88,13 +102,13 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Searches for an employee by their ID and displays their details if found.
         /// </summary>
-        public static void SearchEmployee()
+        public void SearchEmployee()
         {
             try
             {
                 Console.Write("Enter Employee ID to search: ");
                 int id = int.Parse(Console.ReadLine());
-                var emp = employees.Find(e => e.Id == id);
+                var emp = _lstEmployee.Find(e => e.Id == id);
                 if (emp == null)
                 {
                     throw new EmployeeNotFoundException($"No employee found with ID {id}.");
@@ -111,13 +125,13 @@ namespace EmployeeManagementSystem
         /// Updates the details of an existing employee by their ID.
         /// Allows updating name, department, salary, and joining date selectively.
         /// </summary>
-        public static void UpdateEmployee()
+        public void UpdateEmployee()
         {
             try
             {
                 Console.Write("Enter Employee ID to update: ");
                 int id = int.Parse(Console.ReadLine());
-                var employee = employees.Find(e => e.Id == id);
+                var employee = _lstEmployee.Find(e => e.Id == id);
                 if (employee == null)
                 {
                     throw new EmployeeNotFoundException($"No employee found with ID {id}.");
@@ -163,19 +177,19 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Deletes an employee from the system based on their ID.
         /// </summary>
-        public static void DeleteEmployee()
+        public void DeleteEmployee()
         {
             try
             {
                 Console.Write("Enter Employee ID to delete: ");
                 int id = int.Parse(Console.ReadLine());
-                var employee = employees.Find(e => e.Id == id);
+                var employee = _lstEmployee.Find(e => e.Id == id);
                 if (employee == null)
                 {
                     throw new EmployeeNotFoundException($"No employee found with ID {id}.");
                 }
 
-                employees.Remove(employee);
+                _lstEmployee.Remove(employee);
                 Console.WriteLine("Employee deleted successfully.");
             }
             catch (Exception ex)
@@ -184,21 +198,19 @@ namespace EmployeeManagementSystem
             }
         }
 
-        #endregion
-
-        #region File Operations
+       
 
         /// <summary>
         /// Saves all employee details to a file.
         /// </summary>
-        public static void SaveToFile()
+        public  void SaveToFile()
         {
             const string filePath = "EmployeeDetails.txt";
 
             try
             {
                 using StreamWriter writer = new StreamWriter(filePath);
-                foreach (var emp in employees)
+                foreach (var emp in _lstEmployee)
                 {
                     writer.WriteLine($"{emp.Id},{emp.Name},{emp.Dept},{emp.Salary},{emp.JoiningDate}");
                 }
@@ -213,7 +225,7 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Loads employee details from a file.
         /// </summary>
-        public static void LoadFromFile()
+        public void LoadFromFile()
         {
             const string filePath = "EmployeeDetails.txt";
             if (!File.Exists(filePath))
@@ -223,7 +235,7 @@ namespace EmployeeManagementSystem
 
             try
             {
-                employees.Clear();
+                _lstEmployee.Clear();
                 using StreamReader reader = new StreamReader(filePath);
                 string line;
                 while ((line = reader.ReadLine()) != null)
@@ -240,7 +252,7 @@ namespace EmployeeManagementSystem
                     double salary = double.Parse(parts[3]);
                     DateTime joiningDate = DateTime.Parse(parts[4]);
 
-                    employees.Add(new Employee(id, name, dept, salary, joiningDate));
+                    _lstEmployee.Add(new Employee(id, name, dept, salary, joiningDate));
                 }
                 Console.WriteLine("Employee details loaded successfully.");
             }

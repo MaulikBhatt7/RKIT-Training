@@ -13,10 +13,10 @@ namespace DataSetDemo
         /// </summary>
         public static void RunDataSetDemo()
         {
-            // Step 1: Create a new DataSet
+            // Create a new DataSet
             DataSet dataSet = new DataSet("MyDataSet");
 
-            // Step 2: Create and add the first DataTable (Customers)
+            // Create and add the first DataTable (Customers)
             DataTable customers = new DataTable("Customers");
             customers.Columns.Add("CustomerID", typeof(int));
             customers.Columns.Add("CustomerName", typeof(string));
@@ -28,7 +28,7 @@ namespace DataSetDemo
             // Add the Customers table to the DataSet
             dataSet.Tables.Add(customers);
 
-            // Step 3: Create and add the second DataTable (Orders)
+            // Create and add the second DataTable (Orders)
             DataTable orders = new DataTable("Orders");
             orders.Columns.Add("OrderID", typeof(int));
             orders.Columns.Add("CustomerID", typeof(int));
@@ -41,7 +41,7 @@ namespace DataSetDemo
             // Add the Orders table to the DataSet
             dataSet.Tables.Add(orders);
 
-            // Step 4: Display tables in DataSet
+            //  Display tables in DataSet
             Console.WriteLine("Displaying tables in DataSet:");
             foreach (DataTable table in dataSet.Tables)
             {
@@ -56,7 +56,7 @@ namespace DataSetDemo
                 }
             }
 
-            // Step 5: Add a DataRelation between Customers and Orders
+            // Add a DataRelation between Customers and Orders
             DataRelation relation = new DataRelation(
                 "CustomerOrders",
                 customers.Columns["CustomerID"],
@@ -75,7 +75,7 @@ namespace DataSetDemo
                 }
             }
 
-            // Step 6: Merging another DataSet
+            // Merging another DataSet
             DataSet newDataSet = new DataSet();
             DataTable newCustomers = customers.Copy();
             newCustomers.Rows.Add(3, "JG");
@@ -90,7 +90,7 @@ namespace DataSetDemo
                 Console.WriteLine($"Customer ID: {row["CustomerID"]}, Name: {row["CustomerName"]}");
             }
 
-            // Step 7: Accepting and Rejecting Changes
+            //  Accepting and Rejecting Changes
             Console.WriteLine("\nModifying data and demonstrating AcceptChanges and RejectChanges:");
             DataRow mbRow = customers.Rows.Find(1);
             mbRow["CustomerName"] = "MB Updated";

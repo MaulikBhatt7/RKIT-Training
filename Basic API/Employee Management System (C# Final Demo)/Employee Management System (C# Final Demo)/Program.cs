@@ -7,6 +7,8 @@ namespace EmployeeManagementSystem
     /// </summary>
     class Program
     {
+
+        #region Public Methods
         /// <summary>
         /// The main entry point for the application. Displays a menu for managing employees.
         /// </summary>
@@ -14,6 +16,8 @@ namespace EmployeeManagementSystem
         static void Main(string[] args)
         {
             bool continueRunning = true;
+
+            Operations objOperations = new Operations();
 
             Console.WriteLine("Welcome to the Employee Management System!");
 
@@ -27,24 +31,24 @@ namespace EmployeeManagementSystem
                 switch (choice)
                 {
                     case "1":
-                        Operations.AddEmployee();
+                        objOperations.AddEmployee();
                         break;
                     case "2":
-                        Operations.ViewAllEmployees();
+                        objOperations.ViewAllEmployees();
                         break;
                     case "3":
-                        Operations.SearchEmployee();
+                        objOperations.SearchEmployee();
                         break;
                     case "4":
-                        Operations.UpdateEmployee();
+                        objOperations.UpdateEmployee();
                         break;
                     case "5":
-                        Operations.DeleteEmployee();
+                        objOperations.DeleteEmployee();
                         break;
                     case "6":
                         try
                         {
-                            Operations.SaveToFile();
+                            objOperations.SaveToFile();
                         }
                         catch (EmployeeFileException ex)
                         {
@@ -54,7 +58,7 @@ namespace EmployeeManagementSystem
                     case "7":
                         try
                         {
-                            Operations.LoadFromFile();
+                            objOperations.LoadFromFile();
                         }
                         catch (EmployeeFileException ex)
                         {
@@ -63,7 +67,7 @@ namespace EmployeeManagementSystem
                         break;
                     case "8":
                         continueRunning = false;
-                        Console.WriteLine("Exiting the Employee Management System. Goodbye!");
+                        Console.WriteLine("Exiting the Employee Management System.");
                         break;
                     default:
                         Console.WriteLine("Invalid choice. Please select a valid option.");
@@ -73,6 +77,10 @@ namespace EmployeeManagementSystem
                 Console.WriteLine();
             }
         }
+
+        #endregion
+
+        #region Private Methods
 
         /// <summary>
         /// Displays the main menu options to the console.
@@ -91,5 +99,8 @@ namespace EmployeeManagementSystem
             Console.WriteLine("8. Exit");
             Console.WriteLine("==========================================");
         }
+
+
+        #endregion
     }
 }
