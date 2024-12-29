@@ -62,3 +62,13 @@ SELECT
     (SELECT COUNT(*) FROM city) AS total_cities
 FROM student;
 
+Explain 
+SELECT 
+	student_name
+FROM STUDENT
+WHERE city_id = (
+    SELECT 
+		city_id
+    FROM CITY
+    WHERE city_name = 'Kolkata'
+);

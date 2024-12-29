@@ -1,0 +1,10 @@
+DELIMITER $$
+
+CREATE PROCEDURE GetAllStudents()
+BEGIN
+   
+   
+   
+END$$
+
+DELIMITER ;

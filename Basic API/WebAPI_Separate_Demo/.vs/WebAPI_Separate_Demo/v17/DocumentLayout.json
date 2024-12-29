@@ -1,0 +1,403 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\webapi_separate_demo\\webapi_separate_demo\\controllers\\mainversioningdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\mainversioningdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\webapi_separate_demo\\webapi_separate_demo\\controllers\\simpleversioningdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\simpleversioningdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\exceptiondemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\exceptiondemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\authenticationfilterdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\authenticationfilterdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\tokenusingaescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\tokenusingaescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\basicauthenicationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\basicauthenicationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\aesencryptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\aesencryptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\tokencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\cachingdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\cachingdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\authorizationfilterdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\authorizationfilterdemocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\jwttokenusingaeshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\jwttokenusingaeshandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\jwtauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\jwtauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\customexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\customexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\globalexceptionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\roleauthorizationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\roleauthorizationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\handlers\\basicauthenticationattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\handlers\\basicauthenticationattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\webapi_separate_demo\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{3B703CFF-CAB7-4047-9CDC-E40BE01FD44F}|WebAPI_Separate_Demo\\WebAPI_Separate_Demo.csproj|solutionrelative:webapi_separate_demo\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainVersioningDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\MainVersioningDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\MainVersioningDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\MainVersioningDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\MainVersioningDemoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T11:05:31.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SimpleVersioningDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\SimpleVersioningDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\SimpleVersioningDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\SimpleVersioningDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\SimpleVersioningDemoController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T12:35:03.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TokenUsingAESController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\TokenUsingAESController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\TokenUsingAESController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\TokenUsingAESController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\TokenUsingAESController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T07:20:16.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExceptionDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\ExceptionDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\ExceptionDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\ExceptionDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\ExceptionDemoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T06:24:02.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthenticationFilterDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthenticationFilterDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\AuthenticationFilterDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthenticationFilterDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\AuthenticationFilterDemoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T03:30:12.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BasicAuthenicationFilter.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\BasicAuthenicationFilter.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\BasicAuthenicationFilter.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\BasicAuthenicationFilter.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\BasicAuthenicationFilter.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T02:55:47.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T10:50:47.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TokenController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\TokenController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\TokenController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\TokenController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\TokenController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T11:43:18.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\ProductsController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T10:58:57.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AESEncryptionHandler.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\AESEncryptionHandler.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\AESEncryptionHandler.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\AESEncryptionHandler.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\AESEncryptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T07:15:34.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CachingDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\CachingDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\CachingDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\CachingDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\CachingDemoController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T06:35:33.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthorizationFilterDemoController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthorizationFilterDemoController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\AuthorizationFilterDemoController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthorizationFilterDemoController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\AuthorizationFilterDemoController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T03:09:12.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T11:46:10.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Global.asax.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Global.asax.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Global.asax.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Global.asax.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAiwA0AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T02:12:30.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "JWTTokenUsingAESHandler.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\JWTTokenUsingAESHandler.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\JWTTokenUsingAESHandler.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\JWTTokenUsingAESHandler.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\JWTTokenUsingAESHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-29T07:18:21.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Web.config",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Web.config",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Web.config",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Web.config",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Web.config",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-23T10:13:46.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JwtAuthenticationHandler.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\JwtAuthenticationHandler.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\JwtAuthenticationHandler.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\JwtAuthenticationHandler.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\JwtAuthenticationHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T11:41:53.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CustomexceptionFilter.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\CustomexceptionFilter.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\CustomexceptionFilter.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\CustomexceptionFilter.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\CustomexceptionFilter.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T05:54:12.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GlobalExceptionHandler.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\GlobalExceptionHandler.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\GlobalExceptionHandler.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\GlobalExceptionHandler.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\GlobalExceptionHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T12:30:40.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RoleAuthorizationFilter.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\RoleAuthorizationFilter.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\RoleAuthorizationFilter.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\RoleAuthorizationFilter.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\RoleAuthorizationFilter.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T03:08:06.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BasicAuthenticationAttribute.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\BasicAuthenticationAttribute.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Handlers\\BasicAuthenticationAttribute.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Handlers\\BasicAuthenticationAttribute.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Handlers\\BasicAuthenticationAttribute.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T03:33:27.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\Models\\Product.cs",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\Models\\Product.cs",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\Models\\Product.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T10:59:40.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "packages.config",
+              "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\packages.config",
+              "RelativeDocumentMoniker": "WebAPI_Separate_Demo\\packages.config",
+              "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\WebAPI_Separate_Demo\\WebAPI_Separate_Demo\\packages.config",
+              "RelativeToolTip": "WebAPI_Separate_Demo\\packages.config",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-23T10:13:38.942Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\fileoperationsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\fileoperationsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:fileoperationsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\datetimeexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,15 +19,11 @@
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:stringexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\datasetdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:datasetdemo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\datatableexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\datatableexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:datatableexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -70,8 +70,7 @@
               "RelativeToolTip": "DataTableExample.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAQwFwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T10:32:10.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T10:32:10.786Z"
             },
             {
               "$type": "Document",
@@ -81,7 +80,7 @@
               "RelativeDocumentMoniker": "FileOperationsExample.cs",
               "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\FileOperationsExample.cs",
               "RelativeToolTip": "FileOperationsExample.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAswFgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:11:06.523Z",
               "EditorCaption": ""
@@ -96,12 +95,11 @@
               "RelativeToolTip": "DataSetDemo.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAQwFQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T06:16:28.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T06:16:28.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "CollectionsExample.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\CollectionsExample.cs",
               "RelativeDocumentMoniker": "CollectionsExample.cs",
@@ -126,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StringExample.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\StringExample.cs",
               "RelativeDocumentMoniker": "StringExample.cs",
@@ -134,12 +132,11 @@
               "RelativeToolTip": "StringExample.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCkAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T11:07:42.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T11:07:42.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DateTimeExample.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\DateTimeExample.cs",
               "RelativeDocumentMoniker": "DateTimeExample.cs",
@@ -147,8 +144,7 @@
               "RelativeToolTip": "DateTimeExample.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T06:10:52.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T06:10:52.031Z"
             },
             {
               "$type": "Document",

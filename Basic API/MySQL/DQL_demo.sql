@@ -10,7 +10,7 @@ create table city(
 -- create student table
 create table student(
 
-	-- primary key demo
+	-- primary key demo	
 	student_id int primary key,
     
     -- unique key and not null constraints demo
@@ -83,9 +83,13 @@ select sum(marks) as 'total marks' from student;
 
 select count(student_id) as 'total students' from student;
 
-select city_name,max(marks) from student s join city c
-on s.city_id = c.city_id
+select 
+	city_name,
+	max(marks) 
+from student s 
+join city c on s.city_id = c.city_id
 where s.city_id is not null
 group by city_name
 having max(marks) > 70
 order by city_name
+limit 5,10

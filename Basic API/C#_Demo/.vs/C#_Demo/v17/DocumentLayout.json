@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|e:\\rkit github clone\\rkit-training\\basic api\\c#_demo\\fileoperationsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:fileoperationsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|solutionrelative:collectionsexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD0E9BCF-1665-4654-97F6-5AC5FD2CC5B2}|C#_Demo.csproj|E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\datetimeexample.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,13 +74,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "FileOperationsExample.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\FileOperationsExample.cs",
               "RelativeDocumentMoniker": "FileOperationsExample.cs",
               "ToolTip": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\FileOperationsExample.cs",
               "RelativeToolTip": "FileOperationsExample.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwB0AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:11:06.523Z",
               "EditorCaption": ""
@@ -99,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CollectionsExample.cs",
               "DocumentMoniker": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\C#_Demo\\CollectionsExample.cs",
               "RelativeDocumentMoniker": "CollectionsExample.cs",
@@ -107,8 +107,7 @@
               "RelativeToolTip": "CollectionsExample.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAcwEYAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T10:13:29.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T10:13:29.695Z"
             },
             {
               "$type": "Document",

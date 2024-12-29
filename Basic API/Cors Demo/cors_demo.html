@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check CORS</h1>
+</body>
+<script>
+    function fetchAPI() {
+        console.log("Fetching API...");
+        fetch("https://localhost:44325/api/Products")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                return res.json(); // Parse response JSON
+            })
+            .then((data) => {
+                console.log("Response from API:", data);
+            })
+            .catch((err) => {
+                console.error("Error during fetch:", err.message);
+            });
+    }
+
+    fetchAPI();
+</script>
+</html>

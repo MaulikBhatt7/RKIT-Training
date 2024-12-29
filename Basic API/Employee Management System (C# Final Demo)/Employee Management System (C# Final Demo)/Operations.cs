@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 
 namespace EmployeeManagementSystem
 {
+    
     /// <summary>
-    /// Class for performing employee-related operations such as adding, viewing, updating, deleting, 
-    /// searching _lstEmployee, and handling file operations.
+    /// Class for performing employee-related operations by implementing the abstract base class.
     /// </summary>
-    public class Operations
+    public class Operations : EmployeeOperationsBase
     {
 
         #region Private Properties
@@ -17,22 +18,13 @@ namespace EmployeeManagementSystem
 
         #endregion
 
-        #region Public Properties
-        #endregion
-
-        #region Constructors
-        #endregion
-
-        #region Private Methods
-        #endregion
-
         #region Public Methods
 
         /// <summary>
         /// Adds a new employee to the list by collecting details such as ID, name, department, salary, 
         /// and joining date. Handles exceptions for invalid input.
         /// </summary>
-        public void AddEmployee()
+        public override void AddEmployee()
         {
             try
             {
@@ -72,7 +64,13 @@ namespace EmployeeManagementSystem
                     throw new InvalidDateException("Invalid date format.");
                 }
 
-                _lstEmployee.Add(new Employee(id, name, dept, salary, joiningDate));
+                Employee objEmployee = new Employee();
+                objEmployee.Id = id;
+                objEmployee.Name = name;
+                objEmployee.Dept = dept;
+                objEmployee.Salary = salary;
+                objEmployee.JoiningDate = joiningDate;
+                _lstEmployee.Add(objEmployee);
                 Console.WriteLine("Employee added successfully.");
             }
             catch (Exception ex)
@@ -81,28 +79,54 @@ namespace EmployeeManagementSystem
             }
         }
 
+
+        /// <summary>
+        /// Converts the employee list into a DataTable.
+        /// </summary>
+        /// <returns>A DataTable containing all employees.</returns>
+        private DataTable ConvertListToDataTable()
+        {
+            DataTable table = new DataTable("Employees");
+
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Department", typeof(string));
+            table.Columns.Add("Salary", typeof(double));
+            table.Columns.Add("JoiningDate", typeof(DateTime));
+
+            foreach (var emp in _lstEmployee)
+            {
+                table.Rows.Add(emp.Id, emp.Name, emp.Dept.ToString(), emp.Salary, emp.JoiningDate);
+            }
+
+            return table;
+        }
+
         /// <summary>
         /// Displays details of all _lstEmployee in the system.
         /// </summary>
-        public void ViewAll_lstEmployee()
+        public override void ViewAllEmployees()
         {
             if (_lstEmployee.Count == 0)
             {
-                Console.WriteLine("No _lstEmployee found.");
+                Console.WriteLine("No employees found.");
                 return;
             }
 
-            Console.WriteLine("\nEmployee Details:");
-            foreach (var emp in _lstEmployee)
+            DataTable employeeTable = ConvertListToDataTable();
+
+            Console.WriteLine("\nEmployee Details (from DataTable):");
+            foreach (DataRow row in employeeTable.Rows)
             {
-                emp.DisplayDetails();
+                Console.WriteLine($"ID: {row["ID"]}, Name: {row["Name"]}, Department: {row["Department"]}, " +
+                                  $"Salary: {row["Salary"]}, Joining Date: {row["JoiningDate"]}");
             }
         }
 
         /// <summary>
         /// Searches for an employee by their ID and displays their details if found.
         /// </summary>
-        public void SearchEmployee()
+        public override void SearchEmployee()
         {
             try
             {
@@ -125,7 +149,7 @@ namespace EmployeeManagementSystem
         /// Updates the details of an existing employee by their ID.
         /// Allows updating name, department, salary, and joining date selectively.
         /// </summary>
-        public void UpdateEmployee()
+        public override void UpdateEmployee()
         {
             try
             {
@@ -163,7 +187,7 @@ namespace EmployeeManagementSystem
                 string dateInput = Console.ReadLine();
                 if (!string.IsNullOrWhiteSpace(dateInput) && DateTime.TryParse(dateInput, out DateTime joiningDate))
                 {
-                    employee.JoiningDate = joiningDate.ToShortDateString();
+                    employee.JoiningDate = joiningDate;
                 }
 
                 Console.WriteLine("Employee updated successfully.");
@@ -177,7 +201,7 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Deletes an employee from the system based on their ID.
         /// </summary>
-        public void DeleteEmployee()
+        public override void DeleteEmployee()
         {
             try
             {
@@ -203,9 +227,9 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Saves all employee details to a file.
         /// </summary>
-        public  void SaveToFile()
+        public override void SaveToFile()
         {
-            const string filePath = "EmployeeDetails.txt";
+             string filePath = "EmployeeDetails.txt";
 
             try
             {
@@ -225,9 +249,9 @@ namespace EmployeeManagementSystem
         /// <summary>
         /// Loads employee details from a file.
         /// </summary>
-        public void LoadFromFile()
+        public override void LoadFromFile()
         {
-            const string filePath = "EmployeeDetails.txt";
+            string filePath = "EmployeeDetails.txt";
             if (!File.Exists(filePath))
             {
                 throw new EmployeeFileException("File not found.");
@@ -251,8 +275,13 @@ namespace EmployeeManagementSystem
                     EnmDepartment dept = Enum.Parse<EnmDepartment>(parts[2]);
                     double salary = double.Parse(parts[3]);
                     DateTime joiningDate = DateTime.Parse(parts[4]);
-
-                    _lstEmployee.Add(new Employee(id, name, dept, salary, joiningDate));
+                    Employee objEmployee = new Employee();
+                    objEmployee.Id = id;
+                    objEmployee.Name = name;
+                    objEmployee.Dept = dept;
+                    objEmployee.Salary = salary;
+                    objEmployee.JoiningDate = joiningDate;
+                    _lstEmployee.Add(objEmployee);
                 }
                 Console.WriteLine("Employee details loaded successfully.");
             }

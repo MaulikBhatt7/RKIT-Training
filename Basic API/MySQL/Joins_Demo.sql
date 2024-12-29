@@ -67,3 +67,11 @@ GROUP BY c.city_name;
 SELECT s.student_id, s.student_name, c.city_name, (s.marks + 10) AS UpdatedMarks
 FROM student s
 INNER JOIN city c ON s.city_id = c.city_id;
+
+
+explain
+SELECT 
+	s.student_name
+FROM STUDENT s
+JOIN CITY c ON s.city_id = c.city_id
+WHERE c.city_name = 'Kolakata';

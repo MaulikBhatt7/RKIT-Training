@@ -20,8 +20,6 @@ namespace EmployeeManagementSystem
     public class Employee : IEmployeeOperations
     {
 
-        #region Private Properties
-        #endregion
 
         #region Public Properties
         
@@ -38,32 +36,8 @@ namespace EmployeeManagementSystem
         public double Salary { get; set; }
 
         /// <summary> Gets or sets the joining date of the employee. </summary>
-        public string JoiningDate { get; set; }
+        public DateTime JoiningDate { get; set; }
 
-        #endregion
-
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Employee"/> class.
-        /// </summary>
-        /// <param name="id">Unique identifier for the employee.</param>
-        /// <param name="name">Name of the employee.</param>
-        /// <param name="dept">Department of the employee.</param>
-        /// <param name="salary">Salary of the employee.</param>
-        /// <param name="joiningDate">Date the employee joined.</param>
-        public Employee(int id, string name, EnmDepartment dept, double salary, DateTime joiningDate)
-        {
-            Id = id;
-            Name = name;
-            Dept = dept;
-            Salary = salary;
-            JoiningDate = joiningDate.ToShortDateString();
-        }
-
-        #endregion
-
-        #region Private Methods
         #endregion
 
         #region Public Methods
