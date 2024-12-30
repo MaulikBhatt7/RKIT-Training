@@ -1,19 +1,19 @@
-﻿using System.Web.Http;
-using System.Linq;
+﻿using System.Linq;
 using System.Net.Http;
-using System.Web.Routing;
+using System.Web.Http;
 
 namespace WebAPI_Separate_Demo.Controllers
 {
-
-    public class MainVersioningDemo : ApiController
+    public class MainVersioningDemoController : ApiController
     {
-        // Central method to extract version dynamically (URL, query, or header)
 
         private string GetVersion()
         {
             // Check URI for version (path versioning)
-            var versionFromUri = this.ControllerContext.RouteData.Values["version"]?.ToString();
+            var versionFromUri = this.ControllerContext.RouteData.Values.ContainsKey("version")
+                                ? this.ControllerContext.RouteData.Values["version"]?.ToString()
+                                : null;
+
             if (!string.IsNullOrEmpty(versionFromUri))
             {
                 return versionFromUri;
@@ -42,8 +42,10 @@ namespace WebAPI_Separate_Demo.Controllers
             return "1.0";
         }
 
+        [HttpGet]
         // Common action method that decides what to return based on the version
         [Route("api/versioning-demo")]
+        [Route("api/v{version}/versioning-demo")]
         public IHttpActionResult GetProducts()
         {
             var version = GetVersion();
