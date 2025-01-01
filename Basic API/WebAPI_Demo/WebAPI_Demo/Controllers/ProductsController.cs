@@ -26,6 +26,7 @@ namespace WebApiDemo.Controllers
         /// </summary>
         /// <returns>HTTP 200 OK with the list of products.</returns>
         [HttpGet]
+        [AllowAnonymous]
         public IHttpActionResult Get()
         {
             return Ok(products);

@@ -34,9 +34,14 @@ namespace WebAPI_Demo
             // Enable Swagger
             config.EnableSwagger(c =>
             {
+
                 c.SingleApiVersion("v1", "Your API Title");
             })
-            .EnableSwaggerUi();
+            .EnableSwaggerUi(d => 
+                d.EnableApiKeySupport("Authorization","header")
+            );
+
+
 
 
             // Enable CORS globally

@@ -132,7 +132,7 @@ namespace WebAPI_Demo.Controllers
         /// <param name="id">The ID of the student to delete.</param>
         /// <returns>The result of the operation.</returns>
         [HttpDelete]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [Route("api/students/{id}")]
         public IHttpActionResult DeleteStudent(int id)
         {
