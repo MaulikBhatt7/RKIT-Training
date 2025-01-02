@@ -5,6 +5,8 @@ namespace WebApiDemo.Controllers
     [RoutePrefix("api/authentication")]
     public class AuthorizationController : ApiController
     {
+
+        /// hello
         /// <summary>
         /// Endpoint accessible only to users with the Admin role.
         /// </summary>
