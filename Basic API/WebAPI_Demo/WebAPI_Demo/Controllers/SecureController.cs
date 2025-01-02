@@ -24,6 +24,7 @@ namespace AuthDemo.Controllers
 
             // Return a personalized secure message
             return Ok($"Hello, {username}. This is secure data.");
+
         }
     }
 }
