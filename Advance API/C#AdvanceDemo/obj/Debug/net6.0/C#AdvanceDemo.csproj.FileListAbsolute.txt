@@ -1,0 +1,15 @@
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\C#AdvanceDemo.exe
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\C#AdvanceDemo.deps.json
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\C#AdvanceDemo.runtimeconfig.json
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\C#AdvanceDemo.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\C#AdvanceDemo.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.csproj.AssemblyReference.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.GeneratedMSBuildEditorConfig.editorconfig
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.AssemblyInfoInputs.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.AssemblyInfo.cs
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.csproj.CoreCompileInputs.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\refint\C#AdvanceDemo.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.genruntimeconfig.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\ref\C#AdvanceDemo.dll
