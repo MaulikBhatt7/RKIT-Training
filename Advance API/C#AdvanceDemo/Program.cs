@@ -1,5 +1,4 @@
-﻿using ClassTypeDemoSpace;
-
+﻿
 namespace CSharpAdvanceDemo
 {
     // Main Program class to demonstrate employee management
@@ -8,12 +7,17 @@ namespace CSharpAdvanceDemo
         // Entry point of the program
         public static void Main(string[] args)
         {
-            int choice = 1;
+            int choice = 2;
             switch(choice)
             {
                 case 1:
                     ClassTypeDemo objClassTypeDemo = new ClassTypeDemo();
                     objClassTypeDemo.PrintInfo();
+                    break;
+
+                case 2:
+                    GenericsDemo objGenericsDemo = new GenericsDemo();
+                    objGenericsDemo.PrintInfo();
                     break;
 
                 default:

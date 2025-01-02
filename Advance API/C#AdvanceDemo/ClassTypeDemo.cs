@@ -1,4 +1,4 @@
-﻿namespace ClassTypeDemoSpace
+﻿namespace CSharpAdvanceDemo
 {
     /// <summary>
     /// Regular class example.
