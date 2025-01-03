@@ -19,9 +19,10 @@ namespace CSharpAdvanceDemo
             List<int> lstNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7 };
 
             // Use a lambda expression to find all even numbers
+            Console.WriteLine("Expression Demo : ");
             IEnumerable<int> lstEvenNumbers = lstNumbers.FindAll(x => x % 2 == 0);
 
-            Console.WriteLine("Square-List : ");
+            Console.WriteLine("Even Number List : ");
             // Print all even numbers
             foreach (int num in lstEvenNumbers)
             {
@@ -29,13 +30,14 @@ namespace CSharpAdvanceDemo
             }
 
             // Use a multi-line lambda expression to find all odd numbers
+
+            Console.WriteLine("Statement Demo : ");
             IEnumerable<int> lstOddNumbers = lstNumbers.FindAll((x) =>
             {
-                Console.WriteLine("Statement Demo");
                 return x % 2 != 0;
             });
 
-            Console.WriteLine("Cube-List : ");
+            Console.WriteLine("Odd Number List : ");
             // Print all odd numbers
             foreach (int num in lstOddNumbers)
             {
