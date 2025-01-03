@@ -7,7 +7,7 @@ namespace CSharpAdvanceDemo
         // Entry point of the program
         public static void Main(string[] args)
         {
-            int choice = 4;
+            int choice = 5;
             switch(choice)
             {
                 case 1:
@@ -27,6 +27,11 @@ namespace CSharpAdvanceDemo
                 case 4:
                     FileSystemDemo objFileSystemDemo = new FileSystemDemo();
                     objFileSystemDemo.PrintInfo();
+                    break;
+
+                case 5:
+                    DataSerializationUsingJSON objDataSerializationUsingJSON = new DataSerializationUsingJSON();
+                    objDataSerializationUsingJSON.PrintInfo();
                     break;
 
                 default:

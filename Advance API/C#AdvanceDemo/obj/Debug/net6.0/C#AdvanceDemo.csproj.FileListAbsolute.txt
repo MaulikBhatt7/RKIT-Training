@@ -13,3 +13,5 @@ F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.pdb
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.genruntimeconfig.cache
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\ref\C#AdvanceDemo.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\C#AdvanceDemo\obj\Debug\net6.0\C#AdvanceDemo.csproj.CopyComplete

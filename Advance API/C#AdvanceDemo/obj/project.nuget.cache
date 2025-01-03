@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jxYzXDYi5J9B+B+mV336XAR9Wbt02cQsCAGamqJ0xT5q3HLvRRg74VHIgSByuQIuugRrDxPQ3TdNcEcXvf2B0Q==",
+  "dgSpecHash": "AilGz0PbCRsFZvX1p4w+sj+8Ki7dUGBOwX6VgxSjtiiBWJ/2Zy4VY/fuliVD2woDr2Y+AWdke2OalWC9OxyC7A==",
   "success": true,
   "projectFilePath": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\Advance API\\C#AdvanceDemo\\C#AdvanceDemo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maulik.b\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
