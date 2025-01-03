@@ -7,7 +7,7 @@ namespace CSharpAdvanceDemo
         // Entry point of the program
         public static void Main(string[] args)
         {
-            int choice = 3;
+            int choice = 4;
             switch(choice)
             {
                 case 1:
@@ -23,6 +23,10 @@ namespace CSharpAdvanceDemo
                 case 3:
                     DynamicTypeDemo objDynamicTypeDemo = new DynamicTypeDemo(); 
                     objDynamicTypeDemo.PrintInfo();
+                    break;
+                case 4:
+                    FileSystemDemo objFileSystemDemo = new FileSystemDemo();
+                    objFileSystemDemo.PrintInfo();
                     break;
 
                 default:
