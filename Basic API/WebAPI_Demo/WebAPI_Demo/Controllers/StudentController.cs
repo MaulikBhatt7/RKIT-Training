@@ -29,7 +29,6 @@ namespace WebAPI_Demo.Controllers
         /// </summary>
         /// <returns>A list of students.</returns>
         [HttpGet]
-        [Authorize]
         [Route("api/v1/students")]
         public IHttpActionResult GetAllStudentsV1()
         {

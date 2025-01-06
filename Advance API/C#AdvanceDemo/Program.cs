@@ -19,6 +19,7 @@
             Console.WriteLine("5 - Data Serialization Demo");
             Console.WriteLine("6 - Lambda Expression Demo");
             Console.WriteLine("7 - Extension Methods Demo");
+            Console.WriteLine("8 - LINQ Demo");
 
             // Get User's choice
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -57,6 +58,10 @@
                 case 7:
                     ExtensionMethodDemo objExtensionMethodDemo =  new ExtensionMethodDemo();
                     objExtensionMethodDemo.PrintInfo();
+                    break;
+                case 8:
+                    LINQDemo objLINQDemo = new LINQDemo();
+                    objLINQDemo.PrintInfo();
                     break;
 
                 default:

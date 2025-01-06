@@ -18,7 +18,7 @@ namespace WebAPI_Demo
         /// </summary>
         public StudentRepository()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["MB Connection"].ConnectionString;
         }
 
         /// <summary>

@@ -123,7 +123,7 @@
     /// <summary>
     /// Partial class Person demo with 1st field Name 
     /// </summary>
-    public partial class Person
+    public partial class PersonDemo
     {
 
         public string Name { get; set; } = "MyName";
@@ -132,7 +132,7 @@
     /// <summary>
     /// Partial class Person demo with 2nd field Age 
     /// </summary>
-    public partial class Person
+    public partial class PersonDemo
     {
         static int Age { get; set; }
     }
@@ -168,9 +168,9 @@
 
 
             // Test Partial class
-            Person objPerson = new Person();
+            PersonDemo objPersonDemo = new PersonDemo();
             Console.Write("Partial class - ");
-            Console.WriteLine("Name : "+objPerson.Name);
+            Console.WriteLine("Name : "+objPersonDemo.Name);
         }
     }
 
