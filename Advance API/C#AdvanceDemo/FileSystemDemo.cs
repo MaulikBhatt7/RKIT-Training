@@ -1,4 +1,7 @@
-﻿namespace CSharpAdvanceDemo
+﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
+
+namespace CSharpAdvanceDemo
 {
     /// <summary>
     /// Entry class to demonstrate file system-related functionalities.
@@ -20,6 +23,9 @@
 
             FileInfoDemo objFileInfoDemo = new FileInfoDemo();
             objFileInfoDemo.PrintFileInfo();
+
+            EPPlusDemo objEPPlus = new EPPlusDemo();
+            objEPPlus.PrintInfo();
         }
     }
 
@@ -193,6 +199,139 @@
             Console.WriteLine($"Drive Type: {dInfo.DriveType}");
             Console.WriteLine($"Root Directory: {dInfo.RootDirectory}");
             Console.WriteLine($"Ready: {dInfo.IsReady}");
+        }
+    }
+
+
+    public class EPPlusDemo
+    {
+
+
+        public void PrintInfo()
+        {
+            string filePath = "Mysheet.xlsx";
+
+            // Create Excel file
+            CreateExcelFile(filePath);
+
+            // Read the file before update
+            Console.WriteLine("Before Update:");
+            ReadExcelFile(filePath);
+
+            // Update the file
+            UpdateExcelFile(filePath);
+
+            // Read the file after update
+            Console.WriteLine("\nAfter Update:");
+            ReadExcelFile(filePath);
+
+            // Delete data from the file
+            DeleteExcelFileData(filePath);
+
+            // Read the file after delete
+            Console.WriteLine("\nAfter Delete:");
+            ReadExcelFile(filePath);
+        }
+        public void CreateExcelFile(string filePath)
+        {
+            // Enable EPPlus non-commercial license
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("MBSheet");
+
+                // Adding data
+                worksheet.Cells[1, 1].Value = "ID";
+                worksheet.Cells[1, 2].Value = "Name";
+                worksheet.Cells[1, 3].Value = "Age";
+
+                worksheet.Cells[2, 1].Value = 1;
+                worksheet.Cells[2, 2].Value = "MB";
+                worksheet.Cells[2, 3].Value = 21;
+
+                worksheet.Cells[3, 1].Value = 2;
+                worksheet.Cells[3, 2].Value = "YK";
+                worksheet.Cells[3, 3].Value = 21;
+
+
+                // Apply style to data rows
+                using (var range = worksheet.Cells[2, 1, 3, 3])
+                {
+                    range.Style.Font.Name = "Calibri";
+                    range.Style.Font.Size = 12;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                    range.Style.Border.BorderAround(ExcelBorderStyle.Thin);
+                }
+
+                // Set column width for better readability
+                worksheet.Column(1).Width = 10;  // Set width for ID column
+                worksheet.Column(2).Width = 15;  // Set width for Name column
+                worksheet.Column(3).Width = 10;  // Set width for Age colum
+
+                // Save the file
+                File.WriteAllBytes(filePath, package.GetAsByteArray());
+                Console.WriteLine($"Excel file created: {filePath}");
+            }
+        }
+        public void ReadExcelFile(string filePath)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                var worksheet = package.Workbook.Worksheets["MBSheet"];
+
+                // Read and print data
+                for (int row = 1; row <= worksheet.Dimension.End.Row; row++)
+                {
+                    for (int col = 1; col <= worksheet.Dimension.End.Column; col++)
+                    {
+                        Console.Write(worksheet.Cells[row, col].Text + "\t");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        static void UpdateExcelFile(string filePath)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                var worksheet = package.Workbook.Worksheets["MBSheet"];
+
+                // Update specific cell data (example: changing MB's age)
+                worksheet.Cells[2, 3].Value = 20;  // Update Age for MB
+
+                // Save the updated file
+                package.Save();
+                Console.WriteLine("Excel file updated.");
+            }
+        }
+
+        static void DeleteExcelFileData(string filePath)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                var worksheet = package.Workbook.Worksheets["MBSheet"];
+
+                // Remove data from row 2 (YK's data)
+                worksheet.Cells[3, 1].Value = null;
+                worksheet.Cells[3, 2].Value = null;
+                worksheet.Cells[3, 3].Value = null;
+
+                // Alternatively, delete entire row
+                // worksheet.DeleteRow(2); 
+
+                // Save the file after deletion
+                package.Save();
+                Console.WriteLine("Excel file updated with data deleted.");
+            }
         }
     }
 }
