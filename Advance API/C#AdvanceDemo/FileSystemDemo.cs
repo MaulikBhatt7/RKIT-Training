@@ -203,10 +203,16 @@ namespace CSharpAdvanceDemo
     }
 
 
+    /// <summary>
+    /// This class demonstrates basic operations on an Excel file using EPPlus library. 
+    /// It includes creating, reading, updating, and deleting data in an Excel file.
+    /// </summary>
     public class EPPlusDemo
     {
-
-
+        /// <summary>
+        /// Main method to demonstrate the flow of operations on the Excel file.
+        /// It creates an Excel file, reads data from it, updates some data, and then deletes data.
+        /// </summary>
         public void PrintInfo()
         {
             string filePath = "Mysheet.xlsx";
@@ -232,6 +238,11 @@ namespace CSharpAdvanceDemo
             Console.WriteLine("\nAfter Delete:");
             ReadExcelFile(filePath);
         }
+
+        /// <summary>
+        /// Creates a new Excel file with sample data and saves it to the specified file path.
+        /// </summary>
+        /// <param name="filePath">The file path where the Excel file will be saved.</param>
         public void CreateExcelFile(string filePath)
         {
             // Enable EPPlus non-commercial license
@@ -254,7 +265,6 @@ namespace CSharpAdvanceDemo
                 worksheet.Cells[3, 2].Value = "YK";
                 worksheet.Cells[3, 3].Value = 21;
 
-
                 // Apply style to data rows
                 using (var range = worksheet.Cells[2, 1, 3, 3])
                 {
@@ -268,13 +278,18 @@ namespace CSharpAdvanceDemo
                 // Set column width for better readability
                 worksheet.Column(1).Width = 10;  // Set width for ID column
                 worksheet.Column(2).Width = 15;  // Set width for Name column
-                worksheet.Column(3).Width = 10;  // Set width for Age colum
+                worksheet.Column(3).Width = 10;  // Set width for Age column
 
                 // Save the file
                 File.WriteAllBytes(filePath, package.GetAsByteArray());
                 Console.WriteLine($"Excel file created: {filePath}");
             }
         }
+
+        /// <summary>
+        /// Reads data from the Excel file and prints it to the console.
+        /// </summary>
+        /// <param name="filePath">The file path of the Excel file to read.</param>
         public void ReadExcelFile(string filePath)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -295,6 +310,10 @@ namespace CSharpAdvanceDemo
             }
         }
 
+        /// <summary>
+        /// Updates specific data in the Excel file (e.g., changing the age of a person) and saves the changes.
+        /// </summary>
+        /// <param name="filePath">The file path of the Excel file to update.</param>
         static void UpdateExcelFile(string filePath)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -312,6 +331,10 @@ namespace CSharpAdvanceDemo
             }
         }
 
+        /// <summary>
+        /// Deletes data from specific rows or cells in the Excel file and saves the changes.
+        /// </summary>
+        /// <param name="filePath">The file path of the Excel file to update.</param>
         static void DeleteExcelFileData(string filePath)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -320,13 +343,13 @@ namespace CSharpAdvanceDemo
             {
                 var worksheet = package.Workbook.Worksheets["MBSheet"];
 
-                // Remove data from row 2 (YK's data)
+                // Remove data from row 3 (YK's data)
                 worksheet.Cells[3, 1].Value = null;
                 worksheet.Cells[3, 2].Value = null;
                 worksheet.Cells[3, 3].Value = null;
 
                 // Alternatively, delete entire row
-                // worksheet.DeleteRow(2); 
+                // worksheet.DeleteRow(3); 
 
                 // Save the file after deletion
                 package.Save();
