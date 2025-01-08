@@ -18,5 +18,6 @@ namespace ORMDemo.Models.Enum
         /// Specifies the api request is for Edit operation.
         /// </summary>
         E
+
     }
 }
