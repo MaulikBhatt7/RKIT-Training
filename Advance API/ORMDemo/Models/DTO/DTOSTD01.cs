@@ -11,7 +11,7 @@ namespace ORMDemo.Models.DTO
         /// <summary>
         /// Gets or sets the student ID.
         /// </summary>
-        
+            
         [JsonProperty("D01101")]
         public int D01F01 { get; set; }
 
