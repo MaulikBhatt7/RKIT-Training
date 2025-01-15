@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,6 +16,8 @@ namespace CRUDDemo.Models.DTO
         /// <summary>
         /// Gets or sets the student ID.
         /// </summary>
+        [Required]
+     
         public int D01F01 { get; set; }
         /// <summary>
         /// Gets or sets the student name.

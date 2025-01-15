@@ -15,9 +15,9 @@ namespace CSharpAdvanceDemo
         /// </summary>
         public void PrintInfo()
         {
-            // JSON Serialization and Deserialization demo
-            // JSONSerializationDemo objJSONSerializationDemo = new JSONSerializationDemo();
-            // objJSONSerializationDemo.PrintInfo();
+            //JSON Serialization and Deserialization demo
+            JSONSerializationDemo objJSONSerializationDemo = new JSONSerializationDemo();
+            objJSONSerializationDemo.PrintInfo();
 
             // XML Serialization and Deserialization demo
             XMLSerializationDemo objXMLSerializationDemo = new XMLSerializationDemo();
@@ -31,7 +31,7 @@ namespace CSharpAdvanceDemo
     public class JSONSerializationDemo
     {
         // A list of product objects for demonstration purposes
-        public static List<ProductModel> products = new List<ProductModel>
+        public static List<ProductModel> lstProducts = new List<ProductModel>
         {
             new ProductModel { Id = 1, Name = "Laptop", Price = 1500 },
             new ProductModel { Id = 2, Name = "Smartphone", Price = 800 },
@@ -63,11 +63,11 @@ namespace CSharpAdvanceDemo
         /// </summary>
         public void PrintInfo()
         {
-            foreach (ProductModel product in products)
+            foreach (ProductModel product in lstProducts)
             {
                 string serializedString = ConvertObjectToJson(product);
                 Console.WriteLine("JSON Serialization - " + serializedString);
-                Console.WriteLine("JSON Deserialization - " + ConvertJsonToObject(serializedString));
+                Console.WriteLine("JSON Deserialization Name - " + ConvertJsonToObject(serializedString).Name);
             }
         }
     }
@@ -130,7 +130,7 @@ namespace CSharpAdvanceDemo
             }
 
             // Convert the XML string to JSON using JsonConvert
-            Console.WriteLine("Deserialized Name using JsonConvert: " + ConvertStringToXml(xmlData));
+            //Console.WriteLine("Deserialized Name using JsonConvert: " + ConvertStringToXml(xmlData));
         }
     }
 }
