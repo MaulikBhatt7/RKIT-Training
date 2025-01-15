@@ -1,46 +1,53 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 
-namespace ConsoleApp
+namespace TestProcedure
 {
-    class Program
+    class TestingProcedure
     {
+        /// <summary>
+        /// Main entry point of the application that connects to a MySQL database,
+        /// executes a stored procedure to fetch student data, and displays the results.
+        /// </summary>
         static void Main(string[] args)
         {
-            // MySQL connection string (replace with your own database details)
+            // MySQL connection string - Replace with your actual database connection details
             string connectionString = "Server=localhost;Database=college;User ID=tester_user;Password=password123;";
 
+            // Using block ensures the connection is closed when done
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
-                    // Open the connection
+                    // Open the MySQL connection
                     connection.Open();
 
-                    // Create the command object
+                    // Create a command object for executing the stored procedure
                     using (MySqlCommand cmd = new MySqlCommand("SelectAllStudents", connection))
                     {
+                        // Set the command type to StoredProcedure
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        // Execute the command and get the data
+                        // Execute the command and retrieve the data using a data reader
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Check if data exists
+                            // Check if any rows exist in the result set
                             if (reader.HasRows)
                             {
-                                // Loop through the data
+                                // Loop through all the rows returned by the stored procedure
                                 while (reader.Read())
                                 {
-                                    // Replace with your actual column names
-                                    string column1 = reader["rollNo"].ToString();
-                                    string column2 = reader["name"].ToString();
+                                    // Extract data from each column by specifying the column name
+                                    string rollNo = reader["rollNo"].ToString();
+                                    string name = reader["name"].ToString();
 
-                                    // Print each row data to the console
-                                    Console.WriteLine($"ID: {column1}, Name: {column2}");
+                                    // Print each student's data (roll number and name) to the console
+                                    Console.WriteLine($"ID: {rollNo}, Name: {name}");
                                 }
                             }
                             else
                             {
+                                // Display message if no data was returned
                                 Console.WriteLine("No data found.");
                             }
                         }
@@ -48,10 +55,12 @@ namespace ConsoleApp
                 }
                 catch (Exception ex)
                 {
+                    // Display any errors that occur during database connection or command execution
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
 
+            // Wait for user input before exiting the application
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
