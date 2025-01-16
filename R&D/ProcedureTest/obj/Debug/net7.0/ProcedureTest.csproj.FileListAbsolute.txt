@@ -41,3 +41,6 @@ F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\obj\Debug\net7.0\refint\P
 F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\obj\Debug\net7.0\ProcedureTest.pdb
 F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\obj\Debug\net7.0\ProcedureTest.genruntimeconfig.cache
 F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\obj\Debug\net7.0\ref\ProcedureTest.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\R&D\ProcedureTest\bin\Debug\net7.0\Npgsql.dll
