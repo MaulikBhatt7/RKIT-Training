@@ -12,7 +12,7 @@ namespace TestProcedure
         public void Test()
         {
             // MySQL connection string - Replace with your actual database connection details
-            string connectionString = "Server=localhost;Database=abcd;User ID=abcd;Password=abcd;";
+            string connectionString = "Server=localhost;Database=college;User ID=tester_user;Password=password123;";
 
             // Using block ensures the connection is closed when done
             using (MySqlConnection connection = new MySqlConnection(connectionString))
