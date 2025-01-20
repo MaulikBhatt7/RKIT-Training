@@ -1,4 +1,6 @@
-﻿namespace ORMDemo.Models.POCO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ORMDemo.Models.POCO
 {
     /// <summary>
     /// Plain Old CLR Object (POCO) for student information (STD01).
@@ -9,6 +11,7 @@
         /// <summary>
         /// Gets or sets the student ID.
         /// </summary>
+        /// 
         public int D01F01 { get; set; }
 
         /// <summary>

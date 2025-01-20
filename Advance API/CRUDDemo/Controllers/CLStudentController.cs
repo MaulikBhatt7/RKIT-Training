@@ -30,7 +30,7 @@ namespace CRUDDemo.Controllers
         /// </summary>
         /// <returns>Object of Response.</returns>
         [Route("get-all-students")]
-        public Response GetAllStudent()
+        public IHttpActionResult GetAllStudent()
         {
             // Fetch all student records from the business logic layer
             List<STD01> lstStudents = _objBLStudent.GetAllStudents();
@@ -48,7 +48,7 @@ namespace CRUDDemo.Controllers
                 _objResponse.IsError = true;
                 _objResponse.Message = "No Data Found";
             }
-            return _objResponse; // Return the response object
+            return Ok(_objResponse); // Return the response object
         }
 
         /// <summary>
@@ -105,6 +105,11 @@ namespace CRUDDemo.Controllers
         [Route("add-student")]
         public IHttpActionResult AddStudent(DTOSTD01 objDTOSTD01)
         {
+            // Check Validation
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             // Set the operation type to "Add"
             _objBLStudent.Type = EnmEntryType.A;
 
@@ -133,6 +138,11 @@ namespace CRUDDemo.Controllers
         [Route("update-student")]
         public IHttpActionResult UpdateStudent(DTOSTD01 objDTOSTD01)
         {
+            // Check Validation
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             // Set the operation type to "Edit"
             _objBLStudent.Type = EnmEntryType.E;
 

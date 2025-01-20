@@ -70,39 +70,89 @@ namespace CSharpAdvanceDemo
         {
             // Where() - Filters adults aged 30 or above
             List<Person> adults = lstPeople.Where(p => p.Age >= 30).ToList();
-            Console.WriteLine("Adults: " + string.Join(", ", adults.Select(p => p.Name)));
+            Console.WriteLine("Adults (Method Syntax): " + string.Join(", ", adults.Select(p => p.Name)));
+
+            // Query Syntax for Where
+            var adultsQuerySyntax = from p in lstPeople
+                                    where p.Age >= 30
+                                    select p;
+            Console.WriteLine("Adults (Query Syntax): " + string.Join(", ", adultsQuerySyntax.Select(p => p.Name)));
 
             // First() - Gets the first person aged 30 or above
             Person firstAdult = lstPeople.First(p => p.Age >= 30);
-            Console.WriteLine("First adult: " + firstAdult.Name);
+            Console.WriteLine("First adult (Method Syntax): " + firstAdult.Name);
+
+            // Query Syntax for First
+            var firstAdultQuerySyntax = (from p in lstPeople
+                                         where p.Age >= 30
+                                         select p).First();
+            Console.WriteLine("First adult (Query Syntax): " + firstAdultQuerySyntax.Name);
 
             // FirstOrDefault() - Gets the first person aged above 40, or null if none exist
             Person? firstOrDefault = lstPeople.FirstOrDefault(p => p.Age > 40);
-            Console.WriteLine("First or Default (no match): " + (firstOrDefault?.Name ?? "None"));
+            Console.WriteLine("First or Default (no match) (Method Syntax): " + (firstOrDefault?.Name ?? "None"));
+
+            // Query Syntax for FirstOrDefault
+            var firstOrDefaultQuerySyntax = (from p in lstPeople
+                                             where p.Age > 40
+                                             select p).FirstOrDefault();
+            Console.WriteLine("First or Default (no match) (Query Syntax): " + (firstOrDefaultQuerySyntax?.Name ?? "None"));
 
             // Single() - Gets the only person with PersonID = 1
             try
             {
                 Person singlePerson = lstPeople.Single(p => p.PersonID == 1);
-                Console.WriteLine("Single person: " + singlePerson.Name);
+                Console.WriteLine("Single person (Method Syntax): " + singlePerson.Name);
             }
             catch (InvalidOperationException)
             {
-                Console.WriteLine("Single person exception: Multiple matches");
+                Console.WriteLine("Single person exception (Method Syntax): Multiple matches");
+            }
+
+            // Query Syntax for Single
+            try
+            {
+                var singlePersonQuerySyntax = (from p in lstPeople
+                                               where p.PersonID == 1
+                                               select p).Single();
+                Console.WriteLine("Single person (Query Syntax): " + singlePersonQuerySyntax.Name);
+            }
+            catch (InvalidOperationException)
+            {
+                Console.WriteLine("Single person exception (Query Syntax): Multiple matches");
             }
 
             // SingleOrDefault() - Returns null if no person with PersonID = 5
             Person? singleOrDefaultPerson = lstPeople.SingleOrDefault(p => p.PersonID == 5);
-            Console.WriteLine("Single or Default (no match): " + (singleOrDefaultPerson?.Name ?? "None"));
+            Console.WriteLine("Single or Default (no match) (Method Syntax): " + (singleOrDefaultPerson?.Name ?? "None"));
+
+            // Query Syntax for SingleOrDefault
+            var singleOrDefaultPersonQuerySyntax = (from p in lstPeople
+                                                    where p.PersonID == 5
+                                                    select p).SingleOrDefault();
+            Console.WriteLine("Single or Default (no match) (Query Syntax): " + (singleOrDefaultPersonQuerySyntax?.Name ?? "None"));
 
             // Last() - Gets the last person aged 30 or above
             Person lastPerson = lstPeople.Last(p => p.Age >= 30);
-            Console.WriteLine("Last adult: " + lastPerson.Name);
+            Console.WriteLine("Last adult (Method Syntax): " + lastPerson.Name);
+
+            // Query Syntax for Last
+            var lastPersonQuerySyntax = (from p in lstPeople
+                                         where p.Age >= 30
+                                         select p).Last();
+            Console.WriteLine("Last adult (Query Syntax): " + lastPersonQuerySyntax.Name);
 
             // LastOrDefault() - Returns null if no person aged above 40
             Person? lastOrDefaultPerson = lstPeople.LastOrDefault(p => p.Age > 40);
-            Console.WriteLine("Last or Default (no match): " + (lastOrDefaultPerson?.Name ?? "None"));
+            Console.WriteLine("Last or Default (no match) (Method Syntax): " + (lastOrDefaultPerson?.Name ?? "None"));
+
+            // Query Syntax for LastOrDefault
+            var lastOrDefaultPersonQuerySyntax = (from p in lstPeople
+                                                  where p.Age > 40
+                                                  select p).LastOrDefault();
+            Console.WriteLine("Last or Default (no match) (Query Syntax): " + (lastOrDefaultPersonQuerySyntax?.Name ?? "None"));
         }
+
 
         /// <summary>
         /// Demonstrates projection methods like Select and SelectMany.

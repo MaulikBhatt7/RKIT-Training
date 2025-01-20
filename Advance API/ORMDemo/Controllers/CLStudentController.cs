@@ -70,6 +70,11 @@ namespace ORMDemo.Controllers
         [Route("add-student")]
         public IHttpActionResult AddStudent(DTOSTD01 objDTOSTD01)
         {
+            // Check Validation 
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             _objBLStudent.Type = EnmType.A;  // Set operation type to "Add".
             _objBLStudent.PreSave(objDTOSTD01);  // Prepare data for saving.
             _objResponse = _objBLStudent.Validation();  // Validate data before saving.
@@ -89,6 +94,12 @@ namespace ORMDemo.Controllers
         [Route("update-student")]
         public IHttpActionResult UpdateStudent(DTOSTD01 objDTOSTD01)
         {
+
+            // Check Validation
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             _objBLStudent.Type = EnmType.E;  // Set operation type to "Edit".
             _objBLStudent.PreSave(objDTOSTD01);  // Prepare data for saving.
             _objResponse = _objBLStudent.Validation();  // Validate data before saving.

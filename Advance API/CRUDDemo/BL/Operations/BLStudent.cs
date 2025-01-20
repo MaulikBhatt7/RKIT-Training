@@ -9,6 +9,8 @@ using MySql.Data.MySqlClient;
 using CRUDDemo.Extension;
 using System.Data;
 using System;
+using Mysqlx.Crud;
+using System.Collections;
 
 namespace CRUDDemo.BL
 {
@@ -49,9 +51,9 @@ namespace CRUDDemo.BL
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-
+                string queryOfSelectAll = "SELECT D01F01, D01F02, D01F03, D01F04, D01F05, D01F06 FROM STD01";
                 using (var command = new MySqlCommand(
-                    "SELECT D01F01, D01F02, D01F03, D01F04, D01F05, D01F06 FROM STD01",
+                   queryOfSelectAll,
                     connection))
                 {
                     command.CommandType = CommandType.Text;
@@ -90,12 +92,11 @@ namespace CRUDDemo.BL
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-
+                string queryOfGetByID = string.Format("SELECT D01F01, D01F02, D01F03, D01F04, D01F05, D01F06 FROM STD01 WHERE D01F01 = {0}", id);
                 using (var command = new MySqlCommand(
-                    "SELECT D01F01, D01F02, D01F03, D01F04, D01F05, D01F06 FROM STD01 WHERE D01F01 = @Id",
+                    queryOfGetByID,
                     connection))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
                     command.CommandType = CommandType.Text;
 
                     using (var reader = command.ExecuteReader())
@@ -153,10 +154,9 @@ namespace CRUDDemo.BL
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-
+                string queryOfDelete = string.Format("DELETE FROM STD01 WHERE D01F01 = {0}", id);
                 using (var command = new MySqlCommand("DELETE FROM STD01 WHERE D01F01 = @Id", connection))
                 {
-                    command.Parameters.AddWithValue("@Id", id);
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                 }
@@ -217,6 +217,14 @@ namespace CRUDDemo.BL
         /// <returns>Response indicating the result of the operation.</returns>
         public Response Save()
         {
+            string queryOfInsert = string.Format(
+    "INSERT INTO STD01 (D01F02, D01F03, D01F04, D01F05, D01F06) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
+    _objSTD01.D01F02, _objSTD01.D01F03, _objSTD01.D01F04, _objSTD01.D01F05, _objSTD01.D01F06);
+
+
+            string queryOfUpdate = string.Format(
+    "UPDATE STD01 SET D01F02 = '{0}', D01F03 = '{1}', D01F04 = '{2}', D01F05 = '{3}', D01F06 = '{4}' WHERE D01F01 = '{5}'",
+    _objSTD01.D01F02, _objSTD01.D01F03, _objSTD01.D01F04, _objSTD01.D01F05, _objSTD01.D01F06, _objSTD01.D01F01);
             try
             {
                 using (var connection = new MySqlConnection(_connectionString))
@@ -226,14 +234,9 @@ namespace CRUDDemo.BL
                     if (Type == EnmEntryType.A)
                     {
                         using (var command = new MySqlCommand(
-                            "INSERT INTO STD01 (D01F02, D01F03, D01F04, D01F05, D01F06) VALUES (@D01F02, @D01F03, @D01F04, @D01F05, @D01F06)",
+                            queryOfInsert,
                             connection))
                         {
-                            command.Parameters.AddWithValue("@D01F02", _objSTD01.D01F02);
-                            command.Parameters.AddWithValue("@D01F03", _objSTD01.D01F03);
-                            command.Parameters.AddWithValue("@D01F04", _objSTD01.D01F04);
-                            command.Parameters.AddWithValue("@D01F05", _objSTD01.D01F05);
-                            command.Parameters.AddWithValue("@D01F06", _objSTD01.D01F06);
                             command.ExecuteNonQuery();
                             _objResponse.Message = "Data Added Successfully";
                         }
@@ -241,15 +244,9 @@ namespace CRUDDemo.BL
                     else
                     {
                         using (var command = new MySqlCommand(
-                            "UPDATE STD01 SET D01F02 = @D01F02, D01F03 = @D01F03, D01F04 = @D01F04, D01F05 = @D01F05, D01F06 = @D01F06 WHERE D01F01 = @D01F01",
+                            queryOfUpdate,
                             connection))
                         {
-                            command.Parameters.AddWithValue("@D01F02", _objSTD01.D01F02);
-                            command.Parameters.AddWithValue("@D01F03", _objSTD01.D01F03);
-                            command.Parameters.AddWithValue("@D01F04", _objSTD01.D01F04);
-                            command.Parameters.AddWithValue("@D01F05", _objSTD01.D01F05);
-                            command.Parameters.AddWithValue("@D01F06", _objSTD01.D01F06);
-                            command.Parameters.AddWithValue("@D01F01", _objSTD01.D01F01);
                             command.ExecuteNonQuery();
                             _objResponse.Message = "Data Updated Successfully";
                         }
