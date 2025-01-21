@@ -330,6 +330,8 @@ namespace ORMDemo.BL.Operations
             using (var db = _dbFactory.OpenDbConnection())
             using (var transaction = db.OpenTransaction())
             {
+
+                db.ChangeDatabase("db2");
                 action(db);
                 transaction.Commit();
             }
