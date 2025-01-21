@@ -155,7 +155,7 @@ namespace CRUDDemo.BL
             {
                 connection.Open();
                 string queryOfDelete = string.Format("DELETE FROM STD01 WHERE D01F01 = {0}", id);
-                using (var command = new MySqlCommand("DELETE FROM STD01 WHERE D01F01 = @Id", connection))
+                using (var command = new MySqlCommand(queryOfDelete, connection))
                 {
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();

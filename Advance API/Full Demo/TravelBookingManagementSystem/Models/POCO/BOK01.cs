@@ -47,5 +47,10 @@ namespace TravelBookingManagementSystem.Models.POCO
         /// Gets or sets the update timestamp.
         /// </summary>
         public DateTime K01F08 { get; set; }
+
+        /// <summary>
+        /// Gets or sets the User ID.
+        /// </summary>
+        public int K01F09 { get; set; }
     }
 }

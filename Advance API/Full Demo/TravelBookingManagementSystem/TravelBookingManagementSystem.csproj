@@ -218,11 +218,13 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BL\Operations\BLBooking.cs" />
     <Compile Include="BL\Operations\BLConverter.cs" />
     <Compile Include="BL\Operations\BLFlight.cs" />
     <Compile Include="BL\Operations\BLHotel.cs" />
     <Compile Include="BL\Operations\BLLogin.cs" />
     <Compile Include="BL\Operations\BLUser.cs" />
+    <Compile Include="Controllers\CLBookingController.cs" />
     <Compile Include="Controllers\CLFlightController.cs" />
     <Compile Include="Controllers\CLHotelController.cs" />
     <Compile Include="Controllers\CLLoginController.cs" />

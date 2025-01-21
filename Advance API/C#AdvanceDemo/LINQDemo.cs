@@ -293,6 +293,8 @@ namespace CSharpAdvanceDemo
                     OrderAmount = order.TotalAmount
                 });
 
+
+            Console.WriteLine("----- Inner Join ------");
             foreach (var item in personOrders)
             {
                 Console.WriteLine($"Person: {item.PersonName}, Order Amount: {item.OrderAmount}");
@@ -308,6 +310,8 @@ namespace CSharpAdvanceDemo
                     Orders = orders.Select(o => o.TotalAmount)
                 });
 
+
+            Console.WriteLine("----- Group Join ------");
             foreach (var item in groupedOrders)
             {
                 Console.WriteLine($"Person: {item.PersonName}, Orders: {string.Join(", ", item.Orders)}");

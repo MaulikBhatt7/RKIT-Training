@@ -10,6 +10,7 @@ using TravelBookingManagementSystem.Security;
 using TravelBookingManagementSystem.Handlers;
 using System.Net.PeerToPeer;
 using System.Web.Security;
+using System.Web;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
@@ -71,9 +72,9 @@ namespace TravelBookingManagementSystem.BL.Operations
                                 int id = reader.GetInt32("R01F01");
                                 string username = reader.GetString("R01F02");
                                 string role = reader.GetString("R01F05");
-                               
 
-                                var generatedToken = JwtHandler.GenerateToken(username, role);
+
+                                var generatedToken = JwtHandler.GenerateToken(username, id, role);
                                 var userData = new 
                                 {
                                     Token = generatedToken,

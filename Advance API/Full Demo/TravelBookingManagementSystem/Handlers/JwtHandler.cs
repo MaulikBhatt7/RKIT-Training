@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +16,7 @@ namespace TravelBookingManagementSystem.Handlers
         private static string Audience = "yourAudience";
 
         // Method to create JWT token
-        public static string GenerateToken(string username, string role)
+        public static string GenerateToken(string username, int userID, string role)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -23,7 +24,8 @@ namespace TravelBookingManagementSystem.Handlers
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, role),      
+                new Claim(ClaimTypes.Role, role),
+                new Claim(ClaimTypes.NameIdentifier, userID.ToString())
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -66,6 +68,36 @@ namespace TravelBookingManagementSystem.Handlers
             {
                 return null; // If token is invalid, return null
             }
+        }
+
+
+        public static int GetUserIdFromToken(string token)
+        {
+            JwtSecurityTokenHandler objJwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            var jsonToken = objJwtSecurityTokenHandler.ReadToken(token) as JwtSecurityToken;
+
+            if (jsonToken == null)
+            {
+                throw new UnauthorizedAccessException("Invalid JWT token.");
+            }
+
+            Console.WriteLine("Token Claims:");
+            foreach (var claim in jsonToken.Claims)
+            {
+                Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
+            }
+
+            // Get the userId claim from the token
+            var userIdClaim = jsonToken?.Claims.FirstOrDefault(c => c.Type == "nameid");
+
+
+
+            if (userIdClaim != null)
+            {
+                return int.Parse(userIdClaim.Value);  // Return the UserId as an integer
+            }
+
+            throw new UnauthorizedAccessException("User ID not found in the token.");
         }
     }
 }

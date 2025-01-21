@@ -43,6 +43,7 @@ CREATE TABLE bok01 (
     k01f06 INT NOT NULL COMMENT 'reference_id (flight_id or hotel_id)', -- reference_id (flight_id or hotel_id)
     k01f07 DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at', -- created_at
     k01f08 DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'updated_at', -- updated_at
+    k01f09 INT NOT NULL COMMENT 'user_id' -- user_id
     CONSTRAINT fk_reference_id FOREIGN KEY (k01f06)
         REFERENCES flt01(t01f01) ON DELETE CASCADE -- for flight bookings
 );
@@ -59,3 +60,7 @@ CREATE TABLE usr01 (
     r01f07 DATETIME ON UPDATE CURRENT_TIMESTAMP COMMENT 'updated_at' -- updated_at
 );
 
+select * from usr01;
+
+
+INSERT INTO usr01 (R01F02, R01F03, R01F04, R01F05, R01F06) VALUES ('asdf', '8OTC92xYkW7CWPJGhRvqCR0U1CR6L8PhhpRGGxgW4Ts=', 'asdf', 'User','2025-01-21 10:31:51');

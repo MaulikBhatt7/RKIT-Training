@@ -6,6 +6,8 @@ using TravelBookingManagementSystem.Models.Enum;
 using TravelBookingManagementSystem.Models.POCO;
 using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.Handlers;
+using System;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace TravelBookingManagementSystem.Controllers
 {
@@ -59,6 +61,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Booking ID.</param>
         /// <returns>Object of Response.</returns>
         [HttpGet]
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
         [Route("get-booking-by-id")]
         public IHttpActionResult GetBookingByID(int id)
         {
@@ -86,10 +89,13 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="objDTOBOK01">Booking data transfer object containing booking details.</param>
         /// <returns>Response object indicating success or failure of the operation.</returns>
         [HttpPost]
-        [AuthorizeRole(EnmRoles.Admin)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
         [Route("add-booking")]
         public IHttpActionResult AddBooking(DTOBOK01 objDTOBOK01)
         {
+
+            string token = GetTokenFromRequest();
+            int userID = JwtHandler.GetUserIdFromToken(token);
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -100,10 +106,10 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.Type = EnmEntryType.A;
 
             // Prepare the booking object for saving
-            _objBLBooking.PreSave(objDTOBOK01);
+            _objBLBooking.PreSave(objDTOBOK01,userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation();
+            _objResponse = _objBLBooking.Validation(userID);
 
             // If validation passes, save the booking record
             if (!_objResponse.IsError)
@@ -121,10 +127,12 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="objDTOBOK01">Booking data transfer object containing updated details.</param>
         /// <returns>Response object indicating success or failure of the operation.</returns>
         [HttpPut]
-        [AuthorizeRole(EnmRoles.Admin)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
         [Route("update-booking")]
         public IHttpActionResult UpdateBooking(DTOBOK01 objDTOBOK01)
         {
+            string token = GetTokenFromRequest();
+            int userID = JwtHandler.GetUserIdFromToken(token);
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -135,10 +143,10 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.Type = EnmEntryType.E;
 
             // Prepare the booking object for saving
-            _objBLBooking.PreSave(objDTOBOK01);
+            _objBLBooking.PreSave(objDTOBOK01,userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation();
+            _objResponse = _objBLBooking.Validation(userID);
 
             // If validation passes, save the updated booking record
             if (!_objResponse.IsError)
@@ -156,7 +164,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Booking ID to be deleted.</param>
         /// <returns>Response object indicating success or failure.</returns>
         [HttpDelete]
-        [AuthorizeRole(EnmRoles.Admin)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
         [Route("delete-booking")]
         public IHttpActionResult DeleteBooking(int id)
         {
@@ -169,5 +177,28 @@ namespace TravelBookingManagementSystem.Controllers
             // Return the response
             return Ok(_objResponse);
         }
+        private string GetTokenFromRequest()
+        {
+            var token = string.Empty;
+
+            // Check if the Authorization header exists
+            if (Request.Headers.Authorization != null)
+            {
+                // The token should be in the format 'Bearer <token>'
+                var authorizationHeader = Request.Headers.Authorization.Parameter;
+                if (!string.IsNullOrEmpty(authorizationHeader))
+                {
+                    token = authorizationHeader;
+                }
+            }
+
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new UnauthorizedAccessException("Authorization token is missing.");
+            }
+
+            return token;
+        }
+
     }
 }
