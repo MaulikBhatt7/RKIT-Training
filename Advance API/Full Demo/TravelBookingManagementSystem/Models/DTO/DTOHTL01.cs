@@ -41,7 +41,7 @@ namespace TravelBookingManagementSystem.Models.DTO
 
         /// <summary>
         /// Gets or sets the number of available rooms at the hotel.
-        /// </summary>
+        /// </summary> 
         [JsonProperty("L01106")]
         public int L01F06 { get; set; }
     }

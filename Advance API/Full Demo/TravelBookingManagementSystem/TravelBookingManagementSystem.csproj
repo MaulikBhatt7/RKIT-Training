@@ -219,7 +219,13 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BL\Operations\BLConverter.cs" />
+    <Compile Include="BL\Operations\BLFlight.cs" />
+    <Compile Include="BL\Operations\BLHotel.cs" />
+    <Compile Include="BL\Operations\BLLogin.cs" />
     <Compile Include="BL\Operations\BLUser.cs" />
+    <Compile Include="Controllers\CLFlightController.cs" />
+    <Compile Include="Controllers\CLHotelController.cs" />
+    <Compile Include="Controllers\CLLoginController.cs" />
     <Compile Include="Controllers\CLUserController.cs" />
     <Compile Include="Extensions\DTOToPOCOConverter.cs" />
     <Compile Include="Global.asax.cs">
@@ -232,13 +238,16 @@
     <Compile Include="Models\DTO\DTOFLT01.cs" />
     <Compile Include="Models\DTO\DTOHTL01.cs" />
     <Compile Include="Models\DTO\DTOUSR01.cs" />
+    <Compile Include="Models\DTO\DTOUSR02.cs" />
     <Compile Include="Models\Enum\EnmEntryType.cs" />
+    <Compile Include="Models\Enum\EnmRoles.cs" />
     <Compile Include="Models\POCO\BOK01.cs" />
     <Compile Include="Models\POCO\FLT01.cs" />
     <Compile Include="Models\POCO\HTL01.cs" />
     <Compile Include="Models\POCO\USR01.cs" />
     <Compile Include="Models\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Hashing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

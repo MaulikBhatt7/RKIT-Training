@@ -55,7 +55,7 @@ CREATE TABLE usr01 (
     r01f03 VARCHAR(255) NOT NULL COMMENT 'password_hash',           -- password_hash
     r01f04 VARCHAR(100) NOT NULL COMMENT 'email',                  -- email
     r01f05 varchar(50) NOT NULL COMMENT 'role (Admin or User)',  -- role (Admin or User)
-    r01f06 DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'created_at', -- created_at
-    r01f07 DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'updated_at' -- updated_at
+    r01f06 DATETIME NOT NULL  COMMENT 'created_at', -- created_at
+    r01f07 DATETIME ON UPDATE CURRENT_TIMESTAMP COMMENT 'updated_at' -- updated_at
 );
 

@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Http.Filters;
 using TravelBookingManagementSystem.Handlers.Exceptions;
+using TravelBookingManagementSystem.Models.Enum;
 
 namespace TravelBookingManagementSystem.Handlers
 {
@@ -12,9 +13,9 @@ namespace TravelBookingManagementSystem.Handlers
         // Method that gets invoked before the action method is called
         public override void OnAuthorization(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
-            var requiredRole = GetRequiredRole(actionContext);
+            string[] requiredRoles = GetRequiredRole(actionContext);
 
-            if (string.IsNullOrEmpty(requiredRole))
+            if (requiredRoles==null)
             {
                 // If no role is specified in the action attribute, allow the request to proceed.
                 base.OnAuthorization(actionContext);
@@ -38,20 +39,20 @@ namespace TravelBookingManagementSystem.Handlers
             // Extract the user's role from the claims
             var userRole = claimsPrincipal.FindFirst(ClaimTypes.Role)?.Value;
 
-            // Check if the user's role matches the required role
-            if (userRole != requiredRole)
+            // Check if the user's role matches the required role   
+            if (!requiredRoles.Contains(userRole))
             {
-                throw new ForbiddenAccessException($"You need {requiredRole} role to access this resource");
+                throw new ForbiddenAccessException($"You are not Authorized to access this resource");
             }
 
             base.OnAuthorization(actionContext);
         }
 
         // Method to retrieve the required role from the action attribute
-        private string GetRequiredRole(System.Web.Http.Controllers.HttpActionContext actionContext)
+        private string[] GetRequiredRole(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             var roleAttribute = actionContext.ActionDescriptor.GetCustomAttributes<AuthorizeRoleAttribute>().FirstOrDefault();
-            return roleAttribute?.Role;
+            return roleAttribute?.Roles;
         }
     }
 
@@ -59,11 +60,11 @@ namespace TravelBookingManagementSystem.Handlers
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false)]
     public class AuthorizeRoleAttribute : Attribute
     {
-        public string Role { get; }
+        public string[] Roles { get; }
 
-        public AuthorizeRoleAttribute(string role)
+        public AuthorizeRoleAttribute(params EnmRoles[] roles)
         {
-            Role = role;
+            Roles = roles.Select(r=>r.ToString()).ToArray();
         }
     }
 }

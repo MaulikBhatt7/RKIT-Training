@@ -13,7 +13,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// <summary>
     /// Controller to manage user-related API operations.
     /// </summary>
-    public class UserController : ApiController
+    public class CLUserController : ApiController
     {
         /// <summary>
         /// Response object to hold operation results.

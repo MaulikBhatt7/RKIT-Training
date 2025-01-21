@@ -41,6 +41,6 @@ namespace TravelBookingManagementSystem.Models.POCO
         /// <summary>
         /// Gets or sets the update timestamp.
         /// </summary>
-        public DateTime? R01F07 { get; set; }
+        public DateTime R01F07 { get; set; }
     }
 }

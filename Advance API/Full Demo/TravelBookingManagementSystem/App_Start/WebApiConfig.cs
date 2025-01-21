@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web.Http;
+using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem
 {
@@ -11,6 +12,7 @@ namespace TravelBookingManagementSystem
     {
         public static void Register(HttpConfiguration config)
         {
+            config.Filters.Add(new RoleBasedAuthorizationFilter());
 
             string connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
             // Web API configuration and services

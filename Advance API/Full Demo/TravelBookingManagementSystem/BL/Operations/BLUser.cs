@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Linq;
-using System.Web;
 using MySql.Data.MySqlClient;
 using TravelBookingManagementSystem.Extensions;
 using TravelBookingManagementSystem.Models.DTO;
 using TravelBookingManagementSystem.Models.POCO;
 using TravelBookingManagementSystem.Models;
-
-using TravelBookingManagementSystem.Handlers;
 using TravelBookingManagementSystem.Models.Enum;
+using TravelBookingManagementSystem.Security;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
@@ -21,7 +18,7 @@ namespace TravelBookingManagementSystem.BL.Operations
         private int _id; // User ID for identification.
         private Response _objResponse; // Response object to encapsulate operation results.
         private readonly string _connectionString; // Database connection string.
-
+        private Hashing _objHashing;
         public EnmEntryType Type { get; set; } // Specifies the type of operation (Add, Edit, etc.).
 
         // Constructor to initialize the connection string and response object.
@@ -29,6 +26,7 @@ namespace TravelBookingManagementSystem.BL.Operations
         {
             _connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
             _objResponse = new Response();
+            _objHashing = new Hashing();
         }
 
         // Method to get all users from the database.
@@ -48,10 +46,10 @@ namespace TravelBookingManagementSystem.BL.Operations
                         {
                             var user = new USR01
                             {
-                                R01F01 = reader.GetInt32("usrf01"),
-                                R01F02 = reader.GetString("usrf02"),
-                                R01F04 = reader.GetString("usrf04"),
-                                R01F05 = reader.GetString("usrf05")
+                                R01F01 = reader.GetInt32("R01F01"),
+                                R01F02 = reader.GetString("R01F02"),
+                                R01F04 = reader.GetString("R01F04"),
+                                R01F05 = reader.GetString("R01F05")
                             };
                             lstUsers.Add(user);
                         }
@@ -68,7 +66,7 @@ namespace TravelBookingManagementSystem.BL.Operations
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                string query = string.Format("SELECT R01F01, R01F02, R01F03, R01F04, R01F05 FROM usr01 WHERE usrf01 = {0}",id);
+                string query = string.Format("SELECT R01F01, R01F02, R01F03, R01F04, R01F05 FROM usr01 WHERE r01f01 = {0}",id);
                 using (var command = new MySqlCommand(query, connection))
                 {
                     command.CommandType = CommandType.Text;
@@ -120,7 +118,7 @@ namespace TravelBookingManagementSystem.BL.Operations
             using (var connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
-                string query = string.Format("DELETE FROM usr01 WHERE usrf01 = {0}",id);
+                string query = string.Format("DELETE FROM usr01 WHERE r01f01 = {0}",id);
                 using (var command = new MySqlCommand(query, connection))
                 {
                     command.ExecuteNonQuery();
@@ -131,10 +129,11 @@ namespace TravelBookingManagementSystem.BL.Operations
         }
 
         // Method to prepare a user object for saving (Add or Edit).
-        public void PreSave(DTOUSR01 objDTO)
+        public void PreSave(DTOUSR01 objDTOUSR01)
         {
-            _objUSR01 = objDTO.Convert<USR01>();
+            _objUSR01 = objDTOUSR01.Convert<USR01>();
             _objUSR01.R01F05 = "User";
+            _objUSR01.R01F03 = _objHashing.ComputeHash(_objUSR01.R01F03);
             
             if (Type == EnmEntryType.A)
             {
@@ -172,12 +171,12 @@ namespace TravelBookingManagementSystem.BL.Operations
         public Response Save()
         {
             string queryOfInsert = string.Format(
-                "INSERT INTO usr01 (R01F02, R01F03, R01F04, R01F05, R01F06, R01F07) VALUES ('{0}', '{1}', '{2}', '{3}','{4}','{5}')",
-                _objUSR01.R01F02, _objUSR01.R01F03, _objUSR01.R01F04, _objUSR01.R01F05,  _objUSR01.R01F06, _objUSR01.R01F07);
+                "INSERT INTO usr01 (R01F02, R01F03, R01F04, R01F05, R01F06) VALUES ('{0}', '{1}', '{2}', '{3}','{4}')",
+                _objUSR01.R01F02, _objUSR01.R01F03, _objUSR01.R01F04, _objUSR01.R01F05,  _objUSR01.R01F06.ToString("yyyy-MM-dd HH:mm:ss"));
 
             string queryOfUpdate = string.Format(
                 "UPDATE usr01 SET R01F02 = '{0}', R01F03 = '{1}', R01F04 = '{2}', R01F05 = '{3}', R01F07 = '{4}' WHERE R01F01 = '{5}'",
-                _objUSR01.R01F02, _objUSR01.R01F03, _objUSR01.R01F04, _objUSR01.R01F05, _objUSR01.R01F07, _objUSR01.R01F01);
+                _objUSR01.R01F02, _objUSR01.R01F03, _objUSR01.R01F04, _objUSR01.R01F05, _objUSR01.R01F07.ToString("yyyy-MM-dd HH:mm:ss"), _objUSR01.R01F01);
 
             try
             {

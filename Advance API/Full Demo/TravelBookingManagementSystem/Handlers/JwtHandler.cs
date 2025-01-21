@@ -10,7 +10,7 @@ namespace TravelBookingManagementSystem.Handlers
 {
     public class JwtHandler
     {
-        private static string SecretKey = "your_secret_key_here"; // Store securely
+        private static string SecretKey = "d41fe5f117b57539c498afa905a7307c26e5afce4cb54b849b92aba912c7f340"; // Store securely
         private static string Issuer = "yourIssuer";
         private static string Audience = "yourAudience";
 
