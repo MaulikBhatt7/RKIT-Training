@@ -29,9 +29,9 @@ namespace TravelBookingManagementSystem.Controllers
         /// <summary>
         /// Retrieves a list of all hotels.
         /// </summary>
-        /// <returns>Object of Response.</returns>
+        /// <returns>Response object containing the list of hotels.</returns>
         [HttpGet]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Allow both Admin and User roles to access this action
         [Route("get-all-hotels")]
         public IHttpActionResult GetAllHotels()
         {
@@ -58,9 +58,9 @@ namespace TravelBookingManagementSystem.Controllers
         /// Retrieves a hotel by its ID.
         /// </summary>
         /// <param name="id">Hotel ID.</param>
-        /// <returns>Object of Response.</returns>
+        /// <returns>Response object containing the hotel details.</returns>
         [HttpGet]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Allow both Admin and User roles to access this action
         [Route("get-hotel-by-id")]
         public IHttpActionResult GetHotelByID(int id)
         {
@@ -162,6 +162,13 @@ namespace TravelBookingManagementSystem.Controllers
         [Route("delete-hotel")]
         public IHttpActionResult DeleteHotel(int id)
         {
+            // Validate the hotel before deletion
+            _objResponse = _objBLHotel.ValidationDelete(id);
+            if (_objResponse.IsError)
+            {
+                return Ok(_objResponse);
+            }
+
             // Set the operation type to "Delete"
             _objBLHotel.Type = EnmEntryType.D;
 

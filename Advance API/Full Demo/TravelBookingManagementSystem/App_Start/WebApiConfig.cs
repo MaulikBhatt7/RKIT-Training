@@ -13,8 +13,10 @@ namespace TravelBookingManagementSystem
     {
         public static void Register(HttpConfiguration config)
         {
+            // Configure Role Based Authorization Filter Globally.
             config.Filters.Add(new RoleBasedAuthorizationFilter());
 
+            // Configure Validate Model State Globally.
             config.Filters.Add(new ValidateModelStateAttribute());
 
             // Web API routes

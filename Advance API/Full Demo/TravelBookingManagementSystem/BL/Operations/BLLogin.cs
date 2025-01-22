@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Data;
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.Models.DTO;
-using TravelBookingManagementSystem.Models.POCO;
-using TravelBookingManagementSystem.BL.Operations;
 using TravelBookingManagementSystem.Security;
 using TravelBookingManagementSystem.Handlers;
-using System.Net.PeerToPeer;
-using System.Web.Security;
-using System.Web;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
@@ -19,10 +13,11 @@ namespace TravelBookingManagementSystem.BL.Operations
     /// </summary>
     public class BLLogin
     {
-        private readonly string _connectionString;
-        private readonly Response _objResponse;
-        private BLConverter _objBLConverter;
-        private Hashing _objHashing;
+        private readonly string _connectionString; // Database connection string.
+        private readonly Response _objResponse; // Response object to encapsulate operation results.
+        private BLConverter _objBLConverter; // Converter for handling data transformations.
+        private Hashing _objHashing; // Hashing utility for password hashing.
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BLLogin"/> class.
         /// </summary>
@@ -37,7 +32,7 @@ namespace TravelBookingManagementSystem.BL.Operations
         /// <summary>
         /// Validates user credentials and returns the login result.
         /// </summary>
-        /// <param name="loginDto">The login details (username and password).</param>
+        /// <param name="objDTOUSR02">The login details (username and password).</param>
         /// <returns>A <see cref="Response"/> object indicating the result of the operation.</returns>
         public Response Authenticate(DTOUSR02 objDTOUSR02)
         {
@@ -51,20 +46,19 @@ namespace TravelBookingManagementSystem.BL.Operations
                     return _objResponse;
                 }
 
+                // Hash the password
                 objDTOUSR02.R01F03 = _objHashing.ComputeHash(objDTOUSR02.R01F03);
 
                 // Query to check user credentials
-                string query = string.Format("SELECT R01F01, R01F02, R01F05 FROM usr01 WHERE r01f02 = '{0}' and r01f03 = '{1}'", objDTOUSR02.R01F02, objDTOUSR02.R01F03);
+                string query = $"SELECT R01F01, R01F02, R01F05 FROM usr01 WHERE R01F02 = '{objDTOUSR02.R01F02}' AND R01F03 = '{objDTOUSR02.R01F03}'";
 
-                using (var connection = new MySqlConnection(_connectionString))
+                using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     connection.Open();
 
-                    using (var command = new MySqlCommand(query, connection))
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        
-
-                        using (var reader = command.ExecuteReader())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
@@ -73,8 +67,8 @@ namespace TravelBookingManagementSystem.BL.Operations
                                 string username = reader.GetString("R01F02");
                                 string role = reader.GetString("R01F05");
 
-
-                                var generatedToken = JwtHandler.GenerateToken(username, id, role);
+                                // Generate JWT token
+                                string generatedToken = JwtHandler.GenerateToken(username, id, role);
                                 var userData = new 
                                 {
                                     Token = generatedToken,

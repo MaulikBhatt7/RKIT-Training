@@ -12,11 +12,14 @@ using System.Data.Odbc;
 using ServiceStack.Data;
 using System.Web;
 using ServiceStack.OrmLite;
-using System.Runtime.InteropServices;
 using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
+    /// <summary>
+    /// Business Logic class for handling hotels in the Travel Booking Management System.
+    /// This class provides methods to manage hotels including adding, editing, retrieving, and deleting hotels.
+    /// </summary>
     public class BLHotel
     {
         private HTL01 _objHTL01; // Hotel object for processing.
@@ -26,7 +29,9 @@ namespace TravelBookingManagementSystem.BL.Operations
         private readonly IDbConnectionFactory _dbFactory; // Factory to manage database connections.
         public EnmEntryType Type { get; set; } // Specifies the type of operation (Add, Edit, etc.).
 
-        // Constructor to initialize the connection string and response object.
+        /// <summary>
+        /// Constructor to initialize the connection string and response object.
+        /// </summary>
         public BLHotel()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
@@ -34,40 +39,65 @@ namespace TravelBookingManagementSystem.BL.Operations
             _dbFactory = HttpContext.Current.Application["DbFactory"] as IDbConnectionFactory;
         }
 
-        // Method to get all hotels from the database.
+        /// <summary>
+        /// Method to get all hotels from the database.
+        /// </summary>
+        /// <returns>List of all hotels</returns>
         public List<HTL01> GetAllHotels()
         {
-            using (IDbConnection db = _dbFactory.OpenDbConnection())
+            string cacheKey = "GetAllHotels";
+
+            // Check if the data exists in the cache
+            List<HTL01> cachedHotels = CacheHelper.GetFromCache<List<HTL01>>(cacheKey);
+            if (cachedHotels != null)
             {
-                return db.Select<HTL01>(); // Fetch all hotel records.
+                return cachedHotels; // Return cached data
+            }
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
+            {
+                List<HTL01> lstHotel = dbConnection.Select<HTL01>(); // Fetch all hotel records.
+
+                CacheHelper.AddToCache(cacheKey, lstHotel, 30); // Add data to cache
+
+                return lstHotel;
             }
         }
 
-        // Method to get a hotel by ID.
+        /// <summary>
+        /// Method to get a hotel by ID.
+        /// </summary>
+        /// <param name="id">Hotel ID</param>
+        /// <returns>Hotel object</returns>
         public HTL01 GetHotelByID(int id)
         {
-            using (var db = _dbFactory.OpenDbConnection())
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
             {
-                return db.SingleById<HTL01>(id); // Fetch student record by ID.
+                return dbConnection.SingleById<HTL01>(id); // Fetch hotel record by ID.
             }
         }
 
-        // Method to prepare a hotel object for saving (Add or Edit).
+        /// <summary>
+        /// Method to prepare a hotel object for saving (Add or Edit).
+        /// </summary>
+        /// <param name="objDTOHTL01">DTO object for hotel</param>
         public void PreSave(DTOHTL01 objDTOHTL01)
         {
             _objHTL01 = objDTOHTL01.Convert<HTL01>();
             if (Type == EnmEntryType.A)
             {
-                _objHTL01.L01F07 = DateTime.Now;
+                _objHTL01.L01F07 = DateTime.Now; // Set creation timestamp
             }
             if (Type == EnmEntryType.E && _objHTL01.L01F01 > 0)
             {
-                _objHTL01.L01F08 = DateTime.Now;
-                _id = _objHTL01.L01F01;
+                _objHTL01.L01F08 = DateTime.Now; // Set update timestamp
+                _id = _objHTL01.L01F01; // Store hotel ID for validation
             }
         }
 
-        // Method to validate before saving (Add or Edit).
+        /// <summary>
+        /// Method to validate before saving (Add or Edit).
+        /// </summary>
+        /// <returns>Response object indicating validation results</returns>
         public Response Validation()
         {
             if (Type == EnmEntryType.E)
@@ -88,47 +118,48 @@ namespace TravelBookingManagementSystem.BL.Operations
             return _objResponse;
         }
 
-        // Method to save hotel data (Add or Edit).
+        /// <summary>
+        /// Method to save hotel data (Add or Edit).
+        /// </summary>
+        /// <returns>Response object indicating the result of the save operation</returns>
         public Response Save()
         {
-
             DynamicQueryHandler objDynamicQueryHandler = new DynamicQueryHandler(_connectionString);
-            //string queryOfInsert = string.Format(
-            //    "INSERT INTO htl01 (L01F02, L01F03, L01F04, L01F05, L01F06, L01F07) VALUES ('{0}', '{1}', {2}, '{3}', '{4}', '{5}')",
-            //    _objHTL01.L01F02, _objHTL01.L01F03, _objHTL01.L01F04, _objHTL01.L01F05, _objHTL01.L01F06, _objHTL01.L01F07.ToString("yyyy-MM-dd HH:mm:ss"));
 
-            //string queryOfUpdate = string.Format(
-            //    "UPDATE htl01 SET L01F02 = '{0}', L01F03 = '{1}', L01F04 = {2}, L01F05 = {3}, L01F06 = {4}, L01F06 = '{5}' WHERE L01F01 = {6}",
-            //    _objHTL01.L01F02, _objHTL01.L01F03, _objHTL01.L01F04, _objHTL01.L01F05, _objHTL01.L01F06, _objHTL01.L01F08.ToString("yyyy-MM-dd HH:mm:ss"), _objHTL01.L01F01);
             try
             {
                 Dictionary<string, object> parameters = new Dictionary<string, object>
-                        {
-                            { "L01F02", _objHTL01.L01F02 },
-                            { "L01F03", _objHTL01.L01F03 },
-                            { "L01F04", _objHTL01.L01F04 },
-                            { "L01F05", _objHTL01.L01F05 },
-                            { "L01F06", _objHTL01.L01F06 },
-                        };
+                {
+                    { "L01F02", _objHTL01.L01F02 },
+                    { "L01F03", _objHTL01.L01F03 },
+                    { "L01F04", _objHTL01.L01F04 },
+                    { "L01F05", _objHTL01.L01F05 },
+                    { "L01F06", _objHTL01.L01F06 },
+                };
+
                 if (Type == EnmEntryType.A)
                 {
+                    // Insert logic
                     parameters["L01F07"] = _objHTL01.L01F07.ToString("yyyy-MM-dd HH:mm:ss");
                     objDynamicQueryHandler.Insert("HTL01", parameters);
-                    _objResponse.Message = "Data Added Successfully";
+                    _objResponse.Message = "Hotel Added Successfully";
                 }
                 else
                 {
+                    // Update logic
                     string whereClause = "L01F01 = @L01F01";
                     Dictionary<string, object> whereParameters = new Dictionary<string, object>
-                        {
-                            { "L01F01", _objHTL01.L01F01 },
-                     
-                        };
+                    {
+                        { "L01F01", _objHTL01.L01F01 }
+                    };
+
                     parameters["L01F08"] = _objHTL01.L01F08.ToString("yyyy-MM-dd HH:mm:ss");
                     objDynamicQueryHandler.Update("HTL01", parameters, whereClause, whereParameters);
-                    _objResponse.Message = "Data Updated Successfully";
+                    _objResponse.Message = "Hotel Updated Successfully";
                 }
 
+                // Clear cache for all hotels
+                CacheHelper.RemoveFromCache("GetAllHotels");
             }
             catch (Exception ex)
             {
@@ -138,19 +169,45 @@ namespace TravelBookingManagementSystem.BL.Operations
             return _objResponse;
         }
 
-        // Method to delete a hotel by ID.
+        /// <summary>
+        /// Method to validate before deleting a hotel.
+        /// </summary>
+        /// <param name="id">Hotel ID</param>
+        /// <returns>Response object indicating validation results</returns>
+        public Response ValidationDelete(int id)
+        {
+            dynamic checkHotelUsed = null;
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
+            {
+                checkHotelUsed = dbConnection.Select<BOK01>(objBOK01 => objBOK01.K01F06 == id); // Check if hotel is used in bookings
+            }
+            if (checkHotelUsed != null)
+            {
+                _objResponse.IsError = true;
+                _objResponse.Message = "You can't delete this Hotel because this Hotel is booked by a user";
+            }
+            return _objResponse;
+        }
+
+        /// <summary>
+        /// Method to delete a hotel by ID.
+        /// </summary>
+        /// <param name="id">Hotel ID</param>
+        /// <returns>Response object indicating the result of the delete operation</returns>
         public Response Delete(int id)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
                 string query = $"DELETE FROM htl01 WHERE L01F01 = {id}";
-                using (var command = new MySqlCommand(query, connection))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.ExecuteNonQuery();
                 }
             }
             _objResponse.Message = "Hotel Deleted Successfully";
+            // Clear cache for all hotels
+            CacheHelper.RemoveFromCache("GetAllHotels");
             return _objResponse;
         }
     }

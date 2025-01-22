@@ -16,6 +16,10 @@ using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
+    /// <summary>
+    /// Business Logic class for handling flights in the Travel Booking Management System.
+    /// This class provides methods to manage flights including adding, editing, retrieving, and deleting flights.
+    /// </summary>
     public class BLFlight
     {
         private FLT01 _objFLT01; // Flight object for processing.
@@ -25,7 +29,9 @@ namespace TravelBookingManagementSystem.BL.Operations
         public EnmEntryType Type { get; set; } // Specifies the type of operation (Add, Edit, etc.).
         private readonly IDbConnectionFactory _dbFactory; // Factory to manage database connections.
 
-        // Constructor to initialize the connection string and response object.
+        /// <summary>
+        /// Constructor to initialize the connection string and response object.
+        /// </summary>
         public BLFlight()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
@@ -33,40 +39,65 @@ namespace TravelBookingManagementSystem.BL.Operations
             _dbFactory = HttpContext.Current.Application["DbFactory"] as IDbConnectionFactory;
         }
 
-        // Method to get all flights from the database.
+        /// <summary>
+        /// Method to get all flights from the database.
+        /// </summary>
+        /// <returns>List of all flights</returns>
         public List<FLT01> GetAllFlights()
         {
-            using (IDbConnection db = _dbFactory.OpenDbConnection())
+            string cacheKey = "GetAllFlights";
+
+            // Check if the data exists in the cache
+            List<FLT01> cachedFlights = CacheHelper.GetFromCache<List<FLT01>>(cacheKey);
+            if (cachedFlights != null)
             {
-                return db.Select<FLT01>(); // Fetch all flights records.
+                return cachedFlights; // Return cached data
+            }
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
+            {
+                List<FLT01> lstFlight = dbConnection.Select<FLT01>(); // Fetch all flight records.
+
+                CacheHelper.AddToCache(cacheKey, lstFlight, 30); // Add data to cache
+
+                return lstFlight;
             }
         }
 
-        // Method to get a flight by ID.
+        /// <summary>
+        /// Method to get a flight by ID.
+        /// </summary>
+        /// <param name="id">Flight ID</param>
+        /// <returns>Flight object</returns>
         public FLT01 GetFlightByID(int id)
         {
-            using (IDbConnection db = _dbFactory.OpenDbConnection())
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
             {
-                return db.SingleById<FLT01>(id); // Fetch flight by id.
+                return dbConnection.SingleById<FLT01>(id); // Fetch flight by id.
             }
         }
 
-        // Method to prepare a flight object for saving (Add or Edit).
+        /// <summary>
+        /// Method to prepare a flight object for saving (Add or Edit).
+        /// </summary>
+        /// <param name="objDTOFLT01">DTO object for flight</param>
         public void PreSave(DTOFLT01 objDTOFLT01)
         {
             _objFLT01 = objDTOFLT01.Convert<FLT01>();
             if (Type == EnmEntryType.A)
             {
-                _objFLT01.T01F09 = DateTime.Now;
+                _objFLT01.T01F09 = DateTime.Now; // Set creation timestamp
             }
             if (Type == EnmEntryType.E && _objFLT01.T01F01 > 0)
             {
-                _objFLT01.T01F10 = DateTime.Now;
-                _id = _objFLT01.T01F01;
+                _objFLT01.T01F10 = DateTime.Now; // Set update timestamp
+                _id = _objFLT01.T01F01; // Store flight ID for validation
             }
         }
 
-        // Method to validate before saving (Add or Edit).
+        /// <summary>
+        /// Method to validate before saving (Add or Edit).
+        /// </summary>
+        /// <returns>Response object indicating validation results</returns>
         public Response Validation()
         {
             if (Type == EnmEntryType.E)
@@ -87,7 +118,10 @@ namespace TravelBookingManagementSystem.BL.Operations
             return _objResponse;
         }
 
-        // Method to save flight data (Add or Edit).
+        /// <summary>
+        /// Method to save flight data (Add or Edit).
+        /// </summary>
+        /// <returns>Response object indicating the result of the save operation</returns>
         public Response Save()
         {
             DynamicQueryHandler objDynamicQueryHandler = new DynamicQueryHandler(_connectionString);
@@ -96,15 +130,15 @@ namespace TravelBookingManagementSystem.BL.Operations
             {
                 // Prepare column values for insert or update
                 Dictionary<string, object> parameters = new Dictionary<string, object>
-        {
-            { "T01F02", _objFLT01.T01F02 },
-            { "T01F03", _objFLT01.T01F03 },
-            { "T01F04", _objFLT01.T01F04 },
-            { "T01F05", _objFLT01.T01F05 },
-            { "T01F06", _objFLT01.T01F06},
-            { "T01F07", _objFLT01.T01F07 },
-            { "T01F08", _objFLT01.T01F08 },
-        };
+                {
+                    { "T01F02", _objFLT01.T01F02 },
+                    { "T01F03", _objFLT01.T01F03 },
+                    { "T01F04", _objFLT01.T01F04 },
+                    { "T01F05", _objFLT01.T01F05 },
+                    { "T01F06", _objFLT01.T01F06 },
+                    { "T01F07", _objFLT01.T01F07 },
+                    { "T01F08", _objFLT01.T01F08 },
+                };
 
                 if (Type == EnmEntryType.A)
                 {
@@ -119,9 +153,9 @@ namespace TravelBookingManagementSystem.BL.Operations
                     parameters["T01F10"] = _objFLT01.T01F10.ToString("yyyy-MM-dd HH:mm:ss");
                     string whereClause = "T01F01 = @T01F01";
                     Dictionary<string, object> whereParameters = new Dictionary<string, object>
-            {
-                { "T01F01", _objFLT01.T01F01 }
-            };
+                    {
+                        { "T01F01", _objFLT01.T01F01 }
+                    };
 
                     objDynamicQueryHandler.Update("FLT01", parameters, whereClause, whereParameters);
                     _objResponse.Message = "Flight Updated Successfully";
@@ -133,23 +167,31 @@ namespace TravelBookingManagementSystem.BL.Operations
                 _objResponse.Message = ex.Message;
             }
 
+            // Clear cache for all flights
+            CacheHelper.RemoveFromCache("GetAllFlights");
+
             return _objResponse;
         }
 
-
-        // Method to delete a flight by ID.
+        /// <summary>
+        /// Method to delete a flight by ID.
+        /// </summary>
+        /// <param name="id">Flight ID</param>
+        /// <returns>Response object indicating the result of the delete operation</returns>
         public Response Delete(int id)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
                 string query = $"DELETE FROM flt01 WHERE T01F01 = {id}";
-                using (var command = new MySqlCommand(query, connection))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.ExecuteNonQuery();
                 }
             }
             _objResponse.Message = "Flight Deleted Successfully";
+            // Clear cache for all flights
+            CacheHelper.RemoveFromCache("GetAllFlights");
             return _objResponse;
         }
     }

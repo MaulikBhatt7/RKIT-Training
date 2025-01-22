@@ -245,5 +245,29 @@ namespace ORMDemo.Controllers
                 return InternalServerError(ex);
             }
         }
+
+
+        /// <summary>
+        /// Perfoerm Transaction in Multiple Database
+        /// </summary>
+        /// <returns>The result of the transaction operation.</returns>
+        [HttpPost]
+        [Route("perform")]
+        public IHttpActionResult PerformTransaction()
+        {
+            try
+            {
+                // Call the BL method to perform the transaction
+                _objBLStudent.PerformTransaction();
+
+                // Return a success response
+                return Ok("Transaction successfully completed.");
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions and return appropriate error response
+                return InternalServerError(ex);
+            }
+        }
     }
 }

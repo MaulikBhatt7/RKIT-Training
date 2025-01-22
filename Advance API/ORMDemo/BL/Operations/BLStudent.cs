@@ -325,7 +325,7 @@ namespace ORMDemo.BL.Operations
         /// Executes a transactional operation on the database.
         /// </summary>
         /// <param name="action">The action to perform within the transaction.</param>
-        public void PerformTransaction(Action<IDbConnection> action)
+        public void PerformTransaction()
         {
             // Open a single connection to the first database
             using (var db = _dbFactory.OpenDbConnection())
@@ -333,23 +333,41 @@ namespace ORMDemo.BL.Operations
             {
                 try
                 {
-                    // Perform action on the first database
-                    action(db);
+                    // Insert into the first database
+                    db.Insert(new STD01
+                    {
+                        // Fields for the first database
+                        D01F01 = 55,
+                        D01F02 = "asdf",
+                        D01F03 = 21,
+                        D01F04 = 1,
+                        D01F05 = 80,
+                        D01F06 = 'a'
+                    });
 
                     // Switch to the second database
-                    db.ChangeDatabase("db2");
+                    db.ChangeDatabase("college2");
 
-                    // Perform action on the second database
-                    action(db);
+                    // Insert into the second database
+                    db.Insert(new STD01
+                    {
+                        // Fields for the second database
+                        D01F01 = 55,
+                        D01F02 = "asdf",
+                        D01F03 = 21,
+                        D01F04 = 1,
+                        D01F05 = 80,
+                        D01F06 = 'a'
+                    });
 
-                    // Commit the transaction if both actions were successful
+                    // Commit the transaction if both inserts succeed
                     transaction.Commit();
                 }
                 catch (Exception ex)
                 {
-                    // If any exception occurs, rollback the transaction
+                    // Rollback transaction on failure
                     transaction.Rollback();
-                    Console.WriteLine("Transaction failed: " + ex.Message);
+                    throw new Exception("Transaction failed: " + ex.Message);
                 }
             }
         }

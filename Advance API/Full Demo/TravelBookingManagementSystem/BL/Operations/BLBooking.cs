@@ -9,13 +9,16 @@ using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.Models.Enum;
 using TravelBookingManagementSystem.Extensions;
 using System.Web;
-using System.Data.Odbc;
 using ServiceStack.OrmLite;
 using ServiceStack.Data;
 using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem.BL.Operations
 {
+    /// <summary>
+    /// Business Logic class for handling bookings in the Travel Booking Management System.
+    /// This class provides methods to manage bookings including adding, editing, retrieving, and deleting bookings.
+    /// </summary>
     public class BLBooking
     {
         private BOK01 _objBOK01; // Booking object for processing.
@@ -25,34 +28,58 @@ namespace TravelBookingManagementSystem.BL.Operations
         public EnmEntryType Type { get; set; } // Specifies the type of operation (Add, Edit, etc.).
         private readonly IDbConnectionFactory _dbFactory; // Factory to manage database connections.
 
-        // Constructor to initialize the connection string and response object.
+        /// <summary>
+        /// Constructor to initialize the connection string and response object.
+        /// </summary>
         public BLBooking()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
             _objResponse = new Response();
             _dbFactory = HttpContext.Current.Application["DbFactory"] as IDbConnectionFactory;
-
         }
 
-        // Method to get all bookings from the database.
+        /// <summary>
+        /// Method to get all bookings from the database.
+        /// </summary>
+        /// <returns>List of all bookings</returns>
         public List<BOK01> GetAllBookings()
         {
-            using (IDbConnection db = _dbFactory.OpenDbConnection())
+            string cacheKey = "GetAllBookings";
+
+            // Check if the data exists in the cache
+            List<BOK01> cachedBookings = CacheHelper.GetFromCache<List<BOK01>>(cacheKey);
+            if (cachedBookings != null)
             {
-                return db.Select<BOK01>(); // Fetch all booking records.
+                return cachedBookings; // Return cached data
+            }
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
+            {
+                List<BOK01> lstBooking = dbConnection.Select<BOK01>(); // Fetch all booking records.
+
+                CacheHelper.AddToCache(cacheKey, lstBooking, 30); // Add data to cache
+
+                return lstBooking;
             }
         }
 
-        // Method to get a booking by ID.
+        /// <summary>
+        /// Method to get a booking by ID.
+        /// </summary>
+        /// <param name="id">Booking ID</param>
+        /// <returns>Booking object</returns>
         public BOK01 GetBookingByID(int id)
         {
-            using (IDbConnection db = _dbFactory.OpenDbConnection())
+            using (IDbConnection dbConnection = _dbFactory.OpenDbConnection())
             {
-                return db.SingleById<BOK01>(id); // Fetch flight by id.
+                return dbConnection.SingleById<BOK01>(id); // Fetch booking by id.
             }
         }
 
-        // Method to prepare a booking object for saving (Add or Edit).
+        /// <summary>
+        /// Method to prepare a booking object for saving (Add or Edit).
+        /// </summary>
+        /// <param name="objDTOBOK01">DTO object for booking</param>
+        /// <param name="userID">User ID</param>
         public void PreSave(DTOBOK01 objDTOBOK01, int userID)
         {
             _objBOK01 = objDTOBOK01.Convert<BOK01>();
@@ -69,7 +96,12 @@ namespace TravelBookingManagementSystem.BL.Operations
             }
         }
 
-        // Method to validate before saving (Add or Edit).
+        /// <summary>
+        /// Method to validate before saving (Add or Edit).
+        /// </summary>
+        /// <param name="userID">User ID</param>
+        /// <param name="role">User role</param>
+        /// <returns>Response object indicating validation results</returns>
         public Response Validation(int userID, string role)
         {
             if (Type == EnmEntryType.E)
@@ -96,7 +128,10 @@ namespace TravelBookingManagementSystem.BL.Operations
             return _objResponse;
         }
 
-        // Method to save booking data (Add or Edit).
+        /// <summary>
+        /// Method to save booking data (Add or Edit).
+        /// </summary>
+        /// <returns>Response object indicating the result of the save operation</returns>
         public Response Save()
         {
             DynamicQueryHandler objDynamicQueryHandler = new DynamicQueryHandler(_connectionString);
@@ -105,14 +140,14 @@ namespace TravelBookingManagementSystem.BL.Operations
             {
                 // Prepare column values for insert or update
                 Dictionary<string, object> parameters = new Dictionary<string, object>
-        {
-            { "K01F02", _objBOK01.K01F02 },
-            { "K01F03", _objBOK01.K01F03 },
-            { "K01F04", _objBOK01.K01F04.ToString("yyyy-MM-dd HH:mm:ss") },
-            { "K01F05", _objBOK01.K01F05 },
-            { "K01F06", _objBOK01.K01F06 },
-            { "K01F09", _objBOK01.K01F09 }
-        };
+                {
+                    { "K01F02", _objBOK01.K01F02 },
+                    { "K01F03", _objBOK01.K01F03 },
+                    { "K01F04", _objBOK01.K01F04.ToString("yyyy-MM-dd HH:mm:ss") },
+                    { "K01F05", _objBOK01.K01F05 },
+                    { "K01F06", _objBOK01.K01F06 },
+                    { "K01F09", _objBOK01.K01F09 }
+                };
 
                 if (Type == EnmEntryType.A)
                 {
@@ -124,11 +159,11 @@ namespace TravelBookingManagementSystem.BL.Operations
                 else
                 {
                     // Update logic
-                    string whereClause = "K01F01 = @K01F01";
+                    string whereClause = "K01F01 = @K01F01 ";
                     Dictionary<string, object> whereParameters = new Dictionary<string, object>
-                        {
-                            { "K01F01", _objBOK01.K01F01 }
-                        };
+                    {
+                        { "K01F01", _objBOK01.K01F01 }
+                    };
 
                     parameters["K01F08"] = _objBOK01.K01F08.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -141,24 +176,30 @@ namespace TravelBookingManagementSystem.BL.Operations
                 _objResponse.IsError = true;
                 _objResponse.Message = ex.Message;
             }
-
+            // Clear cache for all bookings
+            CacheHelper.RemoveFromCache("GetAllBookings");
             return _objResponse;
         }
 
-
-        // Method to delete a booking by ID.
+        /// <summary>
+        /// Method to delete a booking by ID.
+        /// </summary>
+        /// <param name="id">Booking ID</param>
+        /// <returns>Response object indicating the result of the delete operation</returns>
         public Response Delete(int id)
         {
-            using (var connection = new MySqlConnection(_connectionString))
+            using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
                 connection.Open();
                 string query = $"DELETE FROM bok01 WHERE K01F01 = {id}";
-                using (var command = new MySqlCommand(query, connection))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.ExecuteNonQuery();
                 }
             }
             _objResponse.Message = "Booking Deleted Successfully";
+            // Clear cache for all bookings
+            CacheHelper.RemoveFromCache("GetAllBookings");
             return _objResponse;
         }
     }

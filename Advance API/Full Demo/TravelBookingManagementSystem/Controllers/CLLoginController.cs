@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-
 using TravelBookingManagementSystem.BL.Operations;
 using TravelBookingManagementSystem.Handlers;
 using TravelBookingManagementSystem.Models;
@@ -13,14 +12,15 @@ namespace TravelBookingManagementSystem.Controllers
     [ValidateModelState]
     public class CLLoginController : ApiController
     {
-        private readonly BLLogin _objBLlogin;
-        private readonly Response _objResponse;
+        private readonly BLLogin _objBLlogin; // Business logic layer object for login operations
+        private Response _objResponse; // Response object to hold operation results
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LoginController"/> class.
+        /// Initializes a new instance of the <see cref="CLLoginController"/> class.
         /// </summary>
         public CLLoginController()
         {
+            // Initialize the business logic layer object and response object
             _objBLlogin = new BLLogin();
             _objResponse = new Response();
         }
@@ -28,7 +28,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <summary>
         /// Authenticates a user using their login credentials.
         /// </summary>
-        /// <param name="loginDto">The login details (username and password).</param>
+        /// <param name="objDTOUSR02">The login details (username and password).</param>
         /// <returns>A <see cref="Response"/> object with the result of the login operation.</returns>
         [HttpPost]
         [Route("api/login")]
@@ -37,14 +37,14 @@ namespace TravelBookingManagementSystem.Controllers
             // Check if the provided model is valid
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(ModelState); // Return bad request if model state is invalid
             }
 
             // Authenticate the user using the business logic layer
-            Response response = _objBLlogin.Authenticate(objDTOUSR02);
+             _objResponse = _objBLlogin.Authenticate(objDTOUSR02);
 
             // Return the response as an HTTP response
-            return Ok(response);
+            return Ok(_objResponse);
         }
     }
 }

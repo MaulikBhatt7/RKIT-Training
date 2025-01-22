@@ -5,7 +5,6 @@ using TravelBookingManagementSystem.Models.DTO;
 using TravelBookingManagementSystem.Models.Enum;
 using TravelBookingManagementSystem.Models.POCO;
 using TravelBookingManagementSystem.Models;
-using TravelBookingManagementSystem.BL.Operations;
 using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem.Controllers
@@ -30,7 +29,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <summary>
         /// Retrieves a list of all users.
         /// </summary>
-        /// <returns>Object of Response.</returns>
+        /// <returns>Response object containing the list of users.</returns>
         [Route("get-all-users")]
         public IHttpActionResult GetAllUsers()
         {
@@ -57,7 +56,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// Retrieves a user by their ID.
         /// </summary>
         /// <param name="id">User ID.</param>
-        /// <returns>Object of Response.</returns>
+        /// <returns>Response object containing the user details.</returns>
         [Route("get-user-by-id")]
         public IHttpActionResult GetUserByID(int id)
         {
@@ -112,6 +111,7 @@ namespace TravelBookingManagementSystem.Controllers
             {
                 return BadRequest(ModelState);
             }
+
             // Set the operation type to "Add"
             _objBLUser.Type = EnmEntryType.A;
 
@@ -145,6 +145,7 @@ namespace TravelBookingManagementSystem.Controllers
             {
                 return BadRequest(ModelState);
             }
+
             // Set the operation type to "Edit"
             _objBLUser.Type = EnmEntryType.E;
 

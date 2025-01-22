@@ -5,8 +5,19 @@ using System.Web;
 
 namespace TravelBookingManagementSystem.Models.Enum
 {
+    /// <summary>
+    /// Role Enum.
+    /// </summary>
     public enum EnmRoles
     {
-        Admin , User
+        /// <summary>
+        /// Admin Role.
+        /// </summary>
+        Admin , 
+
+        /// <summary>
+        /// User Role.
+        /// </summary>
+        User
     }
 }

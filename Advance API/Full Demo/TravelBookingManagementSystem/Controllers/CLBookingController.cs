@@ -33,7 +33,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// </summary>
         /// <returns>Object of Response.</returns>
         [HttpGet]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
+        [AuthorizeRole(EnmRoles.Admin)]
         [Route("get-all-bookings")]
         public IHttpActionResult GetAllBookings()
         {
@@ -62,12 +62,15 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Booking ID.</param>
         /// <returns>Object of Response.</returns>
         [HttpGet]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
+        [AuthorizeRole(EnmRoles.Admin)]
         [Route("get-booking-by-id")]
         public IHttpActionResult GetBookingByID(int id)
         {
+            // Retrieve token from request
             string token = GetTokenFromRequest();
+            // Get user ID and role from token
             var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
+
             // Retrieve booking record by ID
             BOK01 objBooking = _objBLBooking.GetBookingByID(id);
 
@@ -77,7 +80,7 @@ namespace TravelBookingManagementSystem.Controllers
                 _objResponse.IsError = true;
                 _objResponse.Message = "No Data Found";
             }
-
+            // Check if the user is authorized to access this record
             else if (objBooking.K01F09 != userID && role != EnmRoles.Admin.ToString())
             {
                 _objResponse.IsError = true;
@@ -98,13 +101,15 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="objDTOBOK01">Booking data transfer object containing booking details.</param>
         /// <returns>Response object indicating success or failure of the operation.</returns>
         [HttpPost]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins and Users can access this action
         [Route("add-booking")]
         public IHttpActionResult AddBooking(DTOBOK01 objDTOBOK01)
         {
-
+            // Retrieve token from request
             string token = GetTokenFromRequest();
+            // Get user ID and role from token
             var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
+
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -115,10 +120,10 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.Type = EnmEntryType.A;
 
             // Prepare the booking object for saving
-            _objBLBooking.PreSave(objDTOBOK01,userID);
+            _objBLBooking.PreSave(objDTOBOK01, userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation(userID,role);
+            _objResponse = _objBLBooking.Validation(userID, role);
 
             // If validation passes, save the booking record
             if (!_objResponse.IsError)
@@ -136,12 +141,15 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="objDTOBOK01">Booking data transfer object containing updated details.</param>
         /// <returns>Response object indicating success or failure of the operation.</returns>
         [HttpPut]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins and Users can access this action
         [Route("update-booking")]
         public IHttpActionResult UpdateBooking(DTOBOK01 objDTOBOK01)
         {
+            // Retrieve token from request
             string token = GetTokenFromRequest();
+            // Get user ID and role from token
             var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
+
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -152,10 +160,10 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.Type = EnmEntryType.E;
 
             // Prepare the booking object for saving
-            _objBLBooking.PreSave(objDTOBOK01,userID);
+            _objBLBooking.PreSave(objDTOBOK01, userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation(userID,role);
+            _objResponse = _objBLBooking.Validation(userID, role);
 
             // If validation passes, save the updated booking record
             if (!_objResponse.IsError)
@@ -173,7 +181,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Booking ID to be deleted.</param>
         /// <returns>Response object indicating success or failure.</returns>
         [HttpDelete]
-        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins can access this action
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)] // Only Admins and Users can access this action
         [Route("delete-booking")]
         public IHttpActionResult DeleteBooking(int id)
         {
@@ -186,6 +194,11 @@ namespace TravelBookingManagementSystem.Controllers
             // Return the response
             return Ok(_objResponse);
         }
+
+        /// <summary>
+        /// Retrieves the authorization token from the request headers.
+        /// </summary>
+        /// <returns>The authorization token as a string.</returns>
         private string GetTokenFromRequest()
         {
             var token = string.Empty;
@@ -208,6 +221,5 @@ namespace TravelBookingManagementSystem.Controllers
 
             return token;
         }
-
     }
 }
