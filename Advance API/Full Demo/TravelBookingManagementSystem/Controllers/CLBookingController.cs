@@ -14,6 +14,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// <summary>
     /// Controller to manage booking-related API operations.
     /// </summary>
+    [ValidateModelState]
     public class CLBookingController : ApiController
     {
         /// <summary>
@@ -65,6 +66,8 @@ namespace TravelBookingManagementSystem.Controllers
         [Route("get-booking-by-id")]
         public IHttpActionResult GetBookingByID(int id)
         {
+            string token = GetTokenFromRequest();
+            var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
             // Retrieve booking record by ID
             BOK01 objBooking = _objBLBooking.GetBookingByID(id);
 
@@ -73,6 +76,12 @@ namespace TravelBookingManagementSystem.Controllers
             {
                 _objResponse.IsError = true;
                 _objResponse.Message = "No Data Found";
+            }
+
+            else if (objBooking.K01F09 != userID && role != EnmRoles.Admin.ToString())
+            {
+                _objResponse.IsError = true;
+                _objResponse.Message = "You are not Authorized to access this record.";
             }
             else
             {
@@ -95,7 +104,7 @@ namespace TravelBookingManagementSystem.Controllers
         {
 
             string token = GetTokenFromRequest();
-            int userID = JwtHandler.GetUserIdFromToken(token);
+            var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -109,7 +118,7 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.PreSave(objDTOBOK01,userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation(userID);
+            _objResponse = _objBLBooking.Validation(userID,role);
 
             // If validation passes, save the booking record
             if (!_objResponse.IsError)
@@ -132,7 +141,7 @@ namespace TravelBookingManagementSystem.Controllers
         public IHttpActionResult UpdateBooking(DTOBOK01 objDTOBOK01)
         {
             string token = GetTokenFromRequest();
-            int userID = JwtHandler.GetUserIdFromToken(token);
+            var (userID, role) = JwtHandler.GetUserIdAndRoleFromToken(token);
             // Check validation
             if (!ModelState.IsValid)
             {
@@ -146,7 +155,7 @@ namespace TravelBookingManagementSystem.Controllers
             _objBLBooking.PreSave(objDTOBOK01,userID);
 
             // Validate the booking data
-            _objResponse = _objBLBooking.Validation(userID);
+            _objResponse = _objBLBooking.Validation(userID,role);
 
             // If validation passes, save the updated booking record
             if (!_objResponse.IsError)

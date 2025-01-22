@@ -327,15 +327,33 @@ namespace ORMDemo.BL.Operations
         /// <param name="action">The action to perform within the transaction.</param>
         public void PerformTransaction(Action<IDbConnection> action)
         {
+            // Open a single connection to the first database
             using (var db = _dbFactory.OpenDbConnection())
             using (var transaction = db.OpenTransaction())
             {
+                try
+                {
+                    // Perform action on the first database
+                    action(db);
 
-                db.ChangeDatabase("db2");
-                action(db);
-                transaction.Commit();
+                    // Switch to the second database
+                    db.ChangeDatabase("db2");
+
+                    // Perform action on the second database
+                    action(db);
+
+                    // Commit the transaction if both actions were successful
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    // If any exception occurs, rollback the transaction
+                    transaction.Rollback();
+                    Console.WriteLine("Transaction failed: " + ex.Message);
+                }
             }
         }
+
 
         /// <summary>
         /// Calculates the average age of students.

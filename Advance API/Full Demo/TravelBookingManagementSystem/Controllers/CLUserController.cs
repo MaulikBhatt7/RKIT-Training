@@ -6,13 +6,14 @@ using TravelBookingManagementSystem.Models.Enum;
 using TravelBookingManagementSystem.Models.POCO;
 using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.BL.Operations;
-
+using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem.Controllers
 {
     /// <summary>
     /// Controller to manage user-related API operations.
     /// </summary>
+    [ValidateModelState]
     public class CLUserController : ApiController
     {
         /// <summary>

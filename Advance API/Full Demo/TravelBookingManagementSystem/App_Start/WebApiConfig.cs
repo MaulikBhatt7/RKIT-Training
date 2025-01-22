@@ -1,4 +1,5 @@
-﻿using Swashbuckle.Application;
+﻿using ServiceStack.OrmLite;
+using Swashbuckle.Application;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,8 +15,7 @@ namespace TravelBookingManagementSystem
         {
             config.Filters.Add(new RoleBasedAuthorizationFilter());
 
-            string connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
-            // Web API configuration and services
+            config.Filters.Add(new ValidateModelStateAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

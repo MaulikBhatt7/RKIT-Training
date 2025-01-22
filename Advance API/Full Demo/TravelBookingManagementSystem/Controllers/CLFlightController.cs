@@ -12,6 +12,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// <summary>
     /// Controller to manage flight-related API operations.
     /// </summary>
+    [ValidateModelState]
     public class CLFlightController : ApiController
     {
         /// <summary>
@@ -59,6 +60,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Flight ID.</param>
         /// <returns>Object of Response.</returns>
         [HttpGet]
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
         [Route("get-flight-by-id")]
         public IHttpActionResult GetFlightByID(int id)
         {

@@ -12,6 +12,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// <summary>
     /// Controller to manage hotel-related API operations.
     /// </summary>
+    [ValidateModelState]
     public class CLHotelController : ApiController
     {
         /// <summary>
@@ -59,6 +60,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Hotel ID.</param>
         /// <returns>Object of Response.</returns>
         [HttpGet]
+        [AuthorizeRole(EnmRoles.Admin, EnmRoles.User)]
         [Route("get-hotel-by-id")]
         public IHttpActionResult GetHotelByID(int id)
         {

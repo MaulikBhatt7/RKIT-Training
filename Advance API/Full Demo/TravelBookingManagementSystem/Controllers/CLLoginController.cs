@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 
 using TravelBookingManagementSystem.BL.Operations;
+using TravelBookingManagementSystem.Handlers;
 using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.Models.DTO;
 
@@ -9,6 +10,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// <summary>
     /// Controller to manage login-related API operations.
     /// </summary>
+    [ValidateModelState]
     public class CLLoginController : ApiController
     {
         private readonly BLLogin _objBLlogin;

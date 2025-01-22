@@ -1,5 +1,7 @@
+using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -11,6 +13,15 @@ namespace TravelBookingManagementSystem
     {
         protected void Application_Start()
         {
+
+            string connectionString = ConfigurationManager.ConnectionStrings["TravelBookingConnection"].ConnectionString;
+            // Web API configuration and services
+
+            var dbFactory = new OrmLiteConnectionFactory(connectionString, MySqlDialect.Provider);
+
+            // Storing OrmLiteConnectionFactory instance for further usage in any other component.
+            Application["DbFactory"] = dbFactory;
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
