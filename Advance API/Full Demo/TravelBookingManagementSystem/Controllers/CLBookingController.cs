@@ -62,7 +62,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// <param name="id">Booking ID.</param>
         /// <returns>Object of Response.</returns>
         [HttpGet]
-        [AuthorizeRole(EnmRoles.Admin)]
+        [AuthorizeRole(EnmRoles.Admin,EnmRoles.User)]
         [Route("get-booking-by-id")]
         public IHttpActionResult GetBookingByID(int id)
         {
