@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "asaypVM+Hagi/hStMet30adAIlnHH6dB48SC1ybNM3s=",
+  "Source": "MiddlewareDemo",
+  "BasePath": "_content/MiddlewareDemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MiddlewareDemo\\wwwroot",
+      "Source": "MiddlewareDemo",
+      "ContentRoot": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\MiddlewareDemo\\wwwroot\\",
+      "BasePath": "_content/MiddlewareDemo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\MiddlewareDemo\\wwwroot\\demo.html",
+      "SourceId": "MiddlewareDemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\MiddlewareDemo\\wwwroot\\",
+      "BasePath": "_content/MiddlewareDemo",
+      "RelativePath": "demo.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\demo.html"
+    }
+  ]
+}
