@@ -4,9 +4,11 @@ using BlogManagementSystem.Models;
 using BlogManagementSystem.Models.DTO;
 using BlogManagementSystem.Models.Enum;
 using BlogManagementSystem.Models.POCO;
+using ServiceStack;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
 using System.Collections.Generic;
+using System.Data;
 using System.Security.Cryptography;
 
 namespace BlogManagementSystem.BL
@@ -45,7 +47,7 @@ namespace BlogManagementSystem.BL
                 }
                 if (lstBlogs.Count > 0)
                 {
-                    _objResponse.Data = lstBlogs;
+                    _objResponse.Data = _objBLConverter.ToDataTable(lstBlogs);
                     _objResponse.Message = "Get Data Successfully.";
 
                 }
@@ -76,7 +78,7 @@ namespace BlogManagementSystem.BL
 
                 if (objBLG01 != null)
                 {
-                    _objResponse.Data = objBLG01;
+                    _objResponse.Data = _objBLConverter.ObjectToDataTable(objBLG01);
                     _objResponse.Message = "Get Data Successfully.";
 
                 }
@@ -169,9 +171,9 @@ namespace BlogManagementSystem.BL
             return null;
         }
 
-        private Response ValidateOnDelete(BLG01 objBLG01)
+        private Response ValidateOnDelete(DataTable objDataTable)
         {
-            if (objBLG01 == null)
+            if (objDataTable == null)
                 return new Response { IsError = true, Message = "Blog not found." };
 
             return new Response { IsError = false }; // Valid for deletion.

@@ -1,5 +1,5 @@
 using BlogManagementSystem.BL;
-
+using BlogManagementSystem.Middleware;
 using BlogManagementSystem.Models;
 using ServiceStack;
 using ServiceStack.Data;
@@ -8,8 +8,14 @@ using ServiceStack.OrmLite;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddControllers(options =>
+{
+    // Add LogActionFilter globally to all actions
+    options.Filters.Add<BlogManagementSystem.Filters.LogActionFilter>();
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -45,11 +51,14 @@ builder.Services.AddTransient<BLBlog>();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseAuthorization();

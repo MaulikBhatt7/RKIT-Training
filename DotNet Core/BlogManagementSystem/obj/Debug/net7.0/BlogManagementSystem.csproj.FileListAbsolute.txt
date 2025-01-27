@@ -63,3 +63,6 @@ F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\obj\Debug\
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\obj\Debug\net7.0\BlogManagementSystem.pdb
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\obj\Debug\net7.0\BlogManagementSystem.genruntimeconfig.cache
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\obj\Debug\net7.0\ref\BlogManagementSystem.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

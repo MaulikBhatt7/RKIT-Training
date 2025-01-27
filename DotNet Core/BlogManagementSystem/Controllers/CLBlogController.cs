@@ -2,7 +2,6 @@
 using BlogManagementSystem.Models;
 using BlogManagementSystem.Models.DTO;
 using BlogManagementSystem.Models.Enum;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogManagementSystem.Controllers
@@ -26,22 +25,26 @@ namespace BlogManagementSystem.Controllers
         [Route("get-all-blogs")]
         public IActionResult GetAllBlogs()
         {
+            _logger.LogInformation("Fetching all blog posts.");
             _objResponse = _objBLBlog.GetAllBlogs();
             return Ok(_objResponse);
         }
 
         [HttpGet]
         [Route("get-blog-by-id")]
+        
         public IActionResult GetBlogByID(int id)
         {
+            _logger.LogInformation($"Fetching blog post whose id is {id}.");
             _objResponse = _objBLBlog.GetBlogByID(id);
             return Ok(_objResponse);
         }
 
         [HttpDelete]
         [Route("delete-blog")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteBlog(int id)
         {
+            _logger.LogInformation($"Deleting blog post with ID {id}.");
             _objResponse = _objBLBlog.Delete(id);  // Delete student and get response.
             return Ok(_objResponse);  // Return response message.
         }
@@ -50,11 +53,12 @@ namespace BlogManagementSystem.Controllers
         [Route("add-blog")]
         public IActionResult AddBlog(DTOBLG01 objDTOBLG01)
         {
+            _logger.LogInformation("Creating a new blog post.");
             // Check Validation 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             _objBLBlog.Type = EnmType.A;  // Set operation type to "Add".
             _objBLBlog.PreSave(objDTOBLG01);  // Prepare data for saving.
             _objResponse = _objBLBlog.ValidationSave();  // Validate data before saving.
@@ -70,7 +74,7 @@ namespace BlogManagementSystem.Controllers
         [Route("update-blog")]
         public IActionResult UpdateBlog(DTOBLG01 objDTOBLG01)
         {
-
+            _logger.LogInformation($"Updating blog post with ID {objDTOBLG01.G01F01}.");
             // Check Validation
             if (!ModelState.IsValid)
             {

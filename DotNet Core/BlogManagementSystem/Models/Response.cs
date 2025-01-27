@@ -23,7 +23,7 @@ namespace BlogManagementSystem.Models
         /// <summary>
         /// Store data of Response.
         /// </summary>
-        public dynamic Data { get; set; }
+        public DataTable Data { get; set; }
 
 
     }
