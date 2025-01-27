@@ -20,7 +20,7 @@ namespace BlogManagementSystem.Middleware
             }
             catch (Exception ex)
             {
-                _logger.LogInformation($"An unhandled exception occurred: {ex.Message}");
+                _logger.LogError($"An unhandled exception occurred: {ex.Message}");
                 await HandleExceptionAsync(context, ex);
             }
         }
