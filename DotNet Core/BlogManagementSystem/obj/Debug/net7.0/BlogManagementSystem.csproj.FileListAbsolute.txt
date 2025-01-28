@@ -66,3 +66,7 @@ F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\obj\Debug\
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\nlog.config
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\NLog.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\NLog.Extensions.Logging.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\BlogManagementSystem\bin\Debug\net7.0\NLog.Web.AspNetCore.dll
