@@ -26,7 +26,7 @@ namespace TestProcedure
                     {
                         // Set the command type to StoredProcedure
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("student_id", 11155);
+                        cmd.Parameters.AddWithValue("student_id", 11157);
                         cmd.Parameters.AddWithValue("student_name", "asdf");
 
 

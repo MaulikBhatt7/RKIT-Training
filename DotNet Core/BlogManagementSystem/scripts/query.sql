@@ -7,7 +7,7 @@ USE BlogDB;
 CREATE TABLE blg01 (
     g01f01 INT AUTO_INCREMENT PRIMARY KEY Comment 'ID',         -- g01f01: Id (Primary Key)
     g01f02 VARCHAR(200) NOT NULL Comment 'Title',              	-- g01f02: Title
-    g01f03 varchar(255) NOT NULL Comment 'Content',            			-- g01f03: Content
+    g01f03 TEXT NOT NULL Comment 'Content',            			-- g01f03: Content
     g01f04 DATETIME NOT NULL Comment 'CreatedAt', 				-- g01f04: CreatedAt
     g01f05 DATETIME NULL Comment 'UpdatedAt'                    -- g01f05: UpdatedAt
 );

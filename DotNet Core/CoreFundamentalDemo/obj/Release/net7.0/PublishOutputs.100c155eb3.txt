@@ -1,0 +1,6 @@
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\CoreFundamentalDemo.exe
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\appsettings.json
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\CoreFundamentalDemo.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\CoreFundamentalDemo.deps.json
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\CoreFundamentalDemo.runtimeconfig.json
+F:\Maulik Bhatt (RKIT)\RKIT Training\DotNet Core\CoreFundamentalDemo\obj\Release\net7.0\PubTmp\Out\CoreFundamentalDemo.pdb

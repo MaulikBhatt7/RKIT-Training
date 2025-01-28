@@ -17,7 +17,7 @@ builder.Logging.AddDebug(); // Adds Debug provider
 // Configure Logging into console and file using Serilog.
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
-    .WriteTo.Console()
+    //.WriteTo.Console()
     .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 builder.Host.UseSerilog();
