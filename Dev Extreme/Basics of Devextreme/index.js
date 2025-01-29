@@ -34,58 +34,86 @@ $(function () {
 
 
 $(
-    function () {
-        $("#buttonContainer-1").dxButton(
-            {
-                type: "normal",
-                text: "Normal Type"
-            }
-        );
-    }
+  function () {
+    $("#buttonContainer-1").dxButton(
+      {
+        type: "normal",
+        text: "Normal Type"
+      }
+    );
+  }
 );
 
 $(
-    function () {
-        $("#buttonContainer-2").dxButton(
-            {
-                type: "default",
-                text: "Default Type"
-            }
-        );
-    }
+  function () {
+    $("#buttonContainer-2").dxButton(
+      {
+        type: "default",
+        text: "Default Type"
+      }
+    );
+  }
 );
 
 $(
-    function () {
-        $("#buttonContainer-3").dxButton(
-            {
-                type: "success",
-                text: "Success Type"
-            }
-        );
-    }
+  function () {
+    $("#buttonContainer-3").dxButton(
+      {
+        type: "success",
+        text: "Success Type"
+      }
+    );
+  }
 );
 
 $(
-    function () {
-        $("#buttonContainer-4").dxButton(
-            {
-                type: "danger",
-                text: "Danger Type"
-            }
-        );
-    }
+  function () {
+    $("#buttonContainer-4").dxButton(
+      {
+        type: "danger",
+        text: "Danger Type and Outlined Mode",
+        stylingMode: "outlined"
+      }
+    );
+  }
 );
 
-$(
-    function () {
-        $("#buttonContainer-4").dxButton(
-            {
-                type: "danger",
-                text: "Danger Type and Style Outlined",
-                stylingMode: "outlined",
-                width: 300
-            }
-        );
-    }
-);
+
+
+
+$("#gridContainer").dxDataGrid({
+  dataSource: [
+    { ID: 1, Name: "MB", Age: 30 },
+    { ID: 2, Name: "YK", Age: 25 },
+    { ID: 3, Name: "MB", Age: 30 },
+    { ID: 4, Name: "YK", Age: 25 },
+    { ID: 5, Name: "MB", Age: 30 },
+    { ID: 6, Name: "YK", Age: 25 }
+  ],
+  columns: ["ID", "Name", "Age"],
+  paging: { pageSize: 5 },
+  filterRow: { visible: true }
+});
+
+let grid = $("#gridContainer").dxDataGrid("instance");
+console.log(grid);
+
+let pageSize = grid.option("paging.pageSize");
+console.log(pageSize);
+
+grid.option("paging.pageSize", 3);
+
+
+grid.option({
+  "paging.pageSize": 2,
+  "filterRow.visible": false
+});
+
+
+grid.selectRows([1]); 
+
+grid.option("onRowClick", function(e) {
+  alert("Clicked row data: " + JSON.stringify(e.data));
+});
+
+// grid.dispose(); //or $("#gridContainer").dxDataGrid("dispose");
