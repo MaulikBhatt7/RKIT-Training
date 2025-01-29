@@ -23,7 +23,7 @@ $(function () {
         tabIndex:0, // specify number of element during tab
         template:"content",
         type:"default", // normal, success, danger
-        useSubmitBehavior:false, // vehave like submit button
+        useSubmitBehavior:false, // behave like submit button
         visible:true,  // visiblity true or false
         width:300, // speecify width
         onClick: function () {
