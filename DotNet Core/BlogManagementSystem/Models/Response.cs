@@ -1,11 +1,12 @@
-﻿using System.Data;
+﻿using BlogManagementSystem.Services;
+using System.Data;
 
 namespace BlogManagementSystem.Models
 {
     /// <summary>
     /// Response Model.
     /// </summary>
-    public class Response 
+    public class Response : IResponse
     {
        
 

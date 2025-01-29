@@ -1,9 +1,11 @@
-﻿namespace BlogManagementSystem.Models.POCO
+﻿using BlogManagementSystem.Services;
+
+namespace BlogManagementSystem.Models.POCO
 {
     /// <summary>
     /// POCO model for Blog Table
     /// </summary>
-    public class BLG01
+    public class BLG01 : IBLG01
     {
         /// <summary>
         /// ID

@@ -1,6 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using BlogManagementSystem.Services;
+using Newtonsoft.Json;
 using System.Data;
 using System.Reflection;
 
@@ -9,7 +8,7 @@ namespace BlogManagementSystem.BL
     /// <summary>
     /// Provides methods to convert objects and collections to DataTable.
     /// </summary>
-    public class BLConverter
+    public class BLConverter : IBLConverter
     {
         /// <summary>
         /// Converts a list of objects into a DataTable.

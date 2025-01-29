@@ -1,6 +1,7 @@
 ﻿using BlogManagementSystem.BL;
 using BlogManagementSystem.Middleware;
 using BlogManagementSystem.Models;
+using BlogManagementSystem.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -55,13 +56,13 @@ public class Startup
         });
 
         // Configure Response Model
-        services.AddTransient<Response>();
+        services.AddTransient<IResponse,Response>();
 
         // Configure BLConverter
-        services.AddTransient<BLConverter>();
+        services.AddTransient<IBLConverter,BLConverter>();
 
         // Configure BLBlog
-        services.AddTransient<BLBlog>();
+        services.AddTransient<IBLBLog,BLBlog>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,7 +1,7 @@
 ﻿using BlogManagementSystem.BL;
-using BlogManagementSystem.Models;
 using BlogManagementSystem.Models.DTO;
 using BlogManagementSystem.Models.Enum;
+using BlogManagementSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogManagementSystem.Controllers
@@ -13,9 +13,9 @@ namespace BlogManagementSystem.Controllers
     [ApiController]
     public class CLBlogController : ControllerBase
     {
-        private readonly BLBlog _objBLBlog;
+        private readonly IBLBLog _objBLBlog;
         private readonly ILogger<CLBlogController> _logger;
-        private Response _objResponse;
+        private IResponse _objResponse;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CLBlogController"/> class.
@@ -23,7 +23,7 @@ namespace BlogManagementSystem.Controllers
         /// <param name="objBLBlog">Business logic instance for Blog.</param>
         /// <param name="logger">Logger instance for logging operations.</param>
         /// <param name="objResponse">Response object for handling API responses.</param>
-        public CLBlogController(BLBlog objBLBlog, ILogger<CLBlogController> logger, Response objResponse)
+        public CLBlogController(IBLBLog objBLBlog, ILogger<CLBlogController> logger, IResponse objResponse)
         {
             _objBLBlog = objBLBlog;
             _logger = logger;

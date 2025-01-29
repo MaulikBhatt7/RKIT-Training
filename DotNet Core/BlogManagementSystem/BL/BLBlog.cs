@@ -3,24 +3,25 @@ using BlogManagementSystem.Models;
 using BlogManagementSystem.Models.DTO;
 using BlogManagementSystem.Models.Enum;
 using BlogManagementSystem.Models.POCO;
+using BlogManagementSystem.Services;
 using ServiceStack;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
-using System.Collections.Generic;
 using System.Data;
-using System.Security.Cryptography;
+
 
 namespace BlogManagementSystem.BL
 {
     /// <summary>
     /// Business Logic class for managing Blog operations.
     /// </summary>
-    public class BLBlog
+    public class BLBlog : IBLBLog
+
     {
         private readonly IDbConnectionFactory _dbConnectionFactory;
-        private Response _objResponse;
-        private BLConverter _objBLConverter;
-        private BLG01 _objBLG01;
+        private IResponse _objResponse;
+        private IBLConverter _objBLConverter;
+        private IBLG01 _objBLG01;
         private int _id;
         public EnmType Type;
 
@@ -30,12 +31,12 @@ namespace BlogManagementSystem.BL
         /// <param name="dbConnectionFactory">Database connection factory.</param>
         /// <param name="objResponse">Response object.</param>
         /// <param name="objBLConverter">Converter object for data transformations.</param>
-        public BLBlog(IDbConnectionFactory dbConnectionFactory, Response objResponse, BLConverter objBLConverter)
+        public BLBlog(IDbConnectionFactory dbConnectionFactory, IResponse objResponse, IBLConverter objBLConverter, IBLG01 objBLG01)
         {
             _dbConnectionFactory = dbConnectionFactory;
             _objResponse = objResponse;
             _objBLConverter = objBLConverter;
-            _objBLG01 = new BLG01();
+            _objBLG01 = objBLG01;
         }
 
         /// <summary>
