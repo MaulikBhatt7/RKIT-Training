@@ -8,24 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\maulik.b\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo).csproj",
+      "projectUniqueName": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo).csproj",
       "projectName": "Employee Management System (C# Final Demo)",
-      "projectPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo).csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "E:\\RKIT GitHub Clone\\RKIT-Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\obj\\",
+      "projectPath": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo).csproj",
+      "packagesPath": "C:\\Users\\maulik.b\\.nuget\\packages\\",
+      "outputPath": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\Basic API\\Employee Management System (C# Final Demo)\\Employee Management System (C# Final Demo)\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\maulik.b\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -45,13 +40,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -67,12 +56,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -121,12 +121,12 @@ AsyncOperation().done((message) => {
 });
 
 
-// Callback Example
-$("button").click(function(){
-    $("p").hide("slow", function(){
-      alert("The paragraph is now hidden");
-    });
-});
+// // Callback Example
+// $("button").click(function(){
+//     $("p").hide("slow", function(){
+//       alert("The paragraph is now hidden");
+//     });
+// });
 
 /**
  * Event: jQuery Array Manipulation (map(), grep(), extend(), each(), merge())
