@@ -21,6 +21,9 @@ namespace DataSetDemo
             customers.Columns.Add("CustomerID", typeof(int));
             customers.Columns.Add("CustomerName", typeof(string));
 
+            // Set Primary Key for Customers table
+            customers.PrimaryKey = new DataColumn[] { customers.Columns["CustomerID"] };
+
             // Add rows to Customers table
             customers.Rows.Add(1, "MB");
             customers.Rows.Add(2, "YK");
@@ -77,7 +80,7 @@ namespace DataSetDemo
 
             // Merging another DataSet
             DataSet newDataSet = new DataSet();
-            DataTable newCustomers = customers.Copy();
+            DataTable newCustomers = customers.Clone();
             newCustomers.Rows.Add(3, "JG");
             newDataSet.Tables.Add(newCustomers);
 
@@ -98,9 +101,11 @@ namespace DataSetDemo
             // Reject changes demonstration
             Console.WriteLine("Before RejectChanges:");
             Console.WriteLine($"Modified Name: {mbRow["CustomerName"]}");
-            customers.RejectChanges(); // Undo changes
-            Console.WriteLine("After RejectChanges:");
-            Console.WriteLine($"Reverted Name: {mbRow["CustomerName"]}");
+
+            //customers.RejectChanges(); // Undo changes
+
+            //Console.WriteLine("After RejectChanges:");
+            //Console.WriteLine($"Reverted Name: {mbRow["CustomerName"]}");
 
             // Accept changes demonstration
             mbRow["CustomerName"] = "MB Updated";

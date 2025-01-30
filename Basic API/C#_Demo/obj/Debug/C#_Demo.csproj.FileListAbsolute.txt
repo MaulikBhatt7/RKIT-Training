@@ -8,3 +8,14 @@ E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.pdb
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.dll
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.pdb
 E:\RKIT GitHub Clone\RKIT-Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.Up2Date
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\bin\Debug\C#_Demo.exe.config
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\bin\Debug\C#_Demo.exe
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\bin\Debug\C#_Demo.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\bin\Debug\CalculatorLibrary.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.AssemblyReference.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.SuggestedBindingRedirects.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.CoreCompileInputs.cache
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.csproj.CopyComplete
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.exe
+F:\Maulik Bhatt (RKIT)\RKIT Training\Basic API\C#_Demo\obj\Debug\C#_Demo.pdb
