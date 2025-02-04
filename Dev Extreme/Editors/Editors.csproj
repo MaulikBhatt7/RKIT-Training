@@ -112,6 +112,8 @@
     <Content Include="Content\dx.softblue.css" />
     <Content Include="Date Box\date-box.html" />
     <Content Include="Date Box\date-box.js" />
+    <Content Include="Drop Down Box\drop-down-box.html" />
+    <Content Include="Drop Down Box\drop-down-box.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
