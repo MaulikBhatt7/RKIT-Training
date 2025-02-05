@@ -28,7 +28,7 @@
             // Create a dxList component for selecting multiple items
             var list = $('<div>').dxList({
                 dataSource: fruits,
-                selectionMode: 'multiple', // ✅ Multiple selection enabled
+                selectionMode: 'multiple', //  Multiple selection enabled
                 searchEnabled: true,
                 itemTemplate: function (data) {
                     return $('<div>').text(data);
@@ -50,7 +50,7 @@
         },
 
         // Enable search in the drop-down
-        searchEnabled: true,
+        //searchEnabled: false,
 
         // Render the drop-down content immediately
         deferRendering: false,

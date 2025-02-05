@@ -75,7 +75,7 @@
         name: 'dateBox',
 
         // Specifies the type of date picker
-        pickerType: 'calender',
+        pickerType: 'rollers',
 
         // Placeholder text for the input field
         placeholder: 'Select Date',
@@ -87,7 +87,7 @@
         rtlEnabled: false,
 
         // Hides the analog clock in time selection
-        showAnalogClock: false,
+        showAnalogClock: true,
 
         // Shows a clear button to reset the date field
         showClearButton: true,
