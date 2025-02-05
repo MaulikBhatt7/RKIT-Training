@@ -4,7 +4,7 @@
     var dateBox = $('#all-properties').dxDateBox({
 
         // Sets the initial date value
-        value: new Date(),
+        //value: new Date(),
 
         // Sets a shortcut key for accessibility
         accessKey: 'm',
@@ -108,7 +108,7 @@
         validationErrors: [{message: "Enter valid date"}],
 
         // Defines how validation messages are displayed
-        validationMessageMode: 'always',
+        validationMessageMode: 'auto',
 
         // Controls the visibility of the DateBox
         visible: true,

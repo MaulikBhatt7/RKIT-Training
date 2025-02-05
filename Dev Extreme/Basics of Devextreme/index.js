@@ -20,7 +20,7 @@ $(function () {
         }, // on option changed event
         rtlEnabled:false, // convert text right to left
         stylingMode:"outlined", // contained
-        tabIndex:0, // specify number of element during tab
+        tabIndex:2, // specify number of element during tab
         template:"content",
         type:"default", // normal, success, danger
         useSubmitBehavior:false, // behave like submit button
@@ -38,7 +38,8 @@ $(
     $("#buttonContainer-1").dxButton(
       {
         type: "normal",
-        text: "Normal Type"
+        text: "Normal Type",
+        tabIndex: 1
       }
     );
   }
