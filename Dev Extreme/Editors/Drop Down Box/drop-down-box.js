@@ -9,7 +9,7 @@
         accessKey: 'D',
 
         // Enable active state on interaction
-        activeStateEnabled: true,
+        activeStateEnabled: false,
 
         // Add custom buttons to the input field
         buttons: [{
@@ -23,28 +23,26 @@
 
         // Define a custom template for the drop-down content
         contentTemplate: function (e) {
-            // Define a list of fruits
-            var fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grapes', 'Kiwi', 'Lemon', 'Mango', 'Orange', 'Pineapple', 'Strawberry', 'Watermelon'];
+            var fruits = ["Apple", "Banana", "Cherry", "Mango", "Orange"];
 
-            // Create a dxList component for selecting items
+            // Create a dxList component for selecting multiple items
             var list = $('<div>').dxList({
                 dataSource: fruits,
-                selectionMode: 'single', // Allow single selection
-                searchEnabled: true, // Enable search functionality
+                selectionMode: 'multiple', // ✅ Multiple selection enabled
+                searchEnabled: true,
                 itemTemplate: function (data) {
-                    // Render each item as a div with the fruit name
                     return $('<div>').text(data);
                 },
                 onSelectionChanged: function (selectionEvent) {
-                    // Get the selected value from the list
-                    var selectedValue = selectionEvent.addedItems[0];
+                    // Get all selected values
+                    var selectedValues = selectionEvent.component.option('selectedItems');
 
-                    // Set the selected value in the drop-down box
-                    e.component.option('value', selectedValue);
+                    // Set selected values in the drop-down box
+                    e.component.option('value', selectedValues.join(', ')); // Join for display
 
-                    // Close the drop-down after selection
-                    e.component.close();
-                }
+                    //e.component.close();
+                },
+                showSelectionControls: true // ✅ Shows checkboxes for multiple selection
             });
 
             // Append the list to the drop-down content area
@@ -75,19 +73,19 @@
             return $("<span>").addClass("custom-button").text("▼");
         },
 
-        // Set options for the drop-down field
-        dropDownOptions: {
-            width: 300,
-            height: 200
-        },
+        //// Set options for the drop-down field
+        //dropDownOptions: {
+        //    width: 300,
+        //    height: 200
+        //},
 
         // Specify custom attributes for the component container
         elementAttr: {
             class: 'custom-drop-down'
         },
 
-        // Set the height of the component
-        height: 40,
+        //// Set the height of the component
+        //height: 40,
 
         // Set a hint text for the component
         hint: 'Choose an option',
@@ -196,7 +194,7 @@
         },
 
         // Indicate that the drop-down is open
-        opened: true,
+        opened: false,
 
         // Allow opening the drop-down by clicking the text field
         openOnFieldClick: true,
