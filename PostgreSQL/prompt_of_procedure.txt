@@ -1,0 +1,10 @@
+See I need a proper deep documentation in md file so give me that
+
+In Mysql, I have a procedure_user and a tester user now a procedure user creates a procedure of insert with only right of create procedure and insert privilege on table now he gives the execution right of procedure to tester_user bcz only definer of proc can call proc and tester_user does not have rights of insert directly in table but can call procedure 
+
+Now that was first half now 
+
+same thing I have done in Postgresql and there are tow concept of security definer and security invoker so firstly I have created proc with security definer so I can perform same as mysql in postgresql like give only privilege of execution of proc to tester_user no insert right directly
+
+then I used Security Invoker in same proc in which i give insert right on table to tester_user
+but not give execution privilege of proc bcz invoker will use definer's privilege and procedure_user has right of insert on table so tester_user also can call proc 

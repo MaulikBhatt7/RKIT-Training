@@ -1,0 +1,5 @@
+New User			Done
+StartUp class and Use		Done
+Publish
+We don't want to add appsetting 
+Exception Log in separate file

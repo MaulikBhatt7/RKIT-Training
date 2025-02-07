@@ -1,0 +1,61 @@
+Commands for Postgre
+
+--- Create Table
+
+CREATE TABLE STUDENTS(
+
+	STUDENT_ID INT PRIMARY KEY,
+	STUDENT_NAME VARCHAR(50)
+);
+
+
+--- Insert Data
+
+INSERT INTO STUDENTS VALUES (101,'ABC'),(102,'ASDF');
+
+
+
+--- Create User
+
+CREATE USER mb WITH PASSWORD 'MB1234'; (Username is always in small case)
+
+
+
+-- Grant all Privileges of table or db
+
+GRANT ALL PRIVILEGES ON TABLE STUDENTS TO MB;
+GRANT ALL PRIVILEGES ON DATABASE COLLEGE TO MB; 
+
+GRANT select, insert ON TABLE STUDENTS TO MB;
+
+
+--- REVOKE ALL PREVILEGES
+
+REVOKE ALL PRIVILEGES ON TABLE STUDENTS FROM MB; 
+
+
+
+--- Create or Replace Procedure
+
+CREATE OR REPLACE PROCEDURE insert_student(STUDENT_ID INT, STUDENT_NAME VARCHAR)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO STUDENTS (STUDENT_ID,STUDENT_NAME) 
+    VALUES (STUDENT_ID,STUDENT_NAME);
+END;
+$$;
+
+
+--- Whenever want to set role (temparary switch user)
+
+GRANT MB TO SRVUSER;
+
+SET ROLE MB
+
+RESET ROLE
+
+--- Change password of user
+
+ALTER USER MB WITH PASSWORD 'MB@123456';
+

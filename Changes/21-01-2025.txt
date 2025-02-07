@@ -1,0 +1,22 @@
+Transaction in Multiple DB		Done
+
+Model State controller level		Done
+
+Query parameter with @ 			Done
+
+Data Annotation for flag 		Done
+
+ID Data Annotation Range 		Done
+
+Common query of all tables for insert, update dynamically	Done 
+
+Dynamic where condition			Done
+
+Foreign key constrains for delete 	Done
+
+Token Encryption 			Done
+
+ORM in Select and Select By ID 		Done
+
+
+
