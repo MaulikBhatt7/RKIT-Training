@@ -75,7 +75,7 @@
         name: 'dateBox',
 
         // Specifies the type of date picker
-        pickerType: 'rollers',
+        pickerType: 'calender',
 
         // Placeholder text for the input field
         placeholder: 'Select Date',
