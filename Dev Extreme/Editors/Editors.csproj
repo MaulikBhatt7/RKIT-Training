@@ -116,6 +116,9 @@
     <Content Include="Date Box\date-box.js" />
     <Content Include="Drop Down Box\drop-down-box.html" />
     <Content Include="Drop Down Box\drop-down-box.js" />
+    <Content Include="File Uploader\file-uploader.html" />
+    <Content Include="File Uploader\file-uploader.js" />
+    <Content Include="File Uploader\kpd.html" />
     <Content Include="index.html" />
     <Content Include="Number Box\number-box.html" />
     <Content Include="Number Box\number-box.js" />
