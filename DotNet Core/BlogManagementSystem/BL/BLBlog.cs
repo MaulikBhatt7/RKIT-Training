@@ -21,9 +21,11 @@ namespace BlogManagementSystem.BL
         private readonly IDbConnectionFactory _dbConnectionFactory;
         private IResponse _objResponse;
         private IBLConverter _objBLConverter;
-        private IBLG01 _objBLG01;
+        private BLG01 _objBLG01;
         private int _id;
-        public EnmType Type;
+        public EnmType Type { get; set; }
+
+     
 
         /// <summary>
         /// Constructor to initialize the BLBlog with necessary dependencies.
@@ -31,19 +33,19 @@ namespace BlogManagementSystem.BL
         /// <param name="dbConnectionFactory">Database connection factory.</param>
         /// <param name="objResponse">Response object.</param>
         /// <param name="objBLConverter">Converter object for data transformations.</param>
-        public BLBlog(IDbConnectionFactory dbConnectionFactory, IResponse objResponse, IBLConverter objBLConverter, IBLG01 objBLG01)
+        public BLBlog(IDbConnectionFactory dbConnectionFactory, IResponse objResponse, IBLConverter objBLConverter)
         {
             _dbConnectionFactory = dbConnectionFactory;
             _objResponse = objResponse;
             _objBLConverter = objBLConverter;
-            _objBLG01 = objBLG01;
+            _objBLG01 = new BLG01();
         }
 
         /// <summary>
         /// Retrieves all blog records.
         /// </summary>
         /// <returns>Response object containing blog data or error message.</returns>
-        public Response GetAllBlogs()
+        public IResponse GetAllBlogs()
         {
             List<BLG01> lstBlogs = new List<BLG01>();
             using (var db = _dbConnectionFactory.OpenDbConnection())
@@ -69,7 +71,7 @@ namespace BlogManagementSystem.BL
         /// </summary>
         /// <param name="id">Blog ID.</param>
         /// <returns>Response object containing blog data or error message.</returns>
-        public Response GetBlogByID(int id)
+        public IResponse GetBlogByID(int id)
         {
             BLG01 objBLG01 = new BLG01();
             using (var db = _dbConnectionFactory.OpenDbConnection())
@@ -126,7 +128,7 @@ namespace BlogManagementSystem.BL
         /// Validates the save operation for add/edit.
         /// </summary>
         /// <returns>Response object indicating validation result.</returns>
-        public Response ValidationSave()
+        public IResponse ValidationSave()
         {
             if (Type == EnmType.E) // If editing.
             {
@@ -148,7 +150,7 @@ namespace BlogManagementSystem.BL
         /// Saves the blog record (add/edit).
         /// </summary>
         /// <returns>Response object indicating save result.</returns>
-        public Response Save()
+        public IResponse Save()
         {
             using (var db = _dbConnectionFactory.OpenDbConnection())
             {
@@ -171,7 +173,7 @@ namespace BlogManagementSystem.BL
         /// </summary>
         /// <param name="id">Blog ID.</param>
         /// <returns>Response object containing blog data or null.</returns>
-        private Response PreDelete(int id)
+        private IResponse PreDelete(int id)
         {
             if (IsBLG01Exist(id))
             {
@@ -198,9 +200,9 @@ namespace BlogManagementSystem.BL
         /// </summary>
         /// <param name="id">Blog ID.</param>
         /// <returns>Response object indicating deletion result.</returns>
-        public Response Delete(int id)
+        public IResponse Delete(int id)
         {
-            Response objResponse = PreDelete(id); // Pre-deletion checks.
+            IResponse objResponse = PreDelete(id); // Pre-deletion checks.
             var validationResponse = ValidateOnDelete(objResponse.Data);
             if (validationResponse.IsError)
                 return validationResponse; // Abort if validation fails.

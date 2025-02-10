@@ -1,6 +1,7 @@
 ﻿using BlogManagementSystem.BL;
 using BlogManagementSystem.Middleware;
 using BlogManagementSystem.Models;
+using BlogManagementSystem.Models.POCO;
 using BlogManagementSystem.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -57,6 +58,9 @@ public class Startup
 
         // Configure Response Model
         services.AddTransient<IResponse,Response>();
+
+        // Configure BLG01 Model
+        services.AddTransient<IBLG01, BLG01>();
 
         // Configure BLConverter
         services.AddTransient<IBLConverter,BLConverter>();
