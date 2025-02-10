@@ -178,6 +178,8 @@
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.debug.js" />
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.js" />
     <Content Include="Scripts\vectormap-utils\dx.vectormaputils.node.js" />
+    <Content Include="Text Area\text-area.html" />
+    <Content Include="Text Area\text-area.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
