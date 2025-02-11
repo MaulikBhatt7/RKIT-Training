@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Radio Group</title>
+
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.min.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+
+    <script src="radio-group.js"></script>
+
+
+    <style>
+        .low.dx-radiobutton-checked .dx-radiobutton-icon .dx-radiobutton-icon-dot {
+            background: gray;
+        }
+
+        .normal.dx-radiobutton-checked .dx-radiobutton-icon .dx-radiobutton-icon-dot {
+            background: green;
+        }
+
+        .urgent.dx-radiobutton-checked .dx-radiobutton-icon .dx-radiobutton-icon-dot {
+            background: orange;
+        }
+
+        .high.dx-radiobutton-checked .dx-radiobutton-icon .dx-radiobutton-icon-dot {
+            background: red;
+        }
+    </style>
+</head>
+<body class="dx-viewport">
+    <h2>Normal Radio Group</h2>
+    <div id="radioGroup"></div>
+    <h2>Custom Radio Group with different color</h2>
+    <div id="customRadioGroup"></div>
+</body>
+</html>

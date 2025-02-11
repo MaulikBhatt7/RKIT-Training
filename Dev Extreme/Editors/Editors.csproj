@@ -121,6 +121,8 @@
     <Content Include="index.html" />
     <Content Include="Number Box\number-box.html" />
     <Content Include="Number Box\number-box.js" />
+    <Content Include="Radio Group\radio-group.html" />
+    <Content Include="Radio Group\radio-group.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
