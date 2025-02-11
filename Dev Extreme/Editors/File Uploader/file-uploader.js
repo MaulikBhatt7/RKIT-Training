@@ -8,7 +8,7 @@
         allowCanceling: true,
 
         // Allowed file extensions (commented out)
-        //allowedFileExtensions: ['.jpg'], 
+        allowedFileExtensions: ['.jpg'], 
 
         // Size of each upload chunk in bytes
         chunkSize: 10000000,

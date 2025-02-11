@@ -188,6 +188,8 @@
     <Content Include="Text Area\text-area.js" />
     <Content Include="Text Box\text-box.html" />
     <Content Include="Text Box\text-box.js" />
+    <Content Include="Validation\validation.html" />
+    <Content Include="Validation\validation.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
