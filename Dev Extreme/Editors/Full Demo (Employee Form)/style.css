@@ -1,0 +1,69 @@
+﻿/* Base body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* Heading (h2) styles */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form container styles */
+.dx-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Field container styles */
+.dx-field {
+    margin-bottom: 15px;
+}
+
+/* Field label styles */
+.dx-field-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Field value container styles */
+.dx-field-value {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Validation message styles */
+.validation-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Button styles */
+.dx-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    /* Button hover effect */
+    .dx-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Legend styles */
+legend {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

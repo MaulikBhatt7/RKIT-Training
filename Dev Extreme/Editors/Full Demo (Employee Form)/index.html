@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Employee Form</title>
+
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.min.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.light.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+
+    <script src="index.js"></script>
+</head>
+
+<body class="dx-viewport">
+
+    <h2 style="font-weight: bold; text-decoration: underline;">Employee Onboarding Form</h2>
+
+    <!-- Create the form using dx-form -->
+    <div id="onboarding-form" class="dx-form">
+        <form id="onboarding-form-elements">
+            <!-- Personal Information Field Set -->
+            <div class="dx-fieldset">
+                <legend>Personal Information</legend>
+
+                <!-- Full Name (TextBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Full Name</div>
+                    <div class="dx-field-value">
+                        <div id="name" class="dx-textbox"></div>
+                        <div class="validation-message" id="name-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Email (TextBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Email Address</div>
+                    <div class="dx-field-value">
+                        <div id="email" class="dx-textbox"></div>
+                        <div class="validation-message" id="email-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Number (TextBox with Mask) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Mobile Number</div>
+                    <div class="dx-field-value">
+                        <div id="mobile" class="dx-textbox"></div>
+                        <div class="validation-message" id="mobile-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Date of Birth (DateBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Date of Birth</div>
+                    <div class="dx-field-value">
+                        <div id="dob" class="dx-datebox"></div>
+                        <div class="validation-message" id="dob-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Age (Number Box) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Age</div>
+                    <div class="dx-field-value">
+                        <div id="age" class="dx-numberbox" readonly="true"></div>
+                        <div class="validation-message" id="age-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Gender (Radio Group) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Gender</div>
+                    <div class="dx-field-value">
+                        <div id="gender" class="dx-radiogroup"></div>
+                        <div class="validation-message" id="gender-validation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Information Field Set -->
+            <div class="dx-fieldset">
+                <legend>Job Information</legend>
+
+                <!-- Job Title (DropDown Box) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Job Title</div>
+                    <div class="dx-field-value">
+                        <div id="job-title" class="dx-dropdownbox"></div>
+                        <div class="validation-message" id="job-title-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Department (Select Box) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Department</div>
+                    <div class="dx-field-value">
+                        <div id="department" class="dx-selectbox"></div>
+                        <div class="validation-message" id="department-validation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account Information Field Set -->
+            <div class="dx-fieldset">
+                <legend>Account Information</legend>
+
+                <!-- Password (TextBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Password</div>
+                    <div class="dx-field-value">
+                        <div id="password" class="dx-textbox" type="password"></div>
+                        <div class="validation-message" id="password-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Confirm Password (TextBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Confirm Password</div>
+                    <div class="dx-field-value">
+                        <div id="confirm-password" class="dx-textbox" type="password"></div>
+                        <div class="validation-message" id="confirm-password-validation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information Field Set -->
+            <div class="dx-fieldset">
+                <legend>Additional Information</legend>
+
+                <!-- Terms & Conditions (CheckBox) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Agree to Terms & Conditions</div>
+                    <div class="dx-field-value">
+                        <div id="terms" class="dx-checkbox"></div>
+                        <div class="validation-message" id="terms-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Resume Upload (FileUploader) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Upload Resume</div>
+                    <div class="dx-field-value">
+                        <div id="resume" class="dx-fileuploader"></div>
+                        <div class="validation-message" id="resume-validation"></div>
+                    </div>
+                </div>
+
+                <!-- Overview / Comments (Text Area) -->
+                <div class="dx-field">
+                    <div class="dx-field-label">Overview / Comments</div>
+                    <div class="dx-field-value">
+                        <div id="comments" class="dx-textarea"></div>
+                        <div class="validation-message" id="comments-validation"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="dx-field">
+                <div class="dx-field-value">
+                    <button type="button" id="submit" class="dx-button">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -118,6 +118,9 @@
     <Content Include="Drop Down Box\drop-down-box.js" />
     <Content Include="File Uploader\file-uploader.html" />
     <Content Include="File Uploader\file-uploader.js" />
+    <Content Include="Full Demo %28Employee Form%29\index.html" />
+    <Content Include="Full Demo %28Employee Form%29\index.js" />
+    <Content Include="Full Demo %28Employee Form%29\style.css" />
     <Content Include="index.html" />
     <Content Include="Number Box\number-box.html" />
     <Content Include="Number Box\number-box.js" />
