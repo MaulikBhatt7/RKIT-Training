@@ -1,43 +1,54 @@
 ﻿$(function () {
-    const mockApiUrl = "url";
+    var mockApiUrl = "https://67b2fe86bc0165def8cf777b.mockapi.io/employee/employees";
 
-    // Initialize CustomStore
+    /**
+     * DevExtreme CustomStore for handling CRUD operations
+     * Provides sorting, filtering, pagination, and error handling.
+     */
     var customStore = new DevExpress.data.CustomStore({
-        key: "id", 
-        // Load data with all load options
+        key: "id",
+
+        /**
+         * Function: Load
+         * Description: Fetches data with sorting, filtering, and pagination.
+         * Parameters: loadOptions (sorting, filtering, pagination details)
+         * Returns: AJAX Promise
+         */
         load: function (loadOptions) {
             console.log("Load Options:", loadOptions);
             let params = {};
 
-            // Handling Sorting
-            if (loadOptions.sort) {
-                params._sort = loadOptions.sort[0].selector;
-                params._order = loadOptions.sort[0].desc ? "desc" : "asc";
-            }
+            //if (loadOptions.sort) {
+            //    params._sort = loadOptions.sort[0].selector;
+            //    params._order = loadOptions.sort[0].desc ? "desc" : "asc";
+            //}
 
-            // Handling Filtering
-            if (loadOptions.filter) {
-                params._filter = JSON.stringify(loadOptions.filter);
-            }
+            //if (loadOptions.filter) {
+            //    params._filter = JSON.stringify(loadOptions.filter);
+            //}
 
-            // Handling Pagination
-            if (loadOptions.skip !== undefined) {
-                params._start = loadOptions.skip;
-            }
-            if (loadOptions.take !== undefined) {
-                params._limit = loadOptions.take;
-            }
+            //if (loadOptions.skip !== undefined) {
+            //    params._start = loadOptions.skip;
+            //}
+            //if (loadOptions.take !== undefined) {
+            //    params._limit = loadOptions.take;
+            //}
 
             return $.ajax({
                 url: mockApiUrl,
                 method: "GET",
-                data: params,
+                //data: params,
                 dataType: "json"
             });
         },
         loadMode: 'raw',
 
-        // Fetch a single item by key
+        /**
+         * Function: ByKey
+         * Description: Fetches a single record by key.
+         * Parameters: key (ID of the record)
+         * Returns: AJAX Promise
+         */
         byKey: function (key) {
             return $.ajax({
                 url: `${mockApiUrl}/${key}`,
@@ -46,7 +57,12 @@
             });
         },
 
-        // Insert a new record
+        /**
+         * Function: Insert
+         * Description: Adds a new record to the database.
+         * Parameters: values (data object containing new record fields)
+         * Returns: AJAX Promise
+         */
         insert: function (values) {
             console.log("Inserting:", values);
             return $.ajax({
@@ -57,7 +73,12 @@
             });
         },
 
-        // Update an existing record
+        /**
+         * Function: Update
+         * Description: Updates an existing record in the database.
+         * Parameters: key (ID of the record), values (updated data)
+         * Returns: AJAX Promise
+         */
         update: function (key, values) {
             console.log("Updating:", key, values);
             return $.ajax({
@@ -68,7 +89,12 @@
             });
         },
 
-        // Remove a record
+        /**
+         * Function: Remove
+         * Description: Deletes a record from the database.
+         * Parameters: key (ID of the record to delete)
+         * Returns: AJAX Promise
+         */
         remove: function (key) {
             console.log("Removing:", key);
             return $.ajax({
@@ -77,7 +103,12 @@
             });
         },
 
-        // Get total count (useful for pagination)
+        /**
+         * Function: TotalCount
+         * Description: Gets the total number of records for pagination.
+         * Parameters: loadOptions (Optional filters or conditions)
+         * Returns: AJAX Promise resolving to count
+         */
         totalCount: function (loadOptions) {
             return $.ajax({
                 url: mockApiUrl,
@@ -86,7 +117,12 @@
             }).then(data => data.length);
         },
 
-        // Custom handling of error messages
+        /**
+         * Function: ErrorHandler
+         * Description: Handles AJAX errors gracefully.
+         * Parameters: error (error object from AJAX)
+         * Returns: None
+         */
         errorHandler: function (error) {
             console.error("CustomStore Error:", error);
             alert("An error occurred while processing the request.");
@@ -94,24 +130,35 @@
         useDefaultSearch: true
     });
 
-    // Function to fetch and render the data
-    function fetchData() {
+    /**
+     * Function: FetchData
+     * Description: Fetches and renders filtered, sorted, and paginated data.
+     * Parameters: None
+     * Returns: None
+     */
+    function FetchData() {
         customStore.load({
-            filter: ["salary", ">", "90000"],
-            skip: 2,
-            take: 3,
-            sort: [{ selector: "salary", desc: true }],
+            //filter: ["salary", ">", "90000"],
+            //skip: 2,
+            take: 10,
+            //sort: [{ selector: "salary", desc: true }]
         }).done(function (data) {
-            renderTable(data);
+            console.log(data)
+            RenderTable(data);
         }).fail(function (error) {
             console.error("Load Error:", error);
         });
     }
 
-    // Function to render the table
-    function renderTable(data) {
+    /**
+     * Function: RenderTable
+     * Description: Dynamically generates and displays the table with data.
+     * Parameters: data (Array of objects from API)
+     * Returns: None
+     */
+    function RenderTable(data) {
         var tableBody = $("#dataTable tbody");
-        tableBody.empty(); // Clear existing rows
+        tableBody.empty();
         data.forEach(function (item) {
             var row = $("<tr>")
                 .append($("<td>").text(item.name))
@@ -124,15 +171,25 @@
         });
     }
 
-    // Show form for adding new data
+    /**
+     * Event: Click - Add Button
+     * Description: Displays form for adding a new record.
+     * Parameters: None
+     * Returns: None
+     */
     $("#addButton").click(function () {
         $("#formContainer").show();
-        $("#saveButton").data("action", "add"); // Add action for save
+        $("#saveButton").data("action", "add");
         $("#name").val("");
         $("#salary").val("");
     });
 
-    // Handle save button click (both Add and Update)
+    /**
+     * Event: Click - Save Button
+     * Description: Handles form submission for adding or updating records.
+     * Parameters: None
+     * Returns: None
+     */
     $("#saveButton").click(function () {
         var name = $("#name").val();
         var salary = $("#salary").val();
@@ -142,9 +199,8 @@
             var data = { name: name, salary: parseInt(salary) };
 
             if (action === "add") {
-                // Add new record
                 customStore.insert(data).done(function () {
-                    fetchData();
+                    FetchData();
                     $("#formContainer").hide();
                 }).fail(function () {
                     alert("Error adding record");
@@ -152,22 +208,31 @@
             } else if (action === "update") {
                 var id = $(this).data("id");
                 customStore.update(id, data).done(function () {
-                    fetchData();
+                    FetchData();
                     $("#formContainer").hide();
                 }).fail(function () {
                     alert("Error updating record");
                 });
             }
         }
-        
     });
 
-    // Handle cancel button click
+    /**
+     * Event: Click - Cancel Button
+     * Description: Hides the form without making any changes.
+     * Parameters: None
+     * Returns: None
+     */
     $("#cancelButton").click(function () {
         $("#formContainer").hide();
     });
 
-    // Edit record
+    /**
+     * Event: Click - Edit Button
+     * Description: Loads selected record into the form for editing.
+     * Parameters: None
+     * Returns: None
+     */
     $(document).on("click", ".editButton", function () {
         var id = $(this).data("id");
         customStore.byKey(id).done(function (data) {
@@ -180,16 +245,21 @@
         });
     });
 
-    // Delete record
+    /**
+     * Event: Click - Delete Button
+     * Description: Deletes the selected record.
+     * Parameters: None
+     * Returns: None
+     */
     $(document).on("click", ".deleteButton", function () {
         var id = $(this).data("id");
         customStore.remove(id).done(function () {
-            fetchData();
+            FetchData();
         }).fail(function () {
             alert("Error deleting record");
         });
     });
 
-    // Load initial data
-    fetchData();
+    // Initial data load
+    FetchData();
 });
