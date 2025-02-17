@@ -10,8 +10,34 @@
     <!-- DevExtreme library -->
     <script type="text/javascript" src="../Scripts/dx.all.js"></script>
     <script src="CustomStore.js"></script>
+    <style>
+        #formContainer {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Form for adding/updating -->
+    <div id="formContainer" style="display:none;">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="salary" placeholder="Salary">
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+    <button id="addButton">Add New</button>
+    <table id="dataTable" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be inserted here -->
+        </tbody>
+    </table>
+
 
 </body>
 </html>
