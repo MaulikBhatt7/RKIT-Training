@@ -112,6 +112,8 @@
     <Content Include="Content\dx.softblue.css" />
     <Content Include="CustomStore\CustomStore.html" />
     <Content Include="CustomStore\CustomStore.js" />
+    <Content Include="DataSource\DataSource.html" />
+    <Content Include="DataSource\DataSource.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
