@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\datasource\\datasource.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:datasource\\datasource.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\datasource\\datasource.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:datasource\\datasource.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\localstore\\localstore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:localstore\\localstore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\arraystore\\arraystore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -23,8 +15,24 @@
       "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:arraystore\\arraystore.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\customstore\\customstore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\customstore\\customstore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:customstore\\customstore.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\datasource\\datasource.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:datasource\\datasource.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\data layer\\localstore\\localstore.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:localstore\\localstore.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\datasource\\datasource.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|solutionrelative:datasource\\datasource.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{82FA5EFD-AE99-4F30-9EEF-A2CF4D77472C}|Data Layer.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\customstore\\customstore.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,20 +54,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "LocalStore.js",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\LocalStore\\LocalStore.js",
+              "RelativeDocumentMoniker": "LocalStore\\LocalStore.js",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\LocalStore\\LocalStore.js",
+              "RelativeToolTip": "LocalStore\\LocalStore.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-18T06:03:40.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LocalStore.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\LocalStore\\LocalStore.html",
+              "RelativeDocumentMoniker": "LocalStore\\LocalStore.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\LocalStore\\LocalStore.html",
+              "RelativeToolTip": "LocalStore\\LocalStore.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-18T06:02:48.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DataSource.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\DataSource\\DataSource.js",
               "RelativeDocumentMoniker": "DataSource\\DataSource.js",
               "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\DataSource\\DataSource.js",
               "RelativeToolTip": "DataSource\\DataSource.js",
-              "ViewState": "AgIAADUAAAAAAAAAAAAiwFgAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-18T04:58:24.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "DataSource.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\DataSource\\DataSource.html",
               "RelativeDocumentMoniker": "DataSource\\DataSource.html",
@@ -67,12 +101,11 @@
               "RelativeToolTip": "DataSource\\DataSource.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-18T04:57:54.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T04:57:54.261Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ArrayStore.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\ArrayStore\\ArrayStore.html",
               "RelativeDocumentMoniker": "ArrayStore\\ArrayStore.html",
@@ -85,20 +118,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "CustomStore.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\CustomStore\\CustomStore.js",
               "RelativeDocumentMoniker": "CustomStore\\CustomStore.js",
               "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\CustomStore\\CustomStore.js",
               "RelativeToolTip": "CustomStore\\CustomStore.js",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJQAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAANAAAAAAAAAAAAAgwN8AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-17T07:01:58.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CustomStore.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\CustomStore\\CustomStore.html",
               "RelativeDocumentMoniker": "CustomStore\\CustomStore.html",
@@ -110,26 +143,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ArrayStore.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\ArrayStore\\ArrayStore.js",
               "RelativeDocumentMoniker": "ArrayStore\\ArrayStore.js",
               "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\ArrayStore\\ArrayStore.js",
               "RelativeToolTip": "ArrayStore\\ArrayStore.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-14T11:05:08.919Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Data Layer\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-02-14T11:01:12.818Z",
               "EditorCaption": ""

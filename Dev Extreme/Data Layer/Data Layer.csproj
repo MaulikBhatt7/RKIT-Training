@@ -115,6 +115,8 @@
     <Content Include="DataSource\DataSource.html" />
     <Content Include="DataSource\DataSource.js" />
     <Content Include="index.html" />
+    <Content Include="LocalStore\LocalStore.html" />
+    <Content Include="LocalStore\LocalStore.js" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />
     <Content Include="Scripts\cldr\supplemental.js" />
