@@ -104,7 +104,7 @@ console.log("Grouped Data by Age:", groupedData);
 
 // max()
 query.max("Age").done(function(maxAge) {
-    console.log("Max Age:", maxAge);
+    console.log("Max Age:", maxxAge);
 });
 
 // max(getter)
