@@ -113,6 +113,10 @@
     <Content Include="Data Binding\array.html" />
     <Content Include="Data Binding\array.js" />
     <Content Include="Data Binding\index.html" />
+    <Content Include="Editing\CascadingLookups.html" />
+    <Content Include="Editing\CascadingLookups.js" />
+    <Content Include="Editing\editing.html" />
+    <Content Include="Editing\editing.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\cldr.js" />
     <Content Include="Scripts\cldr\event.js" />

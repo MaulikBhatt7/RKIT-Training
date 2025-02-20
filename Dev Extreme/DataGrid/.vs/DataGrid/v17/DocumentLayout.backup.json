@@ -3,24 +3,44 @@
   "WorkspaceRootPath": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\ajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\ajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\editing\\editing.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:editing\\editing.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\pagingandscrolling\\virtualscrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:pagingandscrolling\\virtualscrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\editing\\cascadinglookups.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:editing\\cascadinglookups.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\pagingandscrolling\\infinitescrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:pagingandscrolling\\infinitescrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\pagingandscrolling\\recordpaging.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:pagingandscrolling\\recordpaging.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\editing\\cascadinglookups.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:editing\\cascadinglookups.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\static data\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:static data\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\datagrid\\editing\\editing.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:editing\\editing.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\ajax.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\ajax.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\VirtualScrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PagingAndScrolling\\VirtualScrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\ajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\ajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\array.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -31,16 +51,12 @@
       "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\array.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\InfiniteScrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PagingAndScrolling\\InfiniteScrolling.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\static data\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:static data\\data.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\data binding\\ajax.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5EEC621A-02CB-4E30-B858-C812C03854D7}|DataGrid.csproj|solutionrelative:data binding\\ajax.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\RecordPaging.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PagingAndScrolling\\RecordPaging.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,46 +74,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InfiniteScrolling.html",
-              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\InfiniteScrolling.html",
-              "RelativeDocumentMoniker": "PagingAndScrolling\\InfiniteScrolling.html",
-              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\InfiniteScrolling.html",
-              "RelativeToolTip": "PagingAndScrolling\\InfiniteScrolling.html",
-              "ViewState": "AgIAADsAAAAAAAAAAAAowFYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-20T10:46:43.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VirtualScrolling.html",
-              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\VirtualScrolling.html",
-              "RelativeDocumentMoniker": "PagingAndScrolling\\VirtualScrolling.html",
-              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\VirtualScrolling.html",
-              "RelativeToolTip": "PagingAndScrolling\\VirtualScrolling.html",
-              "ViewState": "AgIAADwAAAAAAAAAAAAswFYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-20T10:00:57.687Z",
+              "Title": "CascadingLookups.js",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\CascadingLookups.js",
+              "RelativeDocumentMoniker": "Editing\\CascadingLookups.js",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\CascadingLookups.js",
+              "RelativeToolTip": "Editing\\CascadingLookups.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-20T12:44:56.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RecordPaging.html",
-              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\RecordPaging.html",
-              "RelativeDocumentMoniker": "PagingAndScrolling\\RecordPaging.html",
-              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\RecordPaging.html",
-              "RelativeToolTip": "PagingAndScrolling\\RecordPaging.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CascadingLookups.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\CascadingLookups.html",
+              "RelativeDocumentMoniker": "Editing\\CascadingLookups.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\CascadingLookups.html",
+              "RelativeToolTip": "Editing\\CascadingLookups.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-20T10:00:33.137Z",
+              "WhenOpened": "2025-02-20T12:34:48.942Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "editing.js",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\editing.js",
+              "RelativeDocumentMoniker": "Editing\\editing.js",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\editing.js",
+              "RelativeToolTip": "Editing\\editing.js",
+              "ViewState": "AgIAAEUAAAAAAAAAAADwv2QAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-20T12:10:51.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "editing.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\editing.html",
+              "RelativeDocumentMoniker": "Editing\\editing.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Editing\\editing.html",
+              "RelativeToolTip": "Editing\\editing.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-20T11:12:52.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\index.html",
               "RelativeDocumentMoniker": "Data Binding\\index.html",
@@ -105,11 +134,12 @@
               "RelativeToolTip": "Data Binding\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-19T13:02:38.993Z"
+              "WhenOpened": "2025-02-19T13:02:38.993Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "data.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Static Data\\data.js",
               "RelativeDocumentMoniker": "Static Data\\data.js",
@@ -117,11 +147,51 @@
               "RelativeToolTip": "Static Data\\data.js",
               "ViewState": "AgIAACIAAAAAAAAAAAAuwDMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-19T13:00:09.927Z"
+              "WhenOpened": "2025-02-19T13:00:09.927Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "ajax.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\ajax.html",
+              "RelativeDocumentMoniker": "Data Binding\\ajax.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\ajax.html",
+              "RelativeToolTip": "Data Binding\\ajax.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-19T12:54:43.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-19T12:53:21.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VirtualScrolling.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\VirtualScrolling.html",
+              "RelativeDocumentMoniker": "PagingAndScrolling\\VirtualScrolling.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\VirtualScrolling.html",
+              "RelativeToolTip": "PagingAndScrolling\\VirtualScrolling.html",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAswFEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-20T10:00:57.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ajax.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\ajax.js",
               "RelativeDocumentMoniker": "Data Binding\\ajax.js",
@@ -129,24 +199,35 @@
               "RelativeToolTip": "Data Binding\\ajax.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-19T12:54:55.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T12:54:55.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ajax.html",
-              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\ajax.html",
-              "RelativeDocumentMoniker": "Data Binding\\ajax.html",
-              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\ajax.html",
-              "RelativeToolTip": "Data Binding\\ajax.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "RecordPaging.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\RecordPaging.html",
+              "RelativeDocumentMoniker": "PagingAndScrolling\\RecordPaging.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\RecordPaging.html",
+              "RelativeToolTip": "PagingAndScrolling\\RecordPaging.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-19T12:54:43.009Z"
+              "WhenOpened": "2025-02-20T10:00:33.137Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "InfiniteScrolling.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\InfiniteScrolling.html",
+              "RelativeDocumentMoniker": "PagingAndScrolling\\InfiniteScrolling.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\PagingAndScrolling\\InfiniteScrolling.html",
+              "RelativeToolTip": "PagingAndScrolling\\InfiniteScrolling.html",
+              "ViewState": "AgIAADsAAAAAAAAAAAAowFYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-20T10:46:43.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "array.js",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\array.js",
               "RelativeDocumentMoniker": "Data Binding\\array.js",
@@ -158,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "array.html",
               "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\Data Binding\\array.html",
               "RelativeDocumentMoniker": "Data Binding\\array.html",
@@ -167,19 +248,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-02-19T12:54:17.818Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\DataGrid\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-02-19T12:53:21.549Z",
-              "EditorCaption": ""
             }
           ]
         }
