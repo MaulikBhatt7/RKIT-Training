@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Infinite Scrolling</title>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+</head>
+<body>
+    <div id="gridContainer"></div>
+    <script>
+        $(() => {
+            // Define a custom data store using DevExtreme's CustomStore
+            var data = new DevExpress.data.CustomStore({
+                key: "userId", // Unique key field for each data record
+
+                // Load function to fetch data from the server
+                load() {
+                    return $.ajax({
+                        url: "https://jsonplaceholder.typicode.com/todos", // API endpoint to fetch data
+                        dataType: "json", // Expecting JSON response
+                    })
+                        .then((result) => result) // Return the fetched data on success
+                        .fail(() => {
+                            throw new Error("Data Loading Error"); // Handle any errors during data loading
+                        });
+                },
+            });
+
+            // Initialize DevExtreme DataGrid with the custom data store
+            $("#gridContainer").dxDataGrid({
+                // The data source for the DataGrid.
+                // It can be an array, a store, or a URL (remote data source).
+                dataSource: data,
+
+                scrolling: {
+                    // Defines the scrolling mode:
+                    // - "standard": Loads all data at once.
+                    // - "virtual": Loads data dynamically while scrolling.
+                    // - "infinite": Similar to "virtual" but removes old records as new ones load.
+                    mode: "infinite",
+
+                    // (Optional) Preloads an additional portion of data before reaching the end.
+                    // Helps improve scrolling smoothness.
+                    // Possible values: true, false.
+                    // preloadEnabled: true,
+
+                    // Defines how rows are rendered:
+                    // - "standard": Renders all rows at once.
+                    // - "virtual": Renders only visible rows for better performance.
+                    rowRenderingMode: "virtual",
+
+                    // Determines if users can scroll by dragging the content:
+                    // - true: Enables scrolling via content dragging.
+                    // - false: Scrolling is possible only using the scrollbar.
+                    scrollByContent: true,
+
+                    // Allows scrolling using the scrollbar thumb:
+                    // - true: Users can drag the scrollbar to scroll.
+                    // - false: Scrolling via the scrollbar is disabled.
+                    scrollByThumb: true,
+
+                    // Specifies whether to use native scrolling:
+                    // - true: Uses the browser’s default scrolling behavior.
+                    // - false: Uses DevExtreme’s custom scrolling implementation.
+                    useNative: false,
+
+                    // Controls when the scrollbar is displayed:
+                    // - "always": Always visible.
+                    // - "onHover": Appears when the user hovers over the grid.
+                    // - "onScroll": Appears only while scrolling.
+                    // - "never": The scrollbar is hidden.
+                    showScrollbar: "onScroll"
+                },
+
+                // Sets the height of the DataGrid in pixels.
+                // Can be a numeric value (e.g., 500) or "auto" to adjust dynamically.
+                height: 500
+            });
+        });
+    </script>
+</body>
+</html>
