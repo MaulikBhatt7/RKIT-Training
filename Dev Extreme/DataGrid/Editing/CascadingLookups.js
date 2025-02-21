@@ -44,6 +44,10 @@
                     valueExpr: "id", // Set the value expression for the lookup
                     displayExpr: "name" // Set the display expression for the lookup
                 },
+                calculateDisplayValue: function (rowData) {
+                    var branch = branches.find(b => b.id === rowData.branchId);
+                    return branch ? branch.name : "";
+                },
                 setCellValue: function (rowData, value) {
                     rowData.branchId = value; // Set the branchId value
                     rowData.subBranchId = null; // Reset Sub-Branch when Branch changes
@@ -53,14 +57,10 @@
             {
                 dataField: "subBranchId",
                 caption: "Sub-Branch",
-                setCellValue: function (rowData, value) {
-                    rowData.subBranchId = value; // Set the subBranchId value
-                    rowData.subjectId = null; // Reset Subject when Sub-Branch changes
-                },
                 lookup: {
                     dataSource: function (options) {
                         if (!options.data || !options.data.branchId) {
-                            return subBranches; // Return all sub-branches if no branch is selected
+                            return []; // Return empty array if no branch is selected
                         }
                         return {
                             store: subBranches, // Filter sub-branches based on selected branch
@@ -69,6 +69,14 @@
                     },
                     valueExpr: "id", // Set the value expression for the lookup
                     displayExpr: "name" // Set the display expression for the lookup
+                },
+                calculateDisplayValue: function (rowData) {
+                    var subBranch = subBranches.find(sb => sb.id === rowData.subBranchId);
+                    return subBranch ? subBranch.name : "";
+                },
+                setCellValue: function (rowData, value) {
+                    rowData.subBranchId = value; // Set the subBranchId value
+                    rowData.subjectId = null; // Reset Subject when Sub-Branch changes
                 }
             },
             {
@@ -77,7 +85,7 @@
                 lookup: {
                     dataSource: function (options) {
                         if (!options.data || !options.data.subBranchId) {
-                            return subjects; // Return all subjects if no sub-branch is selected
+                            return []; // Return empty array if no sub-branch is selected
                         }
                         return {
                             store: subjects, // Filter subjects based on selected sub-branch
@@ -86,6 +94,10 @@
                     },
                     valueExpr: "id", // Set the value expression for the lookup
                     displayExpr: "name" // Set the display expression for the lookup
+                },
+                calculateDisplayValue: function (rowData) {
+                    var subject = subjects.find(s => s.id === rowData.subjectId);
+                    return subject ? subject.name : "";
                 }
             }
         ],
