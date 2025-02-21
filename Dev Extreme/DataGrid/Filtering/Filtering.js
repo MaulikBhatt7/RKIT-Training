@@ -14,7 +14,7 @@ $(() => {
             { dataField: "Name", caption: "Name" },
 
             // Column for Salary
-            { dataField: "Salary", caption: "Salary" },
+            { dataField: "Age", caption: "Age" },
         ],
 
         // Configure the filter panel settings
