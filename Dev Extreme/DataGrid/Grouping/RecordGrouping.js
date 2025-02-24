@@ -1,35 +1,35 @@
 $(() => {
+    // Initialize DevExtreme DataGrid with the custom data store
     $("#dataGrid").dxDataGrid({
-        dataSource: data, // Using your existing data
+        // Assign the array as the data source
+        dataSource: data, 
         
+        // Disable column reordering
         allowColumnReordering: false,
-        showBorders: true,
-
+        
         grouping: {
+            // Allow collapsing of grouped rows
             allowCollapsing: true,
+            
+            // Automatically expand all groups
             autoExpandAll: true,
+            
+            // Enable context menu for grouping
             contextMenuEnabled: true,
-            expandMode: "rowClick",
+            
+            // Set grouping expand mode to "rowClick"
+            expandMode: "rowClick", // Can also be set to "buttonClick"
         },
-
+        
         groupPanel: {
+            // Allow dragging of columns to the group panel
             allowColumnDragging: true,
+            
+            // Text to display when the group panel is empty
             emptyPanelText: "Drag Column Here To Group",
+            
+            // Make the group panel visible
             visible: true,
         },
-
-        columns: [
-            { dataField: "name", caption: "Name" },
-            { 
-                dataField: "age", 
-                caption: "Age",
-                groupIndex: 0, // Set grouping by age
-                groupCellTemplate: function(container, options) {
-                    container.addClass("merged-group-cell");
-                    container.text("Age: " + options.value);
-                }
-            },
-            { dataField: "salary", caption: "Salary" }
-        ]
     });
 });
