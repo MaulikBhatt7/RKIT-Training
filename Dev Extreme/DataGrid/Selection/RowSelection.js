@@ -57,7 +57,7 @@ $(() => {
             selectAllMode: "page",
 
             // Set when checkboxes should be visible
-            // Alternative: "always" to always show checkboxes, "none" to hide checkboxes
+            // Alternative: "always" to always show checkboxes, "none" to hide checkboxes, "onClick" to showcheckboxes by click.
             showCheckBoxesMode: "onLongTap",
 
             // Allow selecting all rows

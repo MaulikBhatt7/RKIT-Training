@@ -20,7 +20,7 @@ $(() => {
         // Configure the filter panel settings
         filterPanel: {
             // Disable the filter builder
-            filterEnabled: false,
+            filterEnabled: true,
 
             // Show the filter panel
             visible: true,

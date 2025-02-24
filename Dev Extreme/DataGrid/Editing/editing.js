@@ -107,7 +107,7 @@
                 allowAdding: true, // Allow adding new rows
                 allowDeleting: true, // Allow deleting rows
                 useIcons: true, // Use icons for editing buttons
-                refreshMode: "full", // Full refresh mode
+                refreshMode: "full", // Full refresh mode. other: reshape, repaint.
                 selectTextOnEditStart: true, // Select text when editing starts
                 startEditAction: "dblClick" // Start editing on double-click
             },
