@@ -82,8 +82,8 @@
             {
                 dataField: "subjectId",
                 caption: "Subject",
-                lookup: {
-                    dataSource: function (options) {
+                lookup: 
+                    dataSourc{e: function (options) {
                         if (!options.data || !options.data.subBranchId) {
                             return []; // Return empty array if no sub-branch is selected
                         }
