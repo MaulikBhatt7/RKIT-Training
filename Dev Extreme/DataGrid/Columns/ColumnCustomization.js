@@ -15,18 +15,35 @@ $(() => {
                 allowEditing: false,
                 allowExporting: true,
                 allowFiltering: true,
-                allowFixing: false,
+                allowFixing: true,
                 allowGrouping: true,
                 allowReordering: true,
                 allowResizing: true,
                 allowSearch: true,
                 allowSorting: true,
+                cellTemplate(container, options) {
+                    return $('<a>', { href: options.value, target: '_blank' }).text(options.value);
+                },
+                columnFixing: {
+                    enabled: true
+                },
                 cssClass: "cell-highlighted",
                 customizeText: function(cellInfo) {
                     return "This is " + cellInfo.value + " ID";
                 },
                 dataType: "number",
-                
+                encodeHtml: true,
+                filterOperations: [ "=", "<>", "<", ">", "<=", ">=", "between" ],
+                filterType: "include",
+                // filterValue: 1,
+                filterValues: [1,2],
+                fixed:true,
+                format: {
+                    type: "percent",
+                    precision: 2
+                },
+            
+               
 
             },
 
@@ -35,6 +52,8 @@ $(() => {
                 caption: "PersonInfo", 
                 alignment:"center",
                 columns:["Name","Age"],
+
+                
                 // Sort order index (first priority)
                 // Alternative: Set a different index value for different sorting priorities
                 sortIndex: 0, 
@@ -48,6 +67,11 @@ $(() => {
             { 
                 dataField: "Age", 
                 caption: "Age", 
+                groupCellTemplate: function(element, options) {
+                    element.text("Hello "+options.value);
+                },
+                
+                groupIndex: 0,
 
                 // Sort order index (second priority)
                 // Alternative: Change the order to prioritize another column
@@ -58,6 +82,13 @@ $(() => {
                 sortOrder: "asc" 
             },
         ],
+
+        headerFilter: {
+            allowSearch: true,
+            searchTimeout: 1000,
+            visible: true,
+            width: 500,
+        },
 
         // Handle selection change event
         onSelectionChanged(selectedItems) {
