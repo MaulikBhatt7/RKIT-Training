@@ -1,0 +1,363 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\bl\\blblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:bl\\blblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\services\\iblblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:services\\iblblog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\services\\iblg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:services\\iblg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\models\\poco\\blg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:models\\poco\\blg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\controllers\\clblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:controllers\\clblogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\services\\iresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:services\\iresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\bl\\blconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:bl\\blconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\services\\iblconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:services\\iblconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\extension\\dtotopocoextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:extension\\dtotopocoextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\filters\\logactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:filters\\logactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\models\\enum\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:models\\enum\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\models\\dto\\dtoblg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:models\\dto\\dtoblg01.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:nlog.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\blogmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:blogmanagementsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|c:\\maulik bhatt\\rkit training\\dotnet core\\blogmanagementsystem\\nlog.config||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{28B073DB-F5EC-40BE-B55E-CC9C62217D9D}|BlogManagementSystem.csproj|solutionrelative:nlog.config||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-25T04:32:57.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BLBlog.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BL\\BLBlog.cs",
+              "RelativeDocumentMoniker": "BL\\BLBlog.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BL\\BLBlog.cs",
+              "RelativeToolTip": "BL\\BLBlog.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAwwCAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IBLG01.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLG01.cs",
+              "RelativeDocumentMoniker": "Services\\IBLG01.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLG01.cs",
+              "RelativeToolTip": "Services\\IBLG01.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IResponse.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IResponse.cs",
+              "RelativeDocumentMoniker": "Services\\IResponse.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IResponse.cs",
+              "RelativeToolTip": "Services\\IResponse.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAmwA4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CLBlogController.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Controllers\\CLBlogController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CLBlogController.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Controllers\\CLBlogController.cs",
+              "RelativeToolTip": "Controllers\\CLBlogController.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAmwFMAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IBLBLog.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLBLog.cs",
+              "RelativeDocumentMoniker": "Services\\IBLBLog.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLBLog.cs",
+              "RelativeToolTip": "Services\\IBLBLog.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BLG01.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\POCO\\BLG01.cs",
+              "RelativeDocumentMoniker": "Models\\POCO\\BLG01.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\POCO\\BLG01.cs",
+              "RelativeToolTip": "Models\\POCO\\BLG01.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Startup.cs",
+              "RelativeDocumentMoniker": "Startup.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Startup.cs",
+              "RelativeToolTip": "Startup.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAjwD4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DTOToPOCOExtension.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Extension\\DTOToPOCOExtension.cs",
+              "RelativeDocumentMoniker": "Extension\\DTOToPOCOExtension.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Extension\\DTOToPOCOExtension.cs",
+              "RelativeToolTip": "Extension\\DTOToPOCOExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BLConverter.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BL\\BLConverter.cs",
+              "RelativeDocumentMoniker": "BL\\BLConverter.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BL\\BLConverter.cs",
+              "RelativeToolTip": "BL\\BLConverter.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IBLConverter.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLConverter.cs",
+              "RelativeDocumentMoniker": "Services\\IBLConverter.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Services\\IBLConverter.cs",
+              "RelativeToolTip": "Services\\IBLConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Response.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\Response.cs",
+              "RelativeDocumentMoniker": "Models\\Response.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\Response.cs",
+              "RelativeToolTip": "Models\\Response.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowCUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Enum.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\Enum\\Enum.cs",
+              "RelativeDocumentMoniker": "Models\\Enum\\Enum.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\Enum\\Enum.cs",
+              "RelativeToolTip": "Models\\Enum\\Enum.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DTOBLG01.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\DTO\\DTOBLG01.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\DTOBLG01.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Models\\DTO\\DTOBLG01.cs",
+              "RelativeToolTip": "Models\\DTO\\DTOBLG01.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAiwCoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LogActionFilter.cs",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Filters\\LogActionFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\LogActionFilter.cs",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Filters\\LogActionFilter.cs",
+              "RelativeToolTip": "Filters\\LogActionFilter.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAIwCYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T04:30:17.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "nlog.config",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\nlog.config",
+              "RelativeDocumentMoniker": "nlog.config",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\nlog.config",
+              "RelativeToolTip": "nlog.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-25T04:30:17.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABoAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-25T04:30:17.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BlogManagementSystem.csproj",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
+              "RelativeDocumentMoniker": "BlogManagementSystem.csproj",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
+              "RelativeToolTip": "BlogManagementSystem.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-25T04:30:17.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "nlog.config",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\nlog.config",
+              "RelativeDocumentMoniker": "nlog.config",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\nlog.config",
+              "RelativeToolTip": "nlog.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-02-25T04:30:17.535Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

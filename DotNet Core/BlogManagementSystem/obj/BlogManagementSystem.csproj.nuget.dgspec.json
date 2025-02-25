@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj": {}
+    "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj": {}
   },
   "projects": {
-    "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj": {
+    "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
+        "projectUniqueName": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
         "projectName": "BlogManagementSystem",
-        "projectPath": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\maulik.b\\.nuget\\packages\\",
-        "outputPath": "F:\\Maulik Bhatt (RKIT)\\RKIT Training\\DotNet Core\\BlogManagementSystem\\obj\\",
+        "projectPath": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\BlogManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Maulik.B\\.nuget\\packages\\",
+        "outputPath": "C:\\Maulik Bhatt\\RKIT Training\\DotNet Core\\BlogManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\maulik.b\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maulik.B\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -92,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
