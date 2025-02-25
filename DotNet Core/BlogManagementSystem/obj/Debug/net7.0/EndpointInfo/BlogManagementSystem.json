@@ -140,13 +140,13 @@
     "schemas": {
       "DTOBLG01": {
         "required": [
-          "G01101",
           "G01102",
-          "G01103"
+          "G01103",
+          "g01F01"
         ],
         "type": "object",
         "properties": {
-          "G01101": {
+          "g01F01": {
             "maximum": 2147483647,
             "minimum": 0,
             "type": "integer",

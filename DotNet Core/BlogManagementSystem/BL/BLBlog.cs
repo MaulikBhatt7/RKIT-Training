@@ -25,7 +25,7 @@ namespace BlogManagementSystem.BL
         private int _id;
         public EnmType Type { get; set; }
 
-     
+
 
         /// <summary>
         /// Constructor to initialize the BLBlog with necessary dependencies.
@@ -38,7 +38,7 @@ namespace BlogManagementSystem.BL
             _dbConnectionFactory = dbConnectionFactory;
             _objResponse = objResponse;
             _objBLConverter = objBLConverter;
-            _objBLG01 = new BLG01();
+            
         }
 
         /// <summary>
@@ -100,13 +100,8 @@ namespace BlogManagementSystem.BL
         public void PreSave(DTOBLG01 objDTOBLG01)
         {
             _objBLG01 = objDTOBLG01.Convert<BLG01>(); // Convert DTO to entity.
-            if (Type == EnmType.A)
+            if (Type == EnmType.E && objDTOBLG01.G01F01 > 0)
             {
-                _objBLG01.G01F04 = DateTime.Now; // Set creation date.
-            }
-            else if (Type == EnmType.E && objDTOBLG01.G01F01 > 0)
-            {
-                _objBLG01.G01F05 = DateTime.Now; // Set modification date.
                 _id = objDTOBLG01.G01F01; // Set ID for editing.
             }
         }
@@ -137,9 +132,8 @@ namespace BlogManagementSystem.BL
                     _objResponse.IsError = true;
                     _objResponse.Message = "Enter Correct Id"; // Invalid ID.
                 }
-                else if (!IsBLG01Exist(_id))
+                else if (GetBlogByID(_id).IsError)
                 {
-                    _objResponse.IsError = true;
                     _objResponse.Message = "Blog Not Found"; // ID not found.
                 }
             }

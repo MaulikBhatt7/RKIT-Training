@@ -23,14 +23,5 @@ namespace BlogManagementSystem.Models.POCO
         /// </summary>
         public string G01F03 { get; set; } = String.Empty;
 
-        /// <summary>
-        /// CreatedAt.
-        /// </summary>
-        public DateTime G01F04 { get; set; }
-        
-        /// <summary>
-        /// UpdatedAt.
-        /// </summary>
-        public DateTime G01F05 { get; set; }
     }
 }

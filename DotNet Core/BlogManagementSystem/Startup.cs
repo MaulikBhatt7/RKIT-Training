@@ -3,11 +3,6 @@ using BlogManagementSystem.Middleware;
 using BlogManagementSystem.Models;
 using BlogManagementSystem.Models.POCO;
 using BlogManagementSystem.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 using NLog;
 using NLog.Extensions.Logging;
 using NLog.Web;
