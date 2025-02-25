@@ -54,6 +54,42 @@
     PMMVersion: 2.41.2
     ```
 
+## Step 3: Connect PMM Client to PMM Server
+
+1. On your Ubuntu machine, configure the PMM Client to connect to the PMM Server:
+
+    ```sh
+    sudo pmm-admin config --server-insecure-tls --server-url=https://admin:admin@<PMM-Server-IP>:<PMM-Server-HTTPS-Port>
+    ```
+
+    Replace `<PMM-Server-IP>` with the IP address of your PMM Server and `<PMM-Server-HTTPS-Port>` with the HTTPS port assigned to the PMM Server (e.g., `55001`).
+
+2. Verify the connection to the PMM Server:
+
+    ```sh
+    pmm-admin status
+    ```
+
+    The output should confirm that the PMM Client is connected to the PMM Server.
+
+## Step 4: Add MySQL Instance to PMM Monitoring
+
+1. On your Ubuntu machine, add a MySQL instance to PMM monitoring:
+
+    ```sh
+    sudo pmm-admin add mysql --username=<MySQL-Username> --password=<MySQL-Password> --host=<MySQL-Host> --port=<MySQL-Port>
+    ```
+
+    Replace `<MySQL-Username>`, `<MySQL-Password>`, `<MySQL-Host>`, and `<MySQL-Port>` with your MySQL instance's credentials and connection details.
+
+2. Verify that the MySQL instance has been added:
+
+    ```sh
+    pmm-admin list
+    ```
+
+    The output should list the MySQL instance, confirming that it has been successfully added to PMM monitoring.
+
 ## Conclusion
 
-You have successfully set up the PMM Server using Docker Desktop UI and the PMM Client on an Ubuntu system.
+You have successfully set up the PMM Server using Docker Desktop UI, the PMM Client on an Ubuntu system, connected the PMM Client to the PMM Server, and added a MySQL instance to PMM monitoring.
