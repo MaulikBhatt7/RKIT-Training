@@ -50,3 +50,17 @@
     { "ID": 49, "Name": "Tejas", "Age": 23 },
     { "ID": 50, "Name": "Varun", "Age": 22 }
 ];
+
+
+var data2 = [
+    { "ID": 1, "FirstName": "Ram", "LastName": "Sharma", "Age": 20 },
+    { "ID": 2, "FirstName": "Shyam", "LastName": "Verma", "Age": 21 },
+    { "ID": 3, "FirstName": "Krishna", "LastName": "Yadav", "Age": 20 },
+    { "ID": 4, "FirstName": "Shiv", "LastName": "Patel", "Age": 23 },
+    { "ID": 5, "FirstName": "Mohan", "LastName": "Gupta", "Age": 22 },
+    { "ID": 6, "FirstName": "Sohan", "LastName": "Jain", "Age": 24 },
+    { "ID": 7, "FirstName": "Ravi", "LastName": "Mehta", "Age": 21 },
+    { "ID": 8, "FirstName": "Amit", "LastName": "Singh", "Age": 23 },
+    { "ID": 9, "FirstName": "Vijay", "LastName": "Thakur", "Age": 22 },
+    { "ID": 10, "FirstName": "Anil", "LastName": "Chauhan", "Age": 20 }
+];

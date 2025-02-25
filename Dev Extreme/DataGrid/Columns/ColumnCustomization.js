@@ -1,9 +1,10 @@
 $(() => {
+    var customIDData = [1,2,3,4]
     // Initialize DevExtreme DataGrid with the custom data store
     $("#dataGrid").dxDataGrid({
 
         // Assign the array as the data source
-        dataSource: data,
+        dataSource: data2,
 
         // Define the columns for the DataGrid
         columns: [
@@ -42,7 +43,17 @@ $(() => {
                     type: "percent",
                     precision: 2
                 },
-            
+                headerFilter: {
+                    dataSource: [{
+                        text: "Less than 5",
+                        value: ["ID", "<", 5]
+                    }, {
+                        text: "More than 10",
+                        value: ["ID", ">", 10]
+                    }],
+                },
+                minWidth: 100,
+                name: "ID"
                
 
             },
@@ -51,17 +62,20 @@ $(() => {
             { 
                 caption: "PersonInfo", 
                 alignment:"center",
-                columns:["Name","Age"],
-
-                
+                columns:["FirstName","LastName"],
+                headerFilter: {
+                    searchMode: "startswith",
+                },
                 // Sort order index (first priority)
                 // Alternative: Set a different index value for different sorting priorities
                 sortIndex: 0, 
+              
 
                 // Sort in ascending order
                 // Alternative: "desc" for descending order, undefined to disable sorting
                 sortOrder: "asc" 
             },
+            
 
             // Column for Age with initial sorting applied
             { 
@@ -90,30 +104,8 @@ $(() => {
             width: 500,
         },
 
-        // Handle selection change event
-        onSelectionChanged(selectedItems) {
-            selectedItems.selectedRowsData.forEach((data) => {
-                console.log(`${data["Name"]} Is Selected`);
-            });
-        },
-
-        // Configure selection settings
-        selection: {
-            // Enable multiple row selection
-            // Alternative: "single" for single selection, "none" to disable selection
-            mode: "multiple",
-
-            // Set the selection mode for the "Select All" checkbox
-            // Alternative: "allPages" to select all rows across pages
-            selectAllMode: "page",
-
-            // Set when checkboxes should be visible
-            // Alternative: "always" to always show checkboxes, "none" to hide checkboxes
-            showCheckBoxesMode: "onLongTap",
-
-            // Allow selecting all rows
-            // Alternative: true to enable selecting all rows
-            allowSelectAll: false,
+        searchPanel:{
+            visible:true
         },
 
         // Show borders around grid cells
