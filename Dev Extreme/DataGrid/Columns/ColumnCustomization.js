@@ -75,9 +75,9 @@ $(() => {
                 allowSorting: true,
 
                 // Custom cell template to display values as links
-                cellTemplate(container, options) {
-                    return $('<a>', { href: options.value, target: '_blank' }).text(options.value);
-                },
+                // cellTemplate(container, options) {
+                //     return $('<a>', { href: options.value, target: '_blank' }).text(options.value);
+                // },
 
                 // Enables or disables column fixing
                 columnFixing: {
@@ -88,17 +88,17 @@ $(() => {
                 cssClass: "cell-highlighted",
 
                 // Customizes the displayed text in the cell
-                customizeText: function (cellInfo) {
-                    return "This is " + cellInfo.value + " ID";
-                },
+                // customizeText: function (cellInfo) {
+                //     return "This is " + cellInfo.value + " ID";
+                // },
 
                 // Defines the column data type
                 // Alternative: "string", "date", "boolean"
                 dataType: "number",
 
                 // Enables or disables HTML encoding
-                // Alternative: false (Disables encoding)
-                encodeHtml: true,
+                // Alternative: true (Enable encoding)
+                encodeHtml: false,
 
                 // Available filter operations
                 filterOperations: ["=", "<>", "<", ">", "<=", ">=", "between"],
@@ -108,20 +108,20 @@ $(() => {
                 filterType: "include",
 
                 // Predefined filter values
-                filterValues: [1, 2],
+                // filterValues: [1, 2],
 
                 // Fixes the column
                 // Alternative: false (Column is not fixed)
                 fixed: true,
 
                 // Defines the column format
-                format: {
-                    // Alternative: "currency", "fixedPoint"
-                    type: "percent",
+                // format: {
+                //     // Alternative: "currency", "fixedPoint"
+                //     type: "percent",
 
-                    // Defines precision for numerical values
-                    precision: 2
-                },
+                //     // Defines precision for numerical values
+                //     precision: 2
+                // },
 
                 // Configures the header filter options
                 headerFilter: {
