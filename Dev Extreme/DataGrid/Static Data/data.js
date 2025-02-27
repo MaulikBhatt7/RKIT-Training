@@ -64,3 +64,17 @@ var data2 = [
     { "ID": 9, "FirstName": "Vijay", "LastName": "Thakur", "Age": 22 },
     { "ID": 10, "FirstName": "Anil", "LastName": "Chauhan", "Age": 20 }
 ];
+
+var tmkocSales = [
+    { OrderID: 1, Customer: 'Jethalal Gada', Product: 'LED TV', Quantity: 1, UnitPrice: 40000, OrderDate: '2024-10-25' },
+    { OrderID: 2, Customer: 'Taarak Mehta', Product: 'Refrigerator', Quantity: 1, UnitPrice: 30000, OrderDate: '2024-10-26' },
+    { OrderID: 3, Customer: 'Aatmaram Bhide', Product: 'Washing Machine', Quantity: 1, UnitPrice: 20000, OrderDate: '2024-10-27' },
+    { OrderID: 4, Customer: 'Dr. Hathi', Product: 'Microwave Oven', Quantity: 2, UnitPrice: 10000, OrderDate: '2024-10-28' },
+    { OrderID: 5, Customer: 'Babita Iyer', Product: 'Smartphone', Quantity: 3, UnitPrice: 15000, OrderDate: '2024-10-29' },
+    { OrderID: 6, Customer: 'Popatlal Pandey', Product: 'Laptop', Quantity: 1, UnitPrice: 50000, OrderDate: '2024-10-30' },
+    { OrderID: 7, Customer: 'Roshan Sodhi', Product: 'Air Conditioner', Quantity: 1, UnitPrice: 35000, OrderDate: '2024-10-31' },
+    { OrderID: 8, Customer: 'Madhavi Bhide', Product: 'Tablet', Quantity: 2, UnitPrice: 20000, OrderDate: '2024-11-01' },
+    { OrderID: 9, Customer: 'Komal Hathi', Product: 'Headphones', Quantity: 5, UnitPrice: 2000, OrderDate: '2024-11-02' },
+    { OrderID: 10, Customer: 'Daya Gada', Product: 'Smartwatch', Quantity: 2, UnitPrice: 10000, OrderDate: '2024-11-03' }
+  ];
+  
