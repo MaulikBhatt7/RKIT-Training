@@ -1,24 +1,29 @@
 function sendStorageRequest(storageKey, dataType, method, data) {
-    var deferred = new $.Deferred();
+    var deferred = new $.Deferred(); // Create a Deferred object to handle asynchronous operations
+
+    var requestData = method === "GET" ? null : JSON.stringify(data); // Convert data to JSON format if not a GET request
+
     var storageRequestSettings = {
-        url: "https://67b2fe86bc0165def8cf777b.mockapi.io/employee/employees",
+        url: "https://67b2fe86bc0165def8cf777b.mockapi.io/employee/employees/1", // Ensure correct URL with an ID for PUT requests
         headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
+            "Accept": "application/json", // Expect JSON response
+            "Content-Type": "application/json" // Sending JSON data
         },
-        method: method,
-        data: data ? JSON.stringify({ name: JSON.stringify(data) }) : null,
-        dataType: dataType,
-        success: function (data) {
-            console.log(data);
-            deferred.resolve(data);
+        method: method, // HTTP method (GET, PUT)
+        data: requestData, // Data payload for PUT requests
+        dataType: dataType, // Expected response format
+        success: function (response) {
+            console.log("Success:", response); // Log the success response
+            deferred.resolve(response); // Resolve the Deferred object
         },
         error: function (error) {
-            deferred.reject(error);
+            console.error("Error:", error); // Log the error response
+            deferred.reject(error); // Reject the Deferred object
         }
     };
-    $.ajax(storageRequestSettings);
-    return deferred.promise();
+
+    $.ajax(storageRequestSettings); // Execute AJAX request
+    return deferred.promise(); // Return a promise for asynchronous handling
 }
 
 $(() => {
@@ -30,67 +35,37 @@ $(() => {
 
         // Define the columns for the DataGrid
         columns: [
-            // Column for ID
-            { dataField: "ID", caption: "ID" },
-
-            // Column for Name
-            { dataField: "Name", caption: "Name" },
-
-            // Column for Age
-            { dataField: "Age", caption: "Age" },
+            { dataField: "ID", caption: "ID" }, // Column for ID
+            { dataField: "Name", caption: "Name" }, // Column for Name
+            { dataField: "Age", caption: "Age" } // Column for Age
         ],
-
-        // Configure the filter panel settings
-        filterPanel: {
-            // Disable the filter builder
-            filterEnabled: true,
-
-            // Show the filter panel
-            visible: true,
-
-            text: {
-                // Custom text for filter creation
-                createFilter: "Create your filter"
-            }
-        },
 
         // Configure the filter row settings
         filterRow: {
-            // Display the filter row
-            visible: true,
-
-            // Apply the filter only when the user clicks the apply button
-            applyFilter: 'onClick',
-
-            // Custom text for the apply filter button
-            applyFilterText: 'Apply Filter',
-
-            // Custom text for the end value in the 'between' filter operation
-            betweenEndText: 'To',
-
-            // Custom text for the start value in the 'between' filter operation
-            betweenStartText: 'From',
-
-            // Show the operation chooser in the filter row
-            showOperationChooser: true,
+            visible: true, // Display the filter row
+            applyFilter: 'onClick', // Apply filter only when the user clicks the apply button
+            applyFilterText: 'Apply Filter', // Custom text for apply filter button
+            betweenEndText: 'To', // Custom text for end value in 'between' filter
+            betweenStartText: 'From', // Custom text for start value in 'between' filter
+            showOperationChooser: true // Show the filter operation chooser in filter row
         },
 
         // Enable synchronization between the filter row and filter panel
         filterSyncEnabled: true,
 
-        // Set a default filter condition to show only rows where ID equals 2
+        // Set a default filter condition (commented out for now)
         // filterValue: ["ID", "=", 2],
 
         stateStoring: {
-            enabled: true,
-            type: "custom",
+            enabled: true, // Enable state storing
+            type: "custom", // Use a custom storage mechanism
             customLoad: function () {
-                return sendStorageRequest("storageKey", "json", "GET");
+                return sendStorageRequest("storageKey", "json", "GET"); // Load stored state from API
             },
             customSave: function (state) {
-                sendStorageRequest("storageKey", "json", "POST", state);
-            }
-        },
+                sendStorageRequest("storageKey", "json", "PUT", state); // Save current state to API
+            },
+            storageKey: "Custom Store" // Custom key identifier for storage
+        }
     }).dxDataGrid("instance");
-
 });
