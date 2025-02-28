@@ -25,6 +25,29 @@
 11. [Selection](#selection)
     - [Row Selection](#row-selection)
     - [Multiple Record Selection Modes](#multiple-record-selection-modes)
+12. [Columns](#columns)
+    - [Column Customization](#column-customization)
+    - [Columns based on a Data Source](#columns-based-on-a-data-source)
+    - [Multi-Row Headers](#multi-row-headers)
+    - [Column Resizing](#column-resizing)
+    - [Command Column Customization](#command-column-customization)
+    - [State Persistence](#state-persistence)
+13. [Appearance](#appearance)
+    - [Template](#template)
+    - [Column Template](#column-template)
+    - [Row Template](#row-template)
+    - [Cell Customization](#cell-customization)
+    - [Toolbar Customization](#toolbar-customization)
+14. [Data Summaries](#data-summaries)
+    - [Grid Summaries](#grid-summaries)
+    - [Group Summaries](#group-summaries)
+    - [Custom Summaries](#custom-summaries)
+15. [Master-Detail](#master-detail)
+    - [Master-Detail View](#master-detail-view)
+16. [Export](#export)
+17. [Adaptability](#adaptability)
+    - [Grid Adaptability Overview](#grid-adaptability-overview)
+    - [Grid Columns Hiding Priority](#grid-columns-hiding-priority)
 
 ## Data Binding
 
@@ -467,3 +490,233 @@
 
 ### Events
 - `onSelectionChanged`
+
+## Columns
+
+### Column Customization
+
+### Options
+- `columns`
+  - `dataField`
+  - `caption`
+  - `alignment`
+  - `width`
+  - `minWidth`
+  - `maxWidth`
+  - `visible`
+  - `visibleIndex`
+  - `allowSorting`
+  - `allowFiltering`
+  - `allowGrouping`
+  - `allowHiding`
+
+### Methods
+- `addColumn(columnOptions)`
+- `deleteColumn(id)`
+
+### Events
+- `onColumnHiding`
+- `onColumnVisible`
+
+### Columns based on a Data Source
+
+### Options
+- `dataSource`
+- `columns`
+  - `dataField`
+  - `caption`
+  - `dataType`
+  - `format`
+
+### Methods
+- `refresh()`
+
+### Events
+- `onColumnsChanged`
+
+### Multi-Row Headers
+
+### Options
+- `columns`
+  - `columns`
+    - `caption`
+    - `columns`
+      - `dataField`
+
+### Methods
+- `refresh()`
+
+### Events
+- `onHeaderCellPrepared`
+
+### Column Resizing
+
+### Options
+- `allowColumnResizing`
+- `columnResizingMode`
+- `columnMinWidth`
+- `columnMaxWidth`
+
+### Methods
+- `resizeColumn(id, width)`
+
+### Events
+- `onColumnResizing`
+- `onColumnResized`
+
+### Command Column Customization
+
+### Options
+- `commandColumn`
+  - `type`
+  - `text`
+  - `width`
+  - `visible`
+  - `alignment`
+
+### Methods
+- `addCommandColumn(commandColumnOptions)`
+- `deleteCommandColumn(id)`
+
+### Events
+- `onCommandColumnClick`
+
+### State Persistence
+
+### Options
+- `stateStoring`
+  - `enabled`
+  - `type`
+  - `storageKey`
+
+### Methods
+- `state(state)`
+
+### Events
+- `onStateStoring`
+
+## Appearance
+
+### Template
+
+### Options
+- `template`
+  - `name`
+  - `content`
+
+### Methods
+- `setTemplate(name, content)`
+
+### Events
+- `onTemplate`
+
+### Column Template
+
+### Options
+- `columns`
+  - `cellTemplate`
+
+### Methods
+- `setCellTemplate(columnIndex, template)`
+
+### Events
+- `onCellTemplatePrepared`
+
+### Row Template
+
+### Options
+- `rowTemplate`
+
+### Methods
+- `setRowTemplate(template)`
+
+### Events
+- `onRowTemplatePrepared`
+
+### Cell Customization
+
+### Options
+- `cellCustomization`
+  - `background`
+  - `border`
+  - `font`
+  - `alignment`
+
+### Methods
+- `customizeCell(cellIndex, customizationOptions)`
+
+### Events
+- `onCellCustomization`
+
+### Toolbar Customization
+
+### Options
+- `toolbar`
+  - `items`
+
+### Methods
+- `customizeToolbar(items)`
+
+### Events
+- `onToolbarCustomization`
+
+## Data Summaries
+
+### Grid Summaries
+
+### Options
+- `summary`
+  - `totalItems`
+    - `column`
+    - `summaryType`
+    - `displayFormat`
+
+### Methods
+- `refresh()`
+
+### Events
+- `onSummaryCalculated`
+
+### Group Summaries
+
+### Options
+- `summary`
+  - `groupItems`
+    - `column`
+    - `summaryType`
+    - `displayFormat`
+
+### Methods
+- `refresh()`
+
+### Events
+- `onGroupSummaryCalculated`
+
+### Custom Summaries
+
+### Options
+- `summary`
+  - `calculateCustomSummary`
+
+### Methods
+- `refresh()`
+
+### Events
+- `onCustomSummaryCalculated`
+
+## Master-Detail
+
+### Master-Detail View
+
+### Options
+- `masterDetail`
+  - `enabled`
+  - `template`
+
+### Methods
+- `expandDetailRow(key)`
+- `collapseDetailRow(key)`
+
+### Events
+- `onMasterDetailExpanded`
+- `onMasterDetailCollapsed`

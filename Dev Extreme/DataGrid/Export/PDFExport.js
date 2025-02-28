@@ -20,11 +20,11 @@ $(() => {
             DevExpress.pdfExporter.exportDataGrid({
                 jsPDFDocument: doc,
                 component: e.component,
-                autoTableOptions: {
-                    styles: { fontSize: 8 },
-                    columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 50 }, 2: { cellWidth: 40 } },
-                    margin: { top: 10 }
-                }
+                // autoTableOptions: {
+                //     styles: { fontSize: 8 },
+                //     columnStyles: { 0: { cellWidth: 20 }, 1: { cellWidth: 50 }, 2: { cellWidth: 40 } },
+                //     margin: { top: 10 }
+                // }
             }).then(() => {
                 doc.save("Orders.pdf");
             });

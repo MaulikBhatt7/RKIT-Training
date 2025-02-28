@@ -34,69 +34,69 @@ $(() => {
             allowExportSelectedData: true,
         },
 
-        onExporting(e) {
-            const workbook = new ExcelJS.Workbook();
-            const worksheet = workbook.addWorksheet('Orders');
-      
-            DevExpress.excelExporter.exportDataGrid({
-              component: e.component,
-              worksheet,
-              autoFilterEnabled: true,
-            }).then(() => {
-              workbook.xlsx.writeBuffer().then((buffer) => {
-                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Orders.xlsx');
-              });
-            });
-        },
-
         // onExporting(e) {
         //     const workbook = new ExcelJS.Workbook();
         //     const worksheet = workbook.addWorksheet('Orders');
-        
-        //     // Define header row for Master Grid
-        //     worksheet.columns = [
-        //         { header: 'Order ID', key: 'OrderID', width: 15 },
-        //         { header: 'Customer Name', key: 'Customer', width: 30 },
-        //         { header: 'Order Date', key: 'OrderDate', width: 20 },
-        //         { header: 'Product', key: 'Product', width: 30 },
-        //         { header: 'Quantity', key: 'Quantity', width: 15 },
-        //         { header: 'Unit Price', key: 'UnitPrice', width: 15 },
-        //         { header: 'Total Price', key: 'TotalPrice', width: 15 }
-        //     ];
-        
-        //     // Export each master row with its detail rows
-        //     const masterGrid = e.component;
-        //     const masterData = masterGrid.getDataSource().items();
-        
-        //     masterData.forEach(masterRow => {
-        //         // Add master row to the worksheet
-        //         worksheet.addRow({
-        //             OrderID: masterRow.OrderID,
-        //             Customer: masterRow.Customer,
-        //             OrderDate: masterRow.OrderDate,
-        //         }).font = { bold: true }; // Make master rows bold
-        
-        //         // Fetch detail rows
-        //         const detailData = tmkocOrderDetails.filter(item => item.OrderID === masterRow.OrderID);
-                
-        //         detailData.forEach(detailRow => {
-        //             worksheet.addRow({
-        //                 Product: detailRow.Product,
-        //                 Quantity: detailRow.Quantity,
-        //                 UnitPrice: detailRow.UnitPrice,
-        //                 TotalPrice: detailRow.Quantity * detailRow.UnitPrice
-        //             });
-        //         });
-        
-        //         // Add an empty row for spacing after each master-detail group
-        //         worksheet.addRow({});
+      
+        //     DevExpress.excelExporter.exportDataGrid({
+        //       component: e.component,
+        //       worksheet,
+        //       autoFilterEnabled: true,
+        //     }).then(() => {
+        //       workbook.xlsx.writeBuffer().then((buffer) => {
+        //         saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Orders.xlsx');
+        //       });
         //     });
-        
-        //     // Save the Excel file
-        //     workbook.xlsx.writeBuffer().then((buffer) => {
-        //         saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Orders_with_Details.xlsx');
-        //     });,
         // },
+
+        onExporting(e) {
+            const workbook = new ExcelJS.Workbook();
+            const worksheet = workbook.addWorksheet('Orders');
+        
+            // Define header row for Master Grid
+            worksheet.columns = [
+                { header: 'Order ID', key: 'OrderID', width: 15 },
+                { header: 'Customer Name', key: 'Customer', width: 30 },
+                { header: 'Order Date', key: 'OrderDate', width: 20 },
+                { header: 'Product', key: 'Product', width: 30 },
+                { header: 'Quantity', key: 'Quantity', width: 15 },
+                { header: 'Unit Price', key: 'UnitPrice', width: 15 },
+                { header: 'Total Price', key: 'TotalPrice', width: 15 }
+            ];
+        
+            // Export each master row with its detail rows
+            const masterGrid = e.component;
+            const masterData = masterGrid.getDataSource().items();
+        
+            masterData.forEach(masterRow => {
+                // Add master row to the worksheet
+                worksheet.addRow({
+                    OrderID: masterRow.OrderID,
+                    Customer: masterRow.Customer,
+                    OrderDate: masterRow.OrderDate,
+                }).font = { bold: true }; // Make master rows bold
+        
+                // Fetch detail rows
+                const detailData = tmkocOrderDetails.filter(item => item.OrderID === masterRow.OrderID);
+                
+                detailData.forEach(detailRow => {
+                    worksheet.addRow({
+                        Product: detailRow.Product,
+                        Quantity: detailRow.Quantity,
+                        UnitPrice: detailRow.UnitPrice,
+                        TotalPrice: detailRow.Quantity * detailRow.UnitPrice
+                    });
+                });
+        
+                // Add an empty row for spacing after each master-detail group
+                worksheet.addRow({});
+            });
+        
+            // Save the Excel file
+            workbook.xlsx.writeBuffer().then((buffer) => {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Orders_with_Details.xlsx');
+            });
+        },
         
 
         // Enable Master-Detail feature for showing related order details
