@@ -76,5 +76,62 @@ var tmkocSales = [
     { OrderID: 8, Customer: 'Madhavi Bhide', Product: 'Tablet', Quantity: 2, UnitPrice: 20000, OrderDate: '2024-11-01' },
     { OrderID: 9, Customer: 'Komal Hathi', Product: 'Headphones', Quantity: 5, UnitPrice: 2000, OrderDate: '2024-11-02' },
     { OrderID: 10, Customer: 'Daya Gada', Product: 'Smartwatch', Quantity: 2, UnitPrice: 10000, OrderDate: '2024-11-03' }
-  ];
-  
+];
+
+var tmkocSales2 = [
+    { OrderID: 1, Customer: 'Jethalal Gada', OrderDate: '2024-10-25' },
+    { OrderID: 2, Customer: 'Taarak Mehta', OrderDate: '2024-10-26' },
+    { OrderID: 3, Customer: 'Aatmaram Bhide', OrderDate: '2024-10-27' },
+    { OrderID: 4, Customer: 'Dr. Hathi', OrderDate: '2024-10-28' },
+    { OrderID: 5, Customer: 'Babita Iyer', OrderDate: '2024-10-29' },
+    { OrderID: 6, Customer: 'Popatlal Pandey', OrderDate: '2024-10-30' },
+    { OrderID: 7, Customer: 'Roshan Sodhi', OrderDate: '2024-10-31' },
+    { OrderID: 8, Customer: 'Madhavi Bhide', OrderDate: '2024-11-01' },
+    { OrderID: 9, Customer: 'Komal Hathi', OrderDate: '2024-11-02' },
+    { OrderID: 10, Customer: 'Daya Gada', OrderDate: '2024-11-03' }
+];
+
+var tmkocOrderDetails = [
+    // Order 1 - Jethalal
+    { OrderID: 1, Product: 'LED TV', Quantity: 1, UnitPrice: 40000 },
+    { OrderID: 1, Product: 'Home Theater', Quantity: 1, UnitPrice: 15000 },
+    
+    // Order 2 - Taarak
+    { OrderID: 2, Product: 'Refrigerator', Quantity: 1, UnitPrice: 30000 },
+    { OrderID: 2, Product: 'Microwave Oven', Quantity: 1, UnitPrice: 10000 },
+
+    // Order 3 - Bhide
+    { OrderID: 3, Product: 'Washing Machine', Quantity: 1, UnitPrice: 20000 },
+    { OrderID: 3, Product: 'Iron', Quantity: 2, UnitPrice: 1500 },
+    { OrderID: 3, Product: 'Vacuum Cleaner', Quantity: 1, UnitPrice: 12000 },
+
+    // Order 4 - Dr. Hathi
+    { OrderID: 4, Product: 'Microwave Oven', Quantity: 2, UnitPrice: 10000 },
+    { OrderID: 4, Product: 'Electric Kettle', Quantity: 1, UnitPrice: 5000 },
+
+    // Order 5 - Babita
+    { OrderID: 5, Product: 'Smartphone', Quantity: 3, UnitPrice: 15000 },
+    { OrderID: 5, Product: 'Tablet', Quantity: 1, UnitPrice: 20000 },
+
+    // Order 6 - Popatlal
+    { OrderID: 6, Product: 'Laptop', Quantity: 1, UnitPrice: 50000 },
+    { OrderID: 6, Product: 'Wireless Mouse', Quantity: 1, UnitPrice: 3000 },
+    { OrderID: 6, Product: 'External HDD', Quantity: 1, UnitPrice: 7000 },
+
+    // Order 7 - Sodhi
+    { OrderID: 7, Product: 'Air Conditioner', Quantity: 1, UnitPrice: 35000 },
+    { OrderID: 7, Product: 'Ceiling Fan', Quantity: 2, UnitPrice: 5000 },
+
+    // Order 8 - Madhavi
+    { OrderID: 8, Product: 'Tablet', Quantity: 2, UnitPrice: 20000 },
+    { OrderID: 8, Product: 'Bluetooth Speaker', Quantity: 1, UnitPrice: 8000 },
+
+    // Order 9 - Komal
+    { OrderID: 9, Product: 'Headphones', Quantity: 5, UnitPrice: 2000 },
+    { OrderID: 9, Product: 'Power Bank', Quantity: 1, UnitPrice: 5000 },
+
+    // Order 10 - Daya
+    { OrderID: 10, Product: 'Smartwatch', Quantity: 2, UnitPrice: 10000 },
+    { OrderID: 10, Product: 'Fitness Band', Quantity: 1, UnitPrice: 5000 }
+];
+
