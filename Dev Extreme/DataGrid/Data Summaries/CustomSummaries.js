@@ -68,56 +68,47 @@ $(() => {
         // Enable alternating row colors for better readability
         rowAlternationEnabled: true,
 
+        
+        selection: {
+            mode: 'multiple',
+            showCheckBoxesMode: "always"
+        },
+
+        onSelectionChanged(e) {
+            e.component.refresh(true);
+        },
+
          // Summary configuration
          summary: {
             totalItems: [
                 {
-                    // Custom Summary 1: Maximum Quantity Ordered
-                    name: "customSummary1",
+                    // Custom Summary
+                    name: "SelectedRowsSummary",
+                    showInColumn: "TotalPrice",
                     summaryType: "custom",
-                    displayFormat: "Max Quantity: {0}"
+                    displayFormat: "Total Price of selected rows: {0}",
+                    valueFormat: 'currency',
                 },
-                {
-                    // Custom Summary 2: Total Sales & Order Count
-                    name: "customSummary2",
-                    summaryType: "custom",
-                    displayFormat: "Total Sales: {0}"
-                }
             ],
+
 
             // Custom summary calculation function
             calculateCustomSummary: function(options) {
-                // Handle the calculation of custom summary 1 (Maximum Quantity Ordered)
-                if (options.name === "customSummary1") {
+                // Handle the calculation of custom summary (SelectedRowsSummary)
+                if (options.name === "SelectedRowsSummary") {
+                   
                     switch (options.summaryProcess) {
                         case "start":
                             options.totalValue = 0; // Initialize total value
                             break;
                         case "calculate":
-                            // Compare the current row's Quantity value and update if it's higher
-                            options.totalValue = Math.max(options.totalValue, options.value.Quantity);
+                            // Add TotalAmount of selected row. 
+                            if (options.component.isRowSelected(options.value)) {
+                                options.totalValue += options.value.Quantity * options.value.UnitPrice;
+                            }
                             break;
                         case "finalize":
-                            // The final max value is already stored in totalValue
-                            break;
-                    }
-                }
-
-                // Handle the calculation of custom summary 2 (Total Revenue & Order Count)
-                if (options.name === "customSummary2") {
-                    switch (options.summaryProcess) {
-                        case "start":
-                            // Initialize an object to store total sales and order count
-                            options.totalValue = { totalSales: 0, orderCount: 0 };
-                            break;
-                        case "calculate":
-                            // Accumulate total sales and count the number of orders
-                            options.totalValue.totalSales += options.value.Quantity * options.value.UnitPrice;
-                            options.totalValue.orderCount++;
-                            break;
-                        case "finalize":
-                            // Format the final summary output
-                            options.totalValue = `Sales: $${options.totalValue.totalSales.toFixed(2)}, Orders: ${options.totalValue.orderCount}`;
+                            // The final Total Price value is already stored in totalValue
                             break;
                     }
                 }
