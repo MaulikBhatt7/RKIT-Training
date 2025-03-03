@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Salary Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D88DB91A-41CB-4178-B02C-FEF5ACD353A7}|Salary Management.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\salary management\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D88DB91A-41CB-4178-B02C-FEF5ACD353A7}|Salary Management.csproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D88DB91A-41CB-4178-B02C-FEF5ACD353A7}|Salary Management.csproj|c:\\maulik bhatt\\rkit training\\dev extreme\\salary management\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{D88DB91A-41CB-4178-B02C-FEF5ACD353A7}|Salary Management.csproj|solutionrelative:index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.js",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Salary Management\\index.js",
+              "RelativeDocumentMoniker": "index.js",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Salary Management\\index.js",
+              "RelativeToolTip": "index.js",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAuwGkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-03-03T06:49:36.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Salary Management\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Maulik Bhatt\\RKIT Training\\Dev Extreme\\Salary Management\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-03-03T06:49:29.447Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
