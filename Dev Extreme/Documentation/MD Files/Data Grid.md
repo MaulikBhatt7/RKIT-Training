@@ -1,25 +1,26 @@
 # DataGrid Documentation
 
 ## Table of Contents
+
 1. [Data Binding](#data-binding)
 2. [Simple Array](#simple-array)
 3. [Ajax Request](#ajax-request)
 4. [Paging and Scrolling](#paging-and-scrolling)
-    - [Record Paging](#record-paging)
-    - [Virtual Scrolling](#virtual-scrolling)
-    - [Infinite Scrolling](#infinite-scrolling)
+   - [Record Paging](#record-paging)
+   - [Virtual Scrolling](#virtual-scrolling)
+   - [Infinite Scrolling](#infinite-scrolling)
 5. [Editing](#editing)
-    - [Row Editing & Editing Events](#row-editing--editing-events)
-    - [Batch Editing](#batch-editing)
-    - [Cell Editing](#cell-editing)
-    - [Form Editing](#form-editing)
-    - [Popup Editing](#popup-editing)
+   - [Row Editing & Editing Events](#row-editing--editing-events)
+   - [Batch Editing](#batch-editing)
+   - [Cell Editing](#cell-editing)
+   - [Form Editing](#form-editing)
+   - [Popup Editing](#popup-editing)
 6. [Data Validation](#data-validation)
 7. [Cascading Lookups](#cascading-lookups)
 8. [Grouping](#grouping)
-    - [Record Grouping](#record-grouping)
+   - [Record Grouping](#record-grouping)
 9. [Filtering](#filtering)
-    - [Filter Panel](#filter-panel)
+   - [Filter Panel](#filter-panel)
 10. [Sorting](#sorting)
     - [Multiple Sorting](#multiple-sorting)
 11. [Selection](#selection)
@@ -52,6 +53,7 @@
 ## Data Binding
 
 ### Options
+
 - `dataSource`
 - `keyExpr`
 - `remoteOperations`
@@ -61,10 +63,12 @@
   - `sorting`
 
 ### Methods
+
 - `refresh()`
 - `reload()`
 
 ### Events
+
 - `onDataErrorOccurred`
 - `onInitNewRow`
 - `onRowInserted`
@@ -72,19 +76,23 @@
 ## Simple Array
 
 ### Options
+
 - `dataSource`
 
 ### Methods
+
 - `refresh()`
 - `addRow()`
 
 ### Events
+
 - `onRowInserted`
 - `onRowUpdated`
 
 ## Ajax Request
 
 ### Options
+
 - `dataSource`
 - `loadPanel`
   - `enabled`
@@ -98,9 +106,11 @@
   - `width`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onDataErrorOccurred`
 - `onRowInserted`
 
@@ -109,22 +119,26 @@
 ### Record Paging
 
 ### Options
+
 - `paging`
   - `enabled`
   - `pageIndex`
   - `pageSize`
 
 ### Methods
+
 - `pageIndex(value)`
 - `pageSize(value)`
 
 ### Events
+
 - `onPageChanged`
 - `onPageSizeChanged`
 
 ### Virtual Scrolling
 
 ### Options
+
 - `scrolling`
   - `mode: 'virtual'`
   - `preloadEnabled`
@@ -132,14 +146,17 @@
   - `useNative`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onScroll`
 
 ### Infinite Scrolling
 
 ### Options
+
 - `scrolling`
   - `mode: 'infinite'`
   - `preloadEnabled`
@@ -147,9 +164,11 @@
   - `useNative`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onScroll`
 
 ## Editing
@@ -157,6 +176,7 @@
 ### Row Editing & Editing Events
 
 ### Options
+
 - `editing`
   - `mode: 'row'`
   - `allowAdding`
@@ -174,16 +194,19 @@
     - `undeleteRow`
 
 ### Methods
+
 - `editRow(rowIndex)`
 - `saveEditData()`
 
 ### Events
+
 - `onEditingStart`
 - `onRowUpdating`
 
 ### Batch Editing
 
 ### Options
+
 - `editing`
   - `mode: 'batch'`
   - `allowAdding`
@@ -201,14 +224,17 @@
     - `undeleteRow`
 
 ### Methods
+
 - `saveEditData()`
 
 ### Events
+
 - `onSaving`
 
 ### Cell Editing
 
 ### Options
+
 - `editing`
   - `mode: 'cell'`
   - `allowAdding`
@@ -226,14 +252,17 @@
     - `undeleteRow`
 
 ### Methods
+
 - `editCell(rowIndex, columnIndex)`
 
 ### Events
+
 - `onCellClick`
 
 ### Form Editing
 
 ### Options
+
 - `editing`
   - `mode: 'form'`
   - `allowAdding`
@@ -260,14 +289,17 @@
     - `undeleteRow`
 
 ### Methods
+
 - `editRow(rowIndex)`
 
 ### Events
+
 - `onEditingStart`
 
 ### Popup Editing
 
 ### Options
+
 - `editing`
   - `mode: 'popup'`
   - `allowAdding`
@@ -294,14 +326,17 @@
     - `undeleteRow`
 
 ### Methods
+
 - `editRow(rowIndex)`
 
 ### Events
+
 - `onEditorPreparing`
 
 ## Data Validation
 
 ### Options
+
 - `validationRules`
   - `type`
   - `message`
@@ -314,14 +349,17 @@
   - `ignoreEmptyValue`
 
 ### Methods
+
 - `validate()`
 
 ### Events
+
 - `onRowValidating`
 
 ## Cascading Lookups
 
 ### Options
+
 - `lookup`
   - `dataSource`
   - `valueExpr`
@@ -329,9 +367,11 @@
   - `allowClearing`
 
 ### Methods
+
 - `reload()`
 
 ### Events
+
 - `onEditorPreparing`
 
 ## Grouping
@@ -339,6 +379,7 @@
 ### Record Grouping
 
 ### Options
+
 - `grouping`
   - `autoExpandAll`
   - `allowCollapsing`
@@ -350,16 +391,19 @@
   - `allowColumnDragging`
 
 ### Methods
+
 - `expandAll()`
 - `collapseAll()`
 
 ### Events
+
 - `onGroupExpanded`
 - `onGroupCollapsed`
 
 ## Filtering
 
 ### Options
+
 - `filterRow`
   - `visible`
   - `applyFilter`
@@ -390,15 +434,18 @@
     - `filterEnabledHint`
 
 ### Methods
+
 - `clearFilter()`
 
 ### Events
+
 - `onEditorPreparing`
 - `onEditorPrepared`
 
 ### Filter Panel
 
 ### Options
+
 - `filterPanel`
   - `visible`
   - `filterEnabled`
@@ -415,14 +462,17 @@
   - `valueSortOrder`
 
 ### Methods
+
 - `clearFilter()`
 
 ### Events
+
 - `onFilterPanelInitialized`
 
 ## Sorting
 
 ### Options
+
 - `sorting`
   - `mode`
   - `ascendingText`
@@ -435,15 +485,18 @@
   - `summaryItem`
 
 ### Methods
+
 - `sort()`
 
 ### Events
+
 - `onSortByChanged`
 - `onSorted`
 
 ### Multiple Sorting
 
 ### Options
+
 - `sorting`
   - `mode: 'multiple'`
   - `ascendingText`
@@ -452,9 +505,11 @@
   - `showSortIndexes`
 
 ### Methods
+
 - `sort()`
 
 ### Events
+
 - `onSortByChanged`
 
 ## Selection
@@ -462,6 +517,7 @@
 ### Row Selection
 
 ### Options
+
 - `selection`
   - `mode: 'single'`
   - `allowSelectAll`
@@ -469,15 +525,18 @@
   - `showCheckBoxesMode`
 
 ### Methods
+
 - `selectRow(rowIndex)`
 - `deselectRow(rowIndex)`
 
 ### Events
+
 - `onSelectionChanged`
 
 ### Multiple Record Selection Modes
 
 ### Options
+
 - `selection`
   - `mode: 'multiple'`
   - `allowSelectAll`
@@ -485,10 +544,12 @@
   - `showCheckBoxesMode`
 
 ### Methods
+
 - `selectRows(keys)`
 - `deselectRows(keys)`
 
 ### Events
+
 - `onSelectionChanged`
 
 ## Columns
@@ -496,6 +557,7 @@
 ### Column Customization
 
 ### Options
+
 - `columns`
   - `dataField`
   - `caption`
@@ -511,16 +573,19 @@
   - `allowHiding`
 
 ### Methods
+
 - `addColumn(columnOptions)`
 - `deleteColumn(id)`
 
 ### Events
+
 - `onColumnHiding`
 - `onColumnVisible`
 
 ### Columns based on a Data Source
 
 ### Options
+
 - `dataSource`
 - `columns`
   - `dataField`
@@ -529,14 +594,17 @@
   - `format`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onColumnsChanged`
 
 ### Multi-Row Headers
 
 ### Options
+
 - `columns`
   - `columns`
     - `caption`
@@ -544,29 +612,35 @@
       - `dataField`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onHeaderCellPrepared`
 
 ### Column Resizing
 
 ### Options
+
 - `allowColumnResizing`
 - `columnResizingMode`
 - `columnMinWidth`
 - `columnMaxWidth`
 
 ### Methods
+
 - `resizeColumn(id, width)`
 
 ### Events
+
 - `onColumnResizing`
 - `onColumnResized`
 
 ### Command Column Customization
 
 ### Options
+
 - `commandColumn`
   - `type`
   - `text`
@@ -575,24 +649,29 @@
   - `alignment`
 
 ### Methods
+
 - `addCommandColumn(commandColumnOptions)`
 - `deleteCommandColumn(id)`
 
 ### Events
+
 - `onCommandColumnClick`
 
 ### State Persistence
 
 ### Options
+
 - `stateStoring`
   - `enabled`
   - `type`
   - `storageKey`
 
 ### Methods
+
 - `state(state)`
 
 ### Events
+
 - `onStateStoring`
 
 ## Appearance
@@ -600,42 +679,52 @@
 ### Template
 
 ### Options
+
 - `template`
   - `name`
   - `content`
 
 ### Methods
+
 - `setTemplate(name, content)`
 
 ### Events
+
 - `onTemplate`
 
 ### Column Template
 
 ### Options
+
 - `columns`
   - `cellTemplate`
 
 ### Methods
+
 - `setCellTemplate(columnIndex, template)`
 
 ### Events
+
 - `onCellTemplatePrepared`
 
 ### Row Template
 
 ### Options
+
 - `rowTemplate`
 
 ### Methods
+
 - `setRowTemplate(template)`
 
 ### Events
+
 - `onRowTemplatePrepared`
 
 ### Cell Customization
 
 ### Options
+
 - `cellCustomization`
   - `background`
   - `border`
@@ -643,21 +732,26 @@
   - `alignment`
 
 ### Methods
+
 - `customizeCell(cellIndex, customizationOptions)`
 
 ### Events
+
 - `onCellCustomization`
 
 ### Toolbar Customization
 
 ### Options
+
 - `toolbar`
   - `items`
 
 ### Methods
+
 - `customizeToolbar(items)`
 
 ### Events
+
 - `onToolbarCustomization`
 
 ## Data Summaries
@@ -665,6 +759,7 @@
 ### Grid Summaries
 
 ### Options
+
 - `summary`
   - `totalItems`
     - `column`
@@ -672,14 +767,17 @@
     - `displayFormat`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onSummaryCalculated`
 
 ### Group Summaries
 
 ### Options
+
 - `summary`
   - `groupItems`
     - `column`
@@ -687,21 +785,26 @@
     - `displayFormat`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onGroupSummaryCalculated`
 
 ### Custom Summaries
 
 ### Options
+
 - `summary`
   - `calculateCustomSummary`
 
 ### Methods
+
 - `refresh()`
 
 ### Events
+
 - `onCustomSummaryCalculated`
 
 ## Master-Detail
@@ -709,14 +812,41 @@
 ### Master-Detail View
 
 ### Options
+
 - `masterDetail`
   - `enabled`
   - `template`
 
 ### Methods
+
 - `expandDetailRow(key)`
 - `collapseDetailRow(key)`
 
 ### Events
+
 - `onMasterDetailExpanded`
 - `onMasterDetailCollapsed`
+
+## Export
+
+### Options
+
+- `export`
+
+### Methods
+
+- `onExporting(e)`
+
+## Adaptability
+
+### Grid Adaptability Overview
+
+### Options
+
+- `columnHidingEnabled`
+
+### Grid Columns Hiding Priority
+
+### Options
+
+- `hidingPriority`
