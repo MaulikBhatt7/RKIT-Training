@@ -1,10 +1,7 @@
 ﻿using ServiceStack.OrmLite;
 using Swashbuckle.Application;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using TravelBookingManagementSystem.Handlers;
 
 namespace TravelBookingManagementSystem
@@ -21,6 +18,10 @@ namespace TravelBookingManagementSystem
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            // Enable CORS globally
+            var cors = new EnableCorsAttribute("*", "*", "*"); // Allow all origins, headers, and methods
+            config.EnableCors(cors);
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

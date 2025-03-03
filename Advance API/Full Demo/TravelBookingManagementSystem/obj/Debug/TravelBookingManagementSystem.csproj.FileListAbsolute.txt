@@ -143,3 +143,8 @@ F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManageme
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\obj\Debug\TravelBookingManagementSystem.csproj.CopyComplete
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\obj\Debug\TravelBookingManagementSystem.dll
 F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\obj\Debug\TravelBookingManagementSystem.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\bin\Newtonsoft.Json.Bson.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\bin\System.Web.Http.Cors.dll
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\bin\Newtonsoft.Json.Bson.pdb
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\bin\Newtonsoft.Json.Bson.xml
+F:\Maulik Bhatt (RKIT)\RKIT Training\Advance API\Full Demo\TravelBookingManagementSystem\bin\System.Web.Http.Cors.xml
