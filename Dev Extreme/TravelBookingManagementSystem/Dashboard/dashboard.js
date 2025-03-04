@@ -1,11 +1,29 @@
 $(function () {
     let apiUrl = "https://localhost:44318/"; // API base URL
-    let editModes = ["row", "batch", "cell", "form", "popup"];
-    let selectedMode = "form";
 
     let token = localStorage.getItem("token");
     let userRole = localStorage.getItem("role");
 
+    
+    // Title Box Text
+    $("#title").append(`<h2>${userRole} Dashboard</h2>`);
+
+
+    // logout button
+     $(function () {
+        $("#logoutButton").dxButton({
+            text: "Logout",
+            type: "danger",
+            icon: "runner",
+            onClick: function () {
+                localStorage.removeItem("token");
+                alert("Logged out successfully.");
+                window.location.href = "../Login/login.html";
+            }
+        });
+    });
+
+    // Field mapping object
     let fieldMappings = {
         "L01F01": "L01101",
         "L01F02": "L01102",
@@ -39,14 +57,18 @@ $(function () {
         window.location.href = "../Login/login.html";
     }
 
+
+    // Grid Creation function
+    
     function createDataGrid(containerId, tableKey, columns) {
         let allowEditing = userRole === "Admin";
-
+        console.log(columns)
         $(containerId).dxDataGrid({
+            allowColumnResizing: true,
             dataSource: new DevExpress.data.CustomStore({
                 key: columns[0].dataField,
                 load: () => 
-                    (containerId !== "#bookingsGrid" || userRole === "Admin") ? $.ajax({
+                    (containerId != "#bookingGrid" || userRole == "Admin") ? $.ajax({
                         url: `${apiUrl}get-all-${tableKey}s`,
                         method: "GET",
                         headers: { Authorization: `Bearer ${token}` },
@@ -88,14 +110,12 @@ $(function () {
                     }
                 },
 
-                remove: (key) => allowEditing ? $.ajax({
-                    url: `${apiUrl}delete-${tableKey}`,
-                    method: "DELETE",
-                    headers: { Authorization: `Bearer ${token}` },
-                    data: {id: key}
-                }).fail(handleAjaxError) : null
-            }),
-            keyExpr: columns[0].dataField,
+               remove: (key) => allowEditing ? $.ajax({
+                        url: `${apiUrl}delete-${tableKey}?id=${key}`, // Send id as a query parameter
+                        method: "DELETE",
+                        headers: { Authorization: `Bearer ${token}` }
+                    }).fail(handleAjaxError) : null
+                }),
             columns: columns,
             editing: {
                 mode: 'form',
@@ -103,22 +123,203 @@ $(function () {
                 allowAdding: allowEditing,
                 allowDeleting: allowEditing,
                 useIcons: true,
-                // form: {
-                //     items: columns.concat(userRole === "Admin" && tableKey === "user" ? [{
-                //         dataField: "R01F03",
-                //         caption: "Password",
-                //         editorType: "dxTextBox",
-                //         editorOptions: {
-                //             mode: "password"
-                //         }
-                //     }] : [])
-                // }
             },
-            paging: { pageSize: 10 },
-            filterPanel: { visible: true }
+            paging: {
+                enabled: true,
+                pageIndex: 0,
+                pageSize: 5
+            },
+            pager: {
+                allowedPageSizes: [2,5,10],
+                infoText: "Page No. {0} of {1} (Total {2} items)",
+                displayMode: "adaptive", // compact, // full
+                showInfo:true,
+                showNavigationButtons: true,
+                showPageSizeSelector:true,
+                visible:true
+            },
+
+            groupPanel: {
+                // Allow dragging of columns to the group panel
+                allowColumnDragging: true,
+                
+                // Text to display when the group panel is empty
+                emptyPanelText: "Drag Column Here To Group",
+                
+                // Make the group panel visible
+                visible: true,
+            },
+                
+            // Configure the filter panel settings
+            filterPanel: {
+                // Disable the filter builder
+                filterEnabled: true,
+
+                // Show the filter panel
+                visible: true,
+
+                text: {
+                    // Custom text for filter creation
+                    createFilter: "Create your filter"
+                }
+            },
+
+            // Configure the filter row settings
+            filterRow: {
+                // Display the filter row
+                visible: true,
+
+                // Apply the filter only when the user clicks the apply button
+                applyFilter: 'onClick',
+
+                // Custom text for the apply filter button
+                applyFilterText: 'Apply Filter',
+
+                // Custom text for the end value in the 'between' filter operation
+                betweenEndText: 'To',
+
+                // Custom text for the start value in the 'between' filter operation
+                betweenStartText: 'From',
+
+                // Show the operation chooser in the filter row
+                showOperationChooser: true,
+            },
+
+            sorting: {
+                // Enable multiple column sorting
+                mode: "multiple",
+
+                // Show sort indexes when multiple sorting is applied
+                showSortIndexes: true,
+            },
+
+            
+            selection: {
+                // Enable multiple row selection
+                mode: "multiple",
+
+                // Set the selection mode for the "Select All" checkbox
+                selectAllMode: "page",
+
+                // Set when checkboxes should be visible
+                showCheckBoxesMode: "always",
+
+                // Allow selecting all rows
+                allowSelectAll: true,
+            },
+
+            headerFilter: {
+                // Enables or disables search in the header filter
+                allowSearch: true,
+
+                // Defines the delay before searching (in milliseconds)
+                searchTimeout: 1000,
+
+                // Shows or hides the header filter
+                visible: true,
+
+                // Defines the width of the header filter
+                width: 500
+            },
+
+             // Display borders around the entire grid
+            showBorders: true,
+
+            // Show vertical lines between columns
+            showColumnLines: true,
+
+            // Show horizontal lines between rows
+            showRowLines: true,
+
+            // Enable alternating row colors for better readability
+            rowAlternationEnabled: true, 
+
+            summary: {
+                // Define total summary items
+                totalItems: [
+                    {
+                        // Display the count of records
+                        column: columns[0].dataField,
+                        summaryType: "count",
+                        displayFormat: "Total Records: {0}"
+                    },
+                ]
+            },
+
+            export: {
+                enabled: true,
+                allowExportSelectedData: true,
+            },
+
+            onExporting(e) {
+                const workbook = new ExcelJS.Workbook();
+                const worksheet = workbook.addWorksheet(tableKey);
+        
+                DevExpress.excelExporter.exportDataGrid({
+                  component: e.component,
+                  worksheet,
+                  autoFilterEnabled: true,
+                }).then(() => {
+                  workbook.xlsx.writeBuffer().then((buffer) => {
+                    saveAs(new Blob([buffer], { type: 'application/octet-stream' }), `${tableKey}.xlsx`);
+                  });
+                });
+            },
+
+            onToolbarPreparing: function(e) {
+            let dataGrid = e.component;
+                e.toolbarOptions.items.unshift(
+                    {
+                        location: "after",
+                        widget: "dxButton",
+                        options: {
+                            text: "Clear Filters",
+                            icon: "clear",
+                            onClick: function () {
+                                dataGrid.clearFilter(); // Clears all applied header filters
+                            }
+                        }
+                    }
+                );
+            },
+
+            // Enable Column Hiding
+            columnHidingEnabled: true,
+
+            // // Enable State Storing in LocalStorage
+            // stateStoring: {
+            //     enabled: true,
+            //     type: 'localStorage',
+            //     storageKey: 'MyLocalStorage',
+            // },
+
+            scrolling: {
+                    // Defines the scrolling mode:
+                    mode: "infinite",
+
+                    // Defines how rows are rendered:
+                    rowRenderingMode: "virtual",
+
+                    // Determines if users can scroll by dragging the content:
+                    scrollByContent: true,
+
+                    // Allows scrolling using the scrollbar thumb:
+                    scrollByThumb: true,
+
+                    // Specifies whether to use native scrolling:
+                    useNative: false,
+
+                    // Controls when the scrollbar is displayed:
+                    showScrollbar: "onScroll"
+            },
+            
+            height: 500
+
+
         });
     }
 
+    // Error handling function
     function handleAjaxError(xhr) {
         if (xhr.status === 401) {
             alert("Session expired. Please log in again.");
@@ -129,57 +330,248 @@ $(function () {
         }
     }
 
-    $("#logoutButton").click(function () {
-        localStorage.removeItem("token");
-        alert("Logged out successfully.");
-        window.location.href = "../Login/login.html";
-    });
+
 
     let grids = {
         "Flights": {
             key: "flight",
             columns: [
-                { dataField: "T01F01", caption: "Flight ID", allowEditing: false },
-                { dataField: "T01F02", caption: "Flight Number" },
-                { dataField: "T01F03", caption: "Departure City" },
-                { dataField: "T01F04", caption: "Arrival City" },
-                { dataField: "T01F05", caption: "Departure Time", dataType: "datetime" },
-                { dataField: "T01F06", caption: "Arrival Time", dataType: "datetime" },
-                { dataField: "T01F07", caption: "Price", dataType: "number", format: "currency" },
-                { dataField: "T01F08", caption: "Airline" }
-            ]
+            { 
+                dataField: "T01F01", 
+                caption: "Flight ID", 
+                allowEditing: false,
+                validationRules: [
+                    { type: "range", min: 0, max: 2147483647, message: "Flight ID must be 0 or a positive integer." }
+                ]
+            },
+            { 
+                dataField: "T01F02", 
+                caption: "Flight Number",
+                validationRules: [
+                    { type: "required", message: "Flight number is required." },
+                    { type: "stringLength", max: 20, message: "Flight number cannot exceed 20 characters." }
+                ]
+            },
+            { 
+                dataField: "T01F03", 
+                caption: "Departure City",
+                validationRules: [
+                    { type: "required", message: "Departure city is required." },
+                    { type: "stringLength", max: 100, message: "Departure city cannot exceed 100 characters." }
+                ]
+            },
+            { 
+                dataField: "T01F04", 
+                caption: "Arrival City",
+                validationRules: [
+                    { type: "required", message: "Arrival city is required." },
+                    { type: "stringLength", max: 100, message: "Arrival city cannot exceed 100 characters." }
+                ]
+            },
+            { 
+                dataField: "T01F05", 
+                caption: "Departure Time", 
+                dataType: "datetime",
+                validationRules: [
+                    { type: "required", message: "Departure time is required." }
+                ]
+            },
+            { 
+                dataField: "T01F06", 
+                caption: "Arrival Time", 
+                dataType: "datetime",
+                validationRules: [
+                    { type: "required", message: "Arrival time is required." }
+                ]
+            },
+            { 
+                dataField: "T01F07", 
+                caption: "Price", 
+                dataType: "number", 
+                format: "currency",
+                validationRules: [
+                    { type: "range", min: 0.01, max: 999999999, message: "Price must be greater than 0." }
+                ]
+            },
+            { 
+                dataField: "T01F08", 
+                caption: "Airline",
+                validationRules: [
+                    { type: "required", message: "Airline name is required." },
+                    { type: "stringLength", max: 100, message: "Airline name cannot exceed 100 characters." }
+                ]
+            }
+        ]
+
         },
         "Hotels": {
             key: "hotel",
             columns: [
-                { dataField: "L01F01", caption: "Hotel ID", allowEditing: false },
-                { dataField: "L01F02", caption: "Hotel Name" },
-                { dataField: "L01F03", caption: "City" },
-                { dataField: "L01F04", caption: "Price per Night", dataType: "number", format: "currency" },
-                { dataField: "L01F05", caption: "Rating", dataType: "number" },
-                { dataField: "L01F06", caption: "Available Rooms", dataType: "number" }
-            ]
+            { 
+                dataField: "L01F01", 
+                caption: "Hotel ID", 
+                allowEditing: false,
+                validationRules: [
+                    { type: "range", min: 0, max: 2147483647, message: "Hotel ID must be 0 or a positive integer." }
+                ]
+            },
+            { 
+                dataField: "L01F02", 
+                caption: "Hotel Name",
+                validationRules: [
+                    { type: "required", message: "Hotel name is required." },
+                    { type: "stringLength", max: 100, message: "Hotel name cannot exceed 100 characters." }
+                ]
+            },
+            { 
+                dataField: "L01F03", 
+                caption: "City",
+                validationRules: [
+                    { type: "required", message: "City of the hotel is required." },
+                    { type: "stringLength", max: 100, message: "City name cannot exceed 100 characters." }
+                ]
+            },
+            { 
+                dataField: "L01F04", 
+                caption: "Price per Night", 
+                dataType: "number", 
+                format: "currency",
+                validationRules: [
+                    { type: "range", min: 0.01, max: 999999999, message: "Price per night must be greater than 0." }
+                ]
+            },
+            { 
+                dataField: "L01F05", 
+                caption: "Rating", 
+                dataType: "number",
+                validationRules: [
+                    { type: "range", min: 1, max: 5, message: "Hotel rating must be between 1 and 5." }
+                ]
+            },
+            { 
+                dataField: "L01F06", 
+                caption: "Available Rooms", 
+                dataType: "number",
+                validationRules: [
+                    { type: "range", min: 0, max: 2147483647, message: "Number of available rooms must be a non-negative integer." }
+                ]
+            }
+        ]
+
         },
         "Bookings": {
             key: "booking",
             columns: [
-                { dataField: "K01F01", caption: "Booking ID", allowEditing: false },
-                { dataField: "K01F02", caption: "Customer Name" },
-                { dataField: "K01F03", caption: "Email" },
-                { dataField: "K01F04", caption: "Booking Date", dataType: "datetime" },
-                { dataField: "K01F05", caption: "Type" },
-                { dataField: "K01F06", caption: "Reference ID", dataType: "number" }
+                { 
+                    dataField: "K01F01", 
+                    caption: "Booking ID", 
+                    allowEditing: false,
+                    validationRules: [
+                        { type: "range", min: 0, max: 2147483647, message: "Booking ID must be 0 or a positive integer." }
+                    ]
+                },
+                { 
+                    dataField: "K01F02", 
+                    caption: "Customer Name",
+                    validationRules: [
+                        { type: "required", message: "Customer name is required." },
+                        { type: "stringLength", max: 100, message: "Customer name cannot exceed 100 characters." }
+                    ]
+                },
+                { 
+                    dataField: "K01F03", 
+                    caption: "Email",
+                    validationRules: [
+                        { type: "required", message: "Customer email is required." },
+                        { type: "email", message: "Invalid email format." }
+                    ]
+                },
+                { 
+                    dataField: "K01F04", 
+                    caption: "Booking Date", 
+                    dataType: "datetime",
+                    validationRules: [
+                        { type: "required", message: "Booking date is required." }
+                    ]
+                },
+                { 
+                    dataField: "K01F05", 
+                    caption: "Type",
+                    validationRules: [
+                        { type: "required", message: "Booking type is required." },
+                        { type: "stringLength", max: 50, message: "Booking type cannot exceed 50 characters." }
+                    ]
+                },
+                { 
+                    dataField: "K01F06", 
+                    caption: "Reference ID", 
+                    dataType: "number",
+                    validationRules: [
+                        { type: "range", min: 1, max: 2147483647, message: "Reference ID must be a positive integer." }
+                    ]
+                }
             ]
+
         },
         "Users": {
             key: "user",
             columns: [
-                { dataField: "R01F01", caption: "User ID", allowEditing: false },
-                { dataField: "R01F02", caption: "Username" },
-                { dataField: "R01F04", caption: "Email" },
-                { dataField: "R01F03", caption: "Password", visible: false},
-                { dataField: "R01F05", caption: "Role", allowEditing: false }
+                { 
+                    dataField: "R01F01", 
+                    caption: "User ID", 
+                    allowEditing: false,
+                    validationRules: [
+                        { type: "range", min: 0, max: 2147483647, message: "User ID must be 0 or a positive integer." }
+                    ]
+                },
+                { 
+                    dataField: "R01F02", 
+                    caption: "Username",
+                    validationRules: [
+                        { type: "required", message: "Username is required." },
+                        { type: "stringLength", max: 50, message: "Username cannot exceed 50 characters." }
+                    ]
+                },
+                { 
+                    dataField: "R01F04", 
+                    caption: "Email",
+                    validationRules: [
+                        { type: "required", message: "Email is required." },
+                        { type: "email", message: "Invalid email format." },
+                        { type: "stringLength", max: 100, message: "Email cannot exceed 100 characters." }
+                    ]
+                },
+                { 
+                    dataField: "R01F03", 
+                    caption: "Password", 
+                    visible: false,
+                    // allowEditing: false,
+                    validationRules: [
+                        { type: "required", message: "Password is required." },
+                        { type: "stringLength", max: 100, message: "Password hash cannot exceed 100 characters." }
+                    ],
+                },
+                {
+                    dataField: "R01F05",
+                    caption: "Role",
+                    allowEditing: true,
+                    lookup: {
+                        dataSource: new DevExpress.data.ArrayStore({
+                            data: [
+                                { name: "Admin" },
+                                { name: "User" }
+                            ],
+                            key: "name" // Using the role name as the key
+                        }),
+                        valueExpr: "name", // The actual value stored
+                        displayExpr: "name" // The value displayed in the dropdown
+                    },
+                    validationRules: [
+                        { type: "required", message: "Role is required." }
+                    ]
+                }
             ]
+
         }
     };
 
@@ -196,25 +588,10 @@ $(function () {
         }
     });
 
-    if (userRole === "Admin") {
-        $("#editModeSelector").dxDropDownBox({
-            value: selectedMode,
-            placeholder: "Select Editing Mode",
-            contentTemplate: function (e) {
-                let list = $("<div>").dxList({
-                    dataSource: editModes,
-                    selectionMode: "single",
-                    selectedItem: selectedMode,
-                    onItemClick: function (event) {
-                        selectedMode = event.itemData;
-                        e.component.option("value", selectedMode);
-                        createDataGrid("#flightsGrid", grids["Flights"].key, grids["Flights"].columns);
-                        e.component.close();
-                    }
-                });
-                return list;
-            }
-        });
+    // Ensure the first grid is initialized
+    let firstTab = $("#tabPanelContainer").dxTabPanel("instance").option("items")[0];
+    if (firstTab) {
+        createDataGrid(`#${grids[firstTab.title].key}Grid`, grids[firstTab.title].key, grids[firstTab.title].columns);
     }
 
     function mapRequestData(data) {
@@ -224,7 +601,5 @@ $(function () {
             mappedData[mappedKey] = data[key];
         });
         return mappedData;
-    }
-
-    createDataGrid("#flightsGrid", grids["Flights"].key, grids["Flights"].columns);
+    }  
 });

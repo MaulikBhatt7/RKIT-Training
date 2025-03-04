@@ -132,7 +132,7 @@ namespace TravelBookingManagementSystem.BL.Operations
         /// Method to save booking data (Add or Edit).
         /// </summary>
         /// <returns>Response object indicating the result of the save operation</returns>
-        public Response Save()
+        public Response Save(int userID)
         {
             DynamicQueryHandler objDynamicQueryHandler = new DynamicQueryHandler(_connectionString);
 
@@ -146,7 +146,7 @@ namespace TravelBookingManagementSystem.BL.Operations
                     { "K01F04", _objBOK01.K01F04.ToString("yyyy-MM-dd HH:mm:ss") },
                     { "K01F05", _objBOK01.K01F05 },
                     { "K01F06", _objBOK01.K01F06 },
-                    { "K01F09", _objBOK01.K01F09 }
+                    { "K01F09", userID }
                 };
 
                 if (Type == EnmEntryType.A)

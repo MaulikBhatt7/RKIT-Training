@@ -128,7 +128,7 @@ namespace TravelBookingManagementSystem.Controllers
             // If validation passes, save the booking record
             if (!_objResponse.IsError)
             {
-                _objResponse = _objBLBooking.Save();
+                _objResponse = _objBLBooking.Save(userID);
             }
 
             // Return the response
@@ -168,7 +168,7 @@ namespace TravelBookingManagementSystem.Controllers
             // If validation passes, save the updated booking record
             if (!_objResponse.IsError)
             {
-                _objResponse = _objBLBooking.Save();
+                _objResponse = _objBLBooking.Save(userID);
             }
 
             // Return the response

@@ -8,6 +8,11 @@
     <!-- jQuery -->
     <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
 
+    <!-- Excel Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
     <!-- DevExtreme theme -->
     <link rel="stylesheet" href="../Content/dx.dark.css">
 
@@ -28,13 +33,18 @@
         #tabPanelContainer {
             margin-top: 20px;
         }
+
+        #logoutButton {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
 <body class="dx-viewport">
 
-    <h2>Admin Dashboard</h2>
-    <button id="logoutButton">Logout</button>
+    <div id="title"></div>
+
+    <div id="logoutButton"></div>
 
     <div id="tabPanelContainer"></div>
 
