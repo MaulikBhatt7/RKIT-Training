@@ -6,6 +6,7 @@ using TravelBookingManagementSystem.Models.Enum;
 using TravelBookingManagementSystem.Models.POCO;
 using TravelBookingManagementSystem.Models;
 using TravelBookingManagementSystem.Handlers;
+using System.Web.Http.Cors;
 
 namespace TravelBookingManagementSystem.Controllers
 {
@@ -13,6 +14,7 @@ namespace TravelBookingManagementSystem.Controllers
     /// Controller to manage user-related API operations.
     /// </summary>
     [ValidateModelState]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CLUserController : ApiController
     {
         /// <summary>
@@ -57,6 +59,7 @@ namespace TravelBookingManagementSystem.Controllers
         /// </summary>
         /// <param name="id">User ID.</param>
         /// <returns>Response object containing the user details.</returns>
+        
         [Route("get-user-by-id")]
         public IHttpActionResult GetUserByID(int id)
         {

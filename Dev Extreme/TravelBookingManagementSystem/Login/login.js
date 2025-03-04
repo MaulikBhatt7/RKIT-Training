@@ -47,6 +47,7 @@ function login() {
         success: function (response) {
             console.log(response.Data[0].Token);
             localStorage.setItem("token", response.Data[0].Token);
+            localStorage.setItem("role", response.Data[0].Role);
             alert("Login successful!");
             window.location.href = "../Dashboard/dashboard.html";
         },
