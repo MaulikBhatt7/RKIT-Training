@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Load Panel Demo</title>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.material.blue.dark.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+    <script src="LoadPanel.js"></script>
+</head>
+
+<body class="dx-viewport">
+    <div id="container" style="text-align: center; margin-top: 50px;">
+        <button id="showImageButton">Show Image</button>
+        <br><br>
+    
+        <div id="imageContainer"
+            style="width: 320px; height: 240px; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center; position: relative;">
+            <span id="placeholderText">Image will be loaded here</span>
+            <div id="loadPanel"></div> <!-- LoadPanel inside container -->
+            <img id="onlineImage" src="" style="display: none; max-width: 100%; height: auto;">
+        </div>
+    </div>
+</body>
+
+</html>
