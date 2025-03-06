@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>DevExtreme v21.1 CRUD Demo</title>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.material.blue.dark.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+    <style>
+        #menu, #treeview { width: 250px; float: left; margin-right: 20px; }
+        #content { margin-left: 270px; padding: 20px; }
+        #popup-form { width: 400px; }
+    </style>
+</head>
+<body>
+    <div id="menu"></div>
+    <div id="treeview"></div>
+    <div id="content">
+        <div id="popup"></div>
+        <div id="popover"></div>
+        <div id="loadPanel"></div>
+        <div id="toast"></div>
+    </div>
+    
+    <script>
+        $(function() {
+            // Menu
+            $("#menu").dxMenu({
+                dataSource: [
+                    { text: "Open Popup" },
+                    { text: "Open Popover" }
+                ],
+                onItemClick: function(e) {
+                    if (e.itemData.text === "Open Popup") {
+                        $("#popup").dxPopup("show");
+                    } else {
+                        $("#popover").dxPopover("show");
+                    }
+                }
+            });
+
+            // TreeView
+            $("#treeview").dxTreeView({
+                items: [
+                    { text: "Item 1", expanded: true, items: [{ text: "Sub-item 1" }] },
+                    { text: "Item 2" }
+                ]
+            });
+
+            // Popup with Form
+            $("#popup").dxPopup({
+                title: "Form Popup",
+                contentTemplate: function() {
+                    return $("<div id='popup-form'></div>");
+                },
+                width: 400,
+                height: 250,
+                showTitle: true,
+                visible: false,
+                dragEnabled: true
+            });
+
+            // Popover with Form
+            $("#popover").dxPopover({
+                target: "#menu",
+                contentTemplate: function() {
+                    return $("<div>Popover Content</div>");
+                },
+                width: 200,
+                visible: false
+            });
+
+            // Load Panel for Processing
+            $("#loadPanel").dxLoadPanel({
+                shadingColor: "rgba(0,0,0,0.4)",
+                visible: false
+            });
+
+            // Toast Notification after Save
+            $("#toast").dxToast({
+                message: "Data Saved Successfully!",
+                type: "success",
+                displayTime: 2000,
+                visible: false
+            });
+
+            // Dummy API for CRUD Operations
+            function saveData(data) {
+                $("#loadPanel").dxLoadPanel("instance").show();
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/posts",
+                    method: "POST",
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    success: function(response) {
+                        $("#toast").dxToast("instance").show();
+                    },
+                    complete: function() {
+                        $("#loadPanel").dxLoadPanel("instance").hide();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
