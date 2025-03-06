@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>DevExtreme Popover with ScrollView</title>
+    <script type="text/javascript" src="../Scripts/jquery-3.5.1.js"></script>
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="../Content/dx.material.blue.dark.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="../Scripts/dx.all.js"></script>
+    <script src="Popover.js"></script>
+
+    <style>
+        #targetContainer{
+            height: 200px;
+            position: absolute;
+            border: 1px solid white;
+            bottom: 100px;
+            left: 100px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="dx-viewport">
+    <div id="container" style="text-align: center; margin-top: 50px;">
+        <div id="showPopoverButton"></div>
+        <div id="showPopoverWithScrollViewButton"></div>
+
+        <!-- Popover without ScrollView -->
+        <div id="popoverContainer"></div>
+
+        <section id="targetContainer">
+            Target Container
+        </section>
+
+        <!-- Popover with ScrollView -->
+        <div id="popoverWithScrollView"></div>
+    </div>
+</body>
+
+</html>
