@@ -84,9 +84,6 @@ $(function () {
             
             // Enables or disables right-to-left text direction
             rtlEnabled: false,  
-            
-            // Enables stacking multiple toasts (NOT supported in v21.1)
-            stack: true  
 
         }).dxToast("show"); // Show the toast
     }
