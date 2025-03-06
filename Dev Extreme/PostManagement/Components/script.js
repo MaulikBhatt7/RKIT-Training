@@ -1,6 +1,6 @@
 ﻿$(function () {
     // Initial TreeView data (will be populated from API)
-    let treeData = [];
+    let postsArray = [];
     // Array to store saved settings
     let savedSettings = [];
 
@@ -10,7 +10,7 @@
             url: "https://jsonplaceholder.typicode.com/posts",
             method: "GET",
             success: function (posts) {
-                treeData = posts.map((post, index) => {
+                postsArray = posts.map((post, index) => {
                     const parentId = index * 2 + 1;
                     const childId = parentId + 1;
                     return [
@@ -18,7 +18,7 @@
                         { id: childId, parentId: parentId, text: post.body }
                     ];
                 }).flat();
-                $("#sidebar").dxTreeView("option", "items", treeData);
+                $("#sidebar").dxTreeView("option", "items", postsArray);
             },
             error: function () {
                 DevExpress.ui.notify({
@@ -37,9 +37,9 @@
             { text: "Add Settings", icon: "preferences" }
         ],
         onItemClick: function (e) {
-            if (e.itemData.text === "Add Product") {
+            if (e.itemData.text === "Add Post") {
                 showPopup();
-            } else if (e.itemData.text === "View Settings") {
+            } else if (e.itemData.text === "Add Settings") {
                 showPopover("#menu");
             }
         }
@@ -47,7 +47,7 @@
 
     // 2. TreeView
     const treeView = $("#sidebar").dxTreeView({
-        items: treeData,
+        items: postsArray,
         dataStructure: "plain",
         keyExpr: "id",
         parentIdExpr: "parentId",
@@ -183,13 +183,13 @@
             success: function (response) {
                 loadPanel.option("visible", false); // Hide LoadPanel
 
-                const newParentId = treeData.length + 1;
+                const newParentId = postsArray.length + 1;
                 const newChildId = newParentId + 1;
-                treeData.push(
+                postsArray.push(
                     { id: newParentId, parentId: 0, text: formData.title },
                     { id: newChildId, parentId: newParentId, text: formData.body }
                 );
-                treeView.option("items", treeData);
+                treeView.option("items", postsArray);
 
                 DevExpress.ui.notify({
                     message: "Post added successfully!",
@@ -211,10 +211,11 @@
     function saveSettings() {
         const formData = $("#popover-form").dxForm("instance").option("formData");
         loadPanel.option("visible", true); // Show LoadPanel
+        popover.hide();
 
         setTimeout(() => {
             loadPanel.option("visible", false); // Hide LoadPanel
-            popover.hide();
+            
 
             // Add the new setting to the savedSettings array
             savedSettings.push(formData.option);
