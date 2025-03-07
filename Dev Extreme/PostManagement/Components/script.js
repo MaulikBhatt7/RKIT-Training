@@ -150,7 +150,7 @@
         }
     }).dxPopover("instance");
 
-    // 5. Load Panel (Replaces Load Indicator)
+    // 5. Load Panel
     var loadPanel = $("#load-panel").dxLoadPanel({
         shadingColor: "rgba(0,0,0,0.4)",
         visible: false,
