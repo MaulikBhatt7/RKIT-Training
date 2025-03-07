@@ -11,8 +11,8 @@
             method: "GET",
             success: function (posts) {
                 postsArray = posts.map((post, index) => {
-                    const parentId = index * 2 + 1;
-                    const childId = parentId + 1;
+                    var parentId = index * 2 + 1;
+                    var childId = parentId + 1;
                     return [
                         { id: parentId, parentId: 0, text: post.title },
                         { id: childId, parentId: parentId, text: post.body }
@@ -46,23 +46,23 @@
     });
 
     // 2. TreeView
-    const treeView = $("#sidebar").dxTreeView({
+    var treeView = $("#sidebar").dxTreeView({
         items: postsArray,
         dataStructure: "plain",
         keyExpr: "id",
         parentIdExpr: "parentId",
         displayExpr: "text",
         width: 300,
-        onItemClick: function (e) {
-            showPopover("#sidebar .dx-treeview-item-" + e.itemData.id);
-        }
+        // onItemClick: function (e) {
+        //     showPopover("#sidebar .dx-treeview-item-" + e.itemData.id);
+        // }
     }).dxTreeView("instance");
 
     // Fetch posts on page load
     fetchPosts();
 
     // 3. Popup with Form (For adding new posts)
-    const popup = $("#add-post-popup").dxPopup({
+    var popup = $("#add-post-popup").dxPopup({
         title: "Add New Post",
         width: 400,
         height: 300,
@@ -111,7 +111,7 @@
     }).dxPopup("instance");
 
     // 4. Popover with Form (For settings)
-    const popover = $("#add-setting-popover").dxPopover({
+    var popover = $("#add-setting-popover").dxPopover({
         target: "#menu",
         width: 350,
         showTitle: true,
@@ -151,7 +151,7 @@
     }).dxPopover("instance");
 
     // 5. Load Panel (Replaces Load Indicator)
-    const loadPanel = $("#load-panel").dxLoadPanel({
+    var loadPanel = $("#load-panel").dxLoadPanel({
         shadingColor: "rgba(0,0,0,0.4)",
         visible: false,
         showIndicator: true,
@@ -171,7 +171,7 @@
     }
 
     function savePost() {
-        const formData = $("#form").dxForm("instance").option("formData");
+        var formData = $("#form").dxForm("instance").option("formData");
         popup.hide();
         loadPanel.option("visible", true); // Show LoadPanel
 
@@ -183,8 +183,8 @@
             success: function (response) {
                 loadPanel.option("visible", false); // Hide LoadPanel
 
-                const newParentId = postsArray.length + 1;
-                const newChildId = newParentId + 1;
+                var newParentId = postsArray.length + 1;
+                var newChildId = newParentId + 1;
                 postsArray.push(
                     { id: newParentId, parentId: 0, text: formData.title },
                     { id: newChildId, parentId: newParentId, text: formData.body }
@@ -209,7 +209,7 @@
     }
 
     function saveSettings() {
-        const formData = $("#popover-form").dxForm("instance").option("formData");
+        var formData = $("#popover-form").dxForm("instance").option("formData");
         loadPanel.option("visible", true); // Show LoadPanel
         popover.hide();
 
@@ -231,7 +231,7 @@
 
     // Function to update the settings list
     function updateSettingsList() {
-        const $settingsList = $("#settings-list");
+        var $settingsList = $("#settings-list");
         $settingsList.empty(); // Clear existing items
         savedSettings.forEach((setting, index) => {
             $settingsList.append(`<li>Setting ${index + 1}: ${setting}</li>`);
