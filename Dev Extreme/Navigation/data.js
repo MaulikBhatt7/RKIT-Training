@@ -72,6 +72,7 @@ var menuData2 = [
       {
         id: '3_1',
         name: 'Tea',
+        expanded: true,
         items: [
           { id: '3_1_1', name: 'Green Tea', price: 5 },
           { id: '3_1_2', name: 'Black Tea', price: 4.5 },
