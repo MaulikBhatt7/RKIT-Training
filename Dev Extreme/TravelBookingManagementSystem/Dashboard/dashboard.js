@@ -490,6 +490,7 @@ $(function () {
                     dataField: "K01F04", 
                     caption: "Booking Date", 
                     dataType: "datetime",
+                    format: "dd/MM/yyyy hh:mm:ss",
                     validationRules: [
                         { type: "required", message: "Booking date is required." }
                     ]

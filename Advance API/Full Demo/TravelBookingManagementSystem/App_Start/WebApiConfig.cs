@@ -20,7 +20,7 @@ namespace TravelBookingManagementSystem
             config.MapHttpAttributeRoutes();
 
             // Enable CORS globally
-            var cors = new EnableCorsAttribute("http://127.0.0.1:5504", "*", "GET,POST,PUT,DELETE,OPTIONS");
+            var cors = new EnableCorsAttribute("*", "*", "GET,POST,PUT,DELETE,OPTIONS");
             cors.SupportsCredentials = true; // If you need to support credentials
             config.EnableCors(cors);
 
