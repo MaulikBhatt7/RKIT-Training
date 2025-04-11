@@ -21,7 +21,7 @@ $(function () {
           icon: "https://img.icons8.com/ios-glyphs/30/add--v1.png",
           text: "Add Blog",
           click: function () {
-            $("#BlogTableContainer").jtable("openAddRecordDialog");
+            $("#customAddForm").show();
           },
           cssClass: "jtable-toolbar-item-addRecord",
         },
