@@ -14,6 +14,7 @@ $(function () {
     animationsEnabled: true,
     columnResizable: true,
     columnSelectable: true,
+    gotoPageArea: false,
 
     toolbar: {
       items: [
@@ -57,6 +58,7 @@ $(function () {
       createAction: function (postData) {
         const data = $.deparam(postData); // Convert form-encoded string to object
         objData = {};
+        objData.g01101 = 0;
         objData.g01102 = data.g01F02;
         objData.g01103 = data.g01F03;
         return $.ajax({
@@ -65,6 +67,9 @@ $(function () {
           contentType: "application/json",
           data: JSON.stringify(objData),
           dataType: "json",
+          success: function (response) {
+            $("#BlogTableContainer").jtable("reload");
+          },
         });
       },
       updateAction: function (postData) {
@@ -80,15 +85,21 @@ $(function () {
           contentType: "application/json",
           data: JSON.stringify(objData),
           dataType: "json",
+          success: function (response) {
+            $("#BlogTableContainer").jtable("reload");
+          },
         });
       },
       deleteAction: function (data) {
         console.log(data);
         return $.ajax({
-          url: `${apiURL}/delete-blog/+${data.g01F01}`,
+          url: `${apiURL}/delete-blog/${data.g01F01}`,
           type: "DELETE",
           contentType: "application/json",
           dataType: "json",
+          success: function (response) {
+            $("#BlogTableContainer").jtable("reload");
+          },
         });
       },
     },
@@ -113,20 +124,67 @@ $(function () {
         width: "40%",
         inputClass: "validate[required]",
       },
+      Custom_Edit: {
+        title: "Custom Edit",
+        width: "30%",
+        create: false,
+        edit: false,
+        sorting: false,
+        display: function (data) {
+          return '<div class="custom-edit"></div>';
+        },
+      },
+    },
+    recordsLoaded: function (event, data) {
+      // Add custom edit button to each row
+      data.records.forEach(function (record) {
+        var $row = $("#BlogTableContainer").find(
+          'tr[data-record-key="' + record.g01F01 + '"]'
+        );
+        $row
+          .find(".custom-edit")
+          .append(
+            '<button class="custom-edit-btn" data-id="' +
+              record.g01F01 +
+              '">Edit</button>'
+          );
+      });
+
+      // Attach click event to custom edit buttons
+      $(".custom-edit-btn").on("click", function () {
+        var blogId = $(this).data("id");
+        // Fetch blog details by ID
+        $.ajax({
+          url: apiURL + "/get-blog-by-id/" + blogId,
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            // Populate the form with blog data
+            $("#customAddForm").data("editMode", true); // Set mode to edit
+            $("#customAddForm").data("blogId", blogId); // Store blog ID
+            $("#customAddForm").find('[name="title"]').val(data.data[0].g01F02);
+            $("#customAddForm")
+              .find('[name="content"]')
+              .val(data.data[0].g01F03);
+            $("#customAddForm").show();
+            console.log($("#customAddForm").data("editMode"));
+          },
+          error: function () {
+            alert("Failed to fetch blog details.");
+          },
+        });
+      });
     },
     formClosed: function () {
-      $(data.form).validationEngine("hide");
-      $(data.form).validationEngine("detach");
+      // $(data.form).validationEngine("hide");
+      // $(data.form).validationEngine("detach");
       console.log("Form closed");
     },
     formCreated: function (event, data) {
       $(data.form).validationEngine();
       $(data.form).validationEngine("attach", {
-        promptPosition: "inline", // <- Show message under field
-        scroll: false,
-        autoPositionUpdate: true,
-        showArrow: false,
-        prettySelect: true,
+        promptPosition: "inline", // Show message under field
       });
       console.log("Form created:", data);
     },
@@ -138,6 +196,57 @@ $(function () {
 
   // Load the data when ready
   $("#BlogTableContainer").jtable("load");
+
+  $("#blogForm").on("submit", function (e) {
+    e.preventDefault();
+    var formData = $.deparam($(this).serialize());
+    var data = {
+      g01101: 0,
+      g01102: formData.title,
+      g01103: formData.content,
+    };
+
+    var isEditMode = $("#customAddForm").data("editMode");
+
+    if (isEditMode) {
+      // Update blog
+      var blogId = $("#customAddForm").data("blogId");
+      data.g01101 = blogId;
+      $.ajax({
+        url: apiURL + "/update-blog",
+        type: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: function (response) {
+          console.log("Updated successfully:", response);
+          $("#customAddForm").hide();
+          $("#BlogTableContainer").jtable("reload");
+        },
+        error: function (xhr, status, error) {
+          console.error("Update failed:", error);
+        },
+      });
+    } else {
+      // Create blog
+      data.g01101 = 0;
+      $.ajax({
+        url: apiURL + "/add-blog",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        dataType: "json",
+        success: function (response) {
+          console.log("Created successfully:", response);
+          $("#customAddForm").hide();
+          $("#BlogTableContainer").jtable("reload");
+        },
+        error: function (xhr, status, error) {
+          console.error("Creation failed:", error);
+        },
+      });
+    }
+  });
 });
 
 /*
