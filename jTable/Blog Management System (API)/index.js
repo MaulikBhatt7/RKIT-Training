@@ -61,16 +61,26 @@ $(function () {
         objData.g01101 = 0;
         objData.g01102 = data.g01F02;
         objData.g01103 = data.g01F03;
-        return $.ajax({
+        var deferred = $.Deferred();
+
+        $.ajax({
           url: apiURL + "/add-blog",
           type: "POST",
           contentType: "application/json",
           data: JSON.stringify(objData),
           dataType: "json",
           success: function (response) {
+            console.log(response);
+            deferred.resolve({
+              Result: "OK",
+              Record: objData,
+            });
+            console.log(jtable);
             $("#BlogTableContainer").jtable("reload");
           },
         });
+
+        return deferred;
       },
       updateAction: function (postData) {
         var data = $.deparam(postData);
@@ -79,28 +89,40 @@ $(function () {
         objData.g01102 = data.g01F02;
         objData.g01103 = data.g01F03;
         console.log(data);
-        return $.ajax({
+        var deferred = $.Deferred();
+        $.ajax({
           url: `${apiURL}/update-blog`,
           type: "PUT",
           contentType: "application/json",
           data: JSON.stringify(objData),
           dataType: "json",
           success: function (response) {
+            deferred.resolve({
+              Result: "OK",
+              Record: objData,
+            });
             $("#BlogTableContainer").jtable("reload");
           },
         });
+        return deferred;
       },
       deleteAction: function (data) {
         console.log(data);
-        return $.ajax({
+        var deferred = $.Deferred();
+        $.ajax({
           url: `${apiURL}/delete-blog/${data.g01F01}`,
           type: "DELETE",
           contentType: "application/json",
           dataType: "json",
           success: function (response) {
+            deferred.resolve({
+              Result: "OK",
+              Record: data,
+            });
             $("#BlogTableContainer").jtable("reload");
           },
         });
+        return deferred;
       },
     },
     fields: {
@@ -122,7 +144,16 @@ $(function () {
         title: "Blog Description",
         type: "text",
         width: "40%",
-        inputClass: "validate[required]",
+        // inputClass: "validate[required]",
+        display: function (data) {
+          return $('<input type="text" />')
+            .addClass("validate[required]")
+            .attr("name", "g01F03")
+            .attr(
+              "data-errormessage-value-missing",
+              "Please enter a blog description"
+            );
+        },
       },
       Custom_Edit: {
         title: "Custom Edit",
@@ -175,6 +206,50 @@ $(function () {
           },
         });
       });
+    },
+    recordsLoaded: function (event, data) {
+      // Add custom edit button to each row
+      data.records.forEach(function (record) {
+        var $row = $("#BlogTableContainer").find(
+          'tr[data-record-key="' + record.g01F01 + '"]'
+        );
+        $row
+          .find(".custom-edit")
+          .append(
+            '<button class="custom-edit-btn" data-id="' +
+              record.g01F01 +
+              '">Edit</button>'
+          );
+      });
+
+      // Attach click event to custom edit buttons
+      $(".custom-edit-btn").on("click", function () {
+        var blogId = $(this).data("id");
+        // Fetch blog details by ID
+        $.ajax({
+          url: apiURL + "/get-blog-by-id/" + blogId,
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            // Populate the form with blog data
+            $("#customAddForm").data("editMode", true); // Set mode to edit
+            $("#customAddForm").data("blogId", blogId); // Store blog ID
+            $("#customAddForm").find('[name="title"]').val(data.data[0].g01F02);
+            $("#customAddForm")
+              .find('[name="content"]')
+              .val(data.data[0].g01F03);
+            $("#customAddForm").show();
+            console.log($("#customAddForm").data("editMode"));
+          },
+          error: function () {
+            alert("Failed to fetch blog details.");
+          },
+        });
+      });
+    },
+    recordAdded: function (event, data) {
+      console.log(event);
     },
     formClosed: function () {
       // $(data.form).validationEngine("hide");
@@ -247,6 +322,9 @@ $(function () {
       });
     }
   });
+
+  var jtable = $("#BlogTableContainer").jtable("instance");
+  console.log(jtable);
 });
 
 /*

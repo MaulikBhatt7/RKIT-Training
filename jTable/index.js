@@ -222,12 +222,12 @@ $(document).ready(function () {
       console.log("Close requested");
     },
     formClosed: function () {
-      $(data.form).validationEngine("hide");
-      $(data.form).validationEngine("detach");
+      // $(data.form).validationEngine("hide");
+      // $(data.form).validationEngine("detach");
       console.log("Form closed");
     },
     formCreated: function (event, data) {
-      console.log(typeof $.fn.validationEngine);
+      // console.log(typeof $.fn.validationEngine);
       $(data.form).validationEngine();
       console.log("Form created:", data);
     },
@@ -372,5 +372,5 @@ $(document).ready(function () {
   // });
 
   // Destroy the table
-  // $("#StudentTableContainer").jtable("destroy");s
+  // $("#StudentTableContainer").jtable("destroy");
 });
